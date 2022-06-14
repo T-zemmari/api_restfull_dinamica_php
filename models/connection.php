@@ -28,14 +28,16 @@ class Connection
     //##################   Connexion  #########################//
     //#########################################################//
 
-    
+    static public function Connect()
+    {
 
+        try {
+            $link = new PDO("mysql:host=localhost;dbname=" . Connection::infoDatabase()['database'], Connection::infoDatabase()['user'], Connection::infoDatabase()['pass']);
+            $link->exec("set names utf8 ");
+        } catch (PDOException $e) {
+            die("Error :" . $e->getMessage());
+        }
 
-
-
-
-
-
-
-
+        return $link;
+    }
 }
