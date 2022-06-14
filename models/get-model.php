@@ -5,16 +5,14 @@ require_once "models/connection.php";
 
 class GetModel
 {
-
-
-    static public function getData($table)
+    static public function getData($tabla)
     {
 
-        $sql = "SELECT * FROM $table";
+        $sql = "SELECT * FROM $tabla";
         $stmt = Connection::Connect()->prepare($sql);
         $stmt->execute();
 
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
 
     }
 }

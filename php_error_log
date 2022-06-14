@@ -1,0 +1,57 @@
+[14-Jun-2022 13:06:26 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "GetController" not found in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php:6
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(22): RoutersController->index()
+#3 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php on line 6
+[14-Jun-2022 13:09:35 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "GetController" not found in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php:4
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(22): RoutersController->index()
+#3 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php on line 4
+[14-Jun-2022 13:11:38 Europe/Berlin] PHP Warning:  Undefined variable $table in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php on line 6
+[14-Jun-2022 13:11:38 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "GetModel" not found in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php:8
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(6): GetController::getData(NULL)
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(22): RoutersController->index()
+#4 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php on line 8
+[14-Jun-2022 13:11:52 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "GetModel" not found in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php:8
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(6): GetController::getData('users')
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(22): RoutersController->index()
+#4 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php on line 8
+[14-Jun-2022 13:12:09 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "GetModel" not found in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php:8
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(6): GetController::getData('users')
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(22): RoutersController->index()
+#4 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php on line 8
+[14-Jun-2022 13:12:29 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "GetModel" not found in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php:8
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(6): GetController::getData('users')
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(22): RoutersController->index()
+#4 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php on line 8
+[14-Jun-2022 13:18:27 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'api_restful.user' doesn't exist in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:13
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(13): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(8): GetModel::getData('user')
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(6): GetController::getData('user')
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(22): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 13
