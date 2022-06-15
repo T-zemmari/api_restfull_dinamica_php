@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-06-2022 a las 17:01:30
+-- Tiempo de generación: 15-06-2022 a las 17:03:45
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.0.13
 
@@ -122,7 +122,7 @@ ALTER TABLE `users`
 -- Filtros para la tabla `experiences`
 --
 ALTER TABLE `experiences`
-  ADD CONSTRAINT `experiences_ibfk_1` FOREIGN KEY (`id_user_experience`) REFERENCES `users` (`id_user`);
+  ADD CONSTRAINT `experiences_ibfk_1` FOREIGN KEY (`id_user_experience`) REFERENCES `users` (`id_user`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
