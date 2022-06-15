@@ -9,13 +9,21 @@ class GetModel
     //##########################################################//
     //####         Obtener datos sin mas filtros    ############//
     //#########################################################//
-    static public function getData($tabla, $select, $orderBy, $orderInfo)
+    static public function getData($tabla, $select, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
         $sql = "";
-        if ($orderBy != "00" && $orderInfo != "00") {
-            $sql = "SELECT $select  FROM $tabla ORDER BY $orderBy $orderInfo";
+        if ($orderBy != null && $orderInfo != null) {
+            if ($limit_ini != null && $limit_end != null) {
+                $sql = "SELECT $select  FROM $tabla ORDER BY $orderBy $orderInfo LIMIT $limit_ini,$limit_end";
+            } else {
+                $sql = "SELECT $select  FROM $tabla ORDER BY $orderBy $orderInfo";
+            }
         } else {
-            $sql = "SELECT $select FROM $tabla";
+            if ($limit_ini != null && $limit_end != null) {
+                $sql = "SELECT $select FROM $tabla LIMIT $limit_ini,$limit_end";
+            } else {
+                $sql = "SELECT $select FROM $tabla";
+            }
         }
         $stmt = Connection::Connect()->prepare($sql);
         $stmt->execute();
@@ -27,7 +35,7 @@ class GetModel
     //####         Obtener datos con el id      ############//
     //#########################################################//
 
-    static public function getDataFilter($tabla, $select, $linkTo, $equalTo, $orderBy, $orderInfo)
+    static public function getDataFilter($tabla, $select, $linkTo, $equalTo, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
 
         $linkToArray = explode(',', $linkTo);
@@ -43,10 +51,18 @@ class GetModel
         }
         $sql = "";
 
-        if ($orderBy != "00" && $orderInfo != "00") {
-            $sql = "SELECT $select FROM $tabla WHERE $linkToArray[0]= :$linkToArray[0] $newLink ORDER BY $orderBy $orderInfo";
+        if ($orderBy != null && $orderInfo != null) {
+            if ($limit_ini != null && $limit_end != null) {
+                $sql = "SELECT $select FROM $tabla WHERE $linkToArray[0]= :$linkToArray[0] $newLink ORDER BY $orderBy $orderInfo LIMIT $limit_ini,$limit_end";
+            } else {
+                $sql = "SELECT $select FROM $tabla WHERE $linkToArray[0]= :$linkToArray[0] $newLink ORDER BY $orderBy $orderInfo";
+            }
         } else {
-            $sql = "SELECT $select FROM $tabla WHERE $linkToArray[0]= :$linkToArray[0] $newLink ";
+            if ($limit_ini != null && $limit_end != null) {
+                $sql = "SELECT $select FROM $tabla WHERE $linkToArray[0]= :$linkToArray[0] $newLink LIMIT $limit_ini,$limit_end";
+            } else {
+                $sql = "SELECT $select FROM $tabla WHERE $linkToArray[0]= :$linkToArray[0] $newLink ";
+            }
         }
 
         $stmt = Connection::Connect()->prepare($sql);
