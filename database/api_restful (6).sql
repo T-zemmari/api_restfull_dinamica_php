@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-06-2022 a las 16:36:49
+-- Tiempo de generación: 15-06-2022 a las 16:41:04
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.0.13
 
@@ -43,7 +43,8 @@ CREATE TABLE `experiences` (
 --
 
 INSERT INTO `experiences` (`id_experience`, `company_experience`, `date_start_experience`, `date_end_experience`, `position_company_experience`, `id_user_experience`, `date_create_experience`, `date_update_experience`) VALUES
-(1, 'Tedy', '2022-06-15 15:33:33', '2022-06-15 15:33:33', 'Full stack', 1, '2022-06-15 15:34:02', '2022-06-15 15:34:02');
+(1, 'Tedy', '2022-06-15 15:33:33', '2022-06-15 15:33:33', 'Full stack', 1, '2022-06-15 15:34:02', '2022-06-15 15:34:02'),
+(2, 'Google', '2022-06-15 16:40:22', '2022-06-15 16:40:22', 'Full stack', 1, '2022-06-15 16:40:53', '2022-06-15 16:40:53');
 
 -- --------------------------------------------------------
 
@@ -75,8 +76,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_user`, `name_user`, `lastname_user`, `email_user`, `password_user`, `phone_user`, `adress_user`, `cp_user`, `city_user`, `country_user`, `nif_user`, `token_user`, `token_exp_user`, `id_experience_user`, `date_create_user`, `date_update_user`) VALUES
-(1, 'Tarik', 'Zemmari Kissani', 'guirep@gmail.com', '123456789', '669217903', 'Calla la paz mundial 3', '46001', 'valencia', 'España', '23940276J', NULL, NULL, 1, '2022-06-14 13:18:20', '2022-06-14 13:18:20'),
-(2, 'Lorena', 'Vaso ', 'vaso.lorna@gmail.com', '123456789', '669121212', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2022-06-15 11:11:46', '2022-06-15 11:11:46');
+(1, 'Tarik', 'Zemmari Kissani', 'guirep@gmail.com', '123456789', '666666666', 'Calla la paz mundial 3', '46001', 'valencia', 'España', '23940555J', NULL, NULL, 1, '2022-06-14 13:18:20', '2022-06-14 13:18:20'),
+(2, 'Lorena', 'Vaso ', 'vaso.lorna@gmail.com', '123456789', '669121212', NULL, NULL, NULL, NULL, '23940557L', NULL, NULL, 1, '2022-06-15 11:11:46', '2022-06-15 11:11:46'),
+(3, 'Maria', 'La vega', 'maia@gmail.com', '123456789', '666666666', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-15 16:38:30', '2022-06-15 16:38:30'),
+(4, 'Fran', 'Mario dario', 'mario@gmail.com', '123456789', '666666666', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-15 16:39:32', '2022-06-15 16:39:32');
 
 --
 -- Índices para tablas volcadas
@@ -102,13 +105,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `experiences`
 --
 ALTER TABLE `experiences`
-  MODIFY `id_experience` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_experience` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
