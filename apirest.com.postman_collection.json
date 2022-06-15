@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "71534c38-906c-4dcb-8d65-5b3ec020b935",
+		"name": "apirest.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18820606"
+	},
+	"item": [
+		{
+			"name": "Get All users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "apirest.com/users",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users By One Column",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "apirest.com/users?select=*&linkTo=name_user&equalTo=Tarik",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "*"
+						},
+						{
+							"key": "linkTo",
+							"value": "name_user"
+						},
+						{
+							"key": "equalTo",
+							"value": "Tarik"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users By Many Columns",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "apirest.com/users?select=*&linkTo=name_user,phone_user&equalTo=Lorena_669121212",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "*"
+						},
+						{
+							"key": "linkTo",
+							"value": "name_user,phone_user"
+						},
+						{
+							"key": "equalTo",
+							"value": "Lorena_669121212"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users Ordered",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "apirest.com/users?select=*&orderBy=id_user&orderInfo=DESC",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "*"
+						},
+						{
+							"key": "orderBy",
+							"value": "id_user"
+						},
+						{
+							"key": "orderInfo",
+							"value": "DESC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users Limited",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "apirest.com/users?select=*&limit_ini=0&limit_end=2",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "*"
+						},
+						{
+							"key": "limit_ini",
+							"value": "0"
+						},
+						{
+							"key": "limit_end",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users Ordered And Limited",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "apirest.com/users?select=*&orderBy=id_user&orderInfo=DESC&limit_ini=0&limit_end=5",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "*"
+						},
+						{
+							"key": "orderBy",
+							"value": "id_user"
+						},
+						{
+							"key": "orderInfo",
+							"value": "DESC"
+						},
+						{
+							"key": "limit_ini",
+							"value": "0"
+						},
+						{
+							"key": "limit_end",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
