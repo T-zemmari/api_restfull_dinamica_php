@@ -191,6 +191,62 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Get Users By Many Columns Ordered And Limited",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "apirest.com/users?select=*&linkTo=name_user,phone_user&equalTo=Lorena_669121212&orderBy=id_user&orderInfo=DESC&limit_ini=0&limit_end=5",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "*"
+						},
+						{
+							"key": "linkTo",
+							"value": "name_user,phone_user"
+						},
+						{
+							"key": "equalTo",
+							"value": "Lorena_669121212"
+						},
+						{
+							"key": "orderBy",
+							"value": "id_user"
+						},
+						{
+							"key": "orderInfo",
+							"value": "DESC"
+						},
+						{
+							"key": "limit_ini",
+							"value": "0"
+						},
+						{
+							"key": "limit_end",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users InnerJoin Experiences",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
 		}
 	]
 }
