@@ -24,9 +24,17 @@ class GetController
         }
     }
 
-    static function getData($tabla)
+    static function getData($tabla,$select)
     {
-        $response = GetModel::getData($tabla);
+        $response = GetModel::getData($tabla,$select);
+
+        $getController = new GetController();
+        $getController->respuestaJson($response);
+    }
+
+    static function getDataFilter($tabla,$select,$linkTo,$equalTo)
+    {
+        $response = GetModel::getDataFilter($tabla,$select,$linkTo,$equalTo);
 
         $getController = new GetController();
         $getController->respuestaJson($response);
