@@ -83,9 +83,9 @@ class GetModel
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    //##########################################################//
-    //#####  Obtener datos con tablas relacionadas ############//
-    //#########################################################//
+    //#####################################################################//
+    //#####  Obtener datos con tablas relacionadas sin filtros ############//
+    //#####################################################################//
 
     static public function getRelationData($rel, $type, $select, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
@@ -100,8 +100,6 @@ class GetModel
                     $newLink .= " INNER JOIN " . $value . " ON " .$relArray[0].".id_".$typeArray[$key]."_".$typeArray[0]." = ".$value.".id_".$typeArray[$key]." ";
                 }
             }
-
-
 
             // Obtener datos ordenados y limitados
 
