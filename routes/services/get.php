@@ -19,14 +19,20 @@ if (isset($_GET['linkTo']) && isset($_GET['equalTo'])) {
     //#####################################################################//
 
     $response->getDataFilter($tabla, $select, $linkTo, $equalTo, $orderBy, $orderInfo, $limit_ini, $limit_end);
-
 } else if (isset($_GET['rel']) && isset($_GET['type']) &&  !isset($_GET['linkTo']) && !isset($_GET['equalTo'])) {
 
     //#####################################################################//
-    //####                 Peticiones con relaciones           ############//
+    //########       Peticiones con relaciones Sin Filtros     ############//
     //#####################################################################//
 
     $response->getRelationData($_GET['rel'], $_GET['type'], $select, $orderBy, $orderInfo, $limit_ini, $limit_end);
+} else if (isset($_GET['rel']) && isset($_GET['type']) &&  isset($_GET['linkTo']) && isset($_GET['equalTo'])) {
+
+    //#####################################################################//
+    //#######        Peticiones con relaciones Con Filtros     ############//
+    //#####################################################################//
+
+    $response->getRelationDataWithFilter($_GET['rel'], $_GET['type'], $select, $linkTo, $equalTo,  $orderBy, $orderInfo, $limit_ini, $limit_end);
 } else {
 
     //#####################################################################//
