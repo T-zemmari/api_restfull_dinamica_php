@@ -247,6 +247,14 @@
 				"header": []
 			},
 			"response": []
+		},
+		{
+			"name": "Get data from tables InnerJoins anothe tables with filters",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
 		}
 	]
 }
