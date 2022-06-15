@@ -23,12 +23,26 @@ class GetModel
     //####         Obtener datos con el id      ############//
     //#########################################################//
 
-    static public function getDataFilter($tabla, $select, $linkTo,$equalTo)
+    static public function getDataFilter($tabla, $select, $linkTo, $equalTo)
     {
 
-        $sql = "SELECT $select FROM $tabla WHERE $linkTo= :$linkTo";
+        $linkToArray = explode(',', $linkTo);
+        $equalToArray = explode('_', $equalTo);
+        $newLink = "";
+        if (count($linkToArray) > 1) {
+
+            foreach ($linkToArray as $key => $value) {
+                if ($key > 0) {
+                    $newLink .= "AND " . $value . "= :" . $value . " ";
+                }
+            }
+        }
+        $sql = "SELECT $select FROM $tabla WHERE $linkToArray[0]= :$linkToArray[0] $newLink";
         $stmt = Connection::Connect()->prepare($sql);
-        $stmt->bindParam(":".$linkTo,$equalTo,PDO::PARAM_STR);
+
+        foreach ($linkToArray as $key => $value) {
+            $stmt->bindParam(":" . $value, $equalToArray[$key], PDO::PARAM_STR);
+        }
         $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
