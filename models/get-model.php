@@ -32,7 +32,7 @@ class GetModel
     }
 
     //##########################################################//
-    //####         Obtener datos con el id      ############//
+    //####         Obtener datos con filtros      ############//
     //#########################################################//
 
     static public function getDataFilter($tabla, $select, $linkTo, $equalTo, $orderBy, $orderInfo, $limit_ini, $limit_end)
@@ -51,20 +51,28 @@ class GetModel
         }
         $sql = "";
 
-        if ($orderBy != null && $orderInfo != null) {
-            if ($limit_ini != null && $limit_end != null) {
-                $sql = "SELECT $select FROM $tabla WHERE $linkToArray[0]= :$linkToArray[0] $newLink ORDER BY $orderBy $orderInfo LIMIT $limit_ini,$limit_end";
-            } else {
-                $sql = "SELECT $select FROM $tabla WHERE $linkToArray[0]= :$linkToArray[0] $newLink ORDER BY $orderBy $orderInfo";
-            }
-        } else {
-            if ($limit_ini != null && $limit_end != null) {
-                $sql = "SELECT $select FROM $tabla WHERE $linkToArray[0]= :$linkToArray[0] $newLink LIMIT $limit_ini,$limit_end";
-            } else {
-                $sql = "SELECT $select FROM $tabla WHERE $linkToArray[0]= :$linkToArray[0] $newLink ";
-            }
+        // Obtener datos ordenados y limitados
+
+        if ($orderBy != null && $orderInfo != null && $limit_ini != null && $limit_end != null) {
+            $sql = "SELECT $select FROM $tabla  WHERE $linkToArray[0]= :$linkToArray[0] $newLink ORDER BY $orderBy $orderInfo LIMIT $limit_ini,$limit_end";
         }
 
+        // Obtener datos ordenados sin limit
+
+        if ($orderBy != null && $orderInfo != null && $limit_ini == null && $limit_end == null) {
+            $sql = "SELECT $select FROM $tabla WHERE $linkToArray[0]= :$linkToArray[0] $newLink  ORDER BY $orderBy $orderInfo";
+        }
+        // Obtener no ordenados con limit
+
+        if ($orderBy == null && $orderInfo == null && $limit_ini != null && $limit_end != null) {
+            $sql = "SELECT $select FROM $tabla WHERE $linkToArray[0]= :$linkToArray[0] $newLink  LIMIT $limit_ini,$limit_end";
+        }
+
+        // Obtener datos sin orden y sin limit
+
+        if ($orderBy == null && $orderInfo == null && $limit_ini == null && $limit_end == null) {
+            $sql = "SELECT $select FROM $tabla WHERE $linkToArray[0]= :$linkToArray[0] $newLink ";
+        }
         $stmt = Connection::Connect()->prepare($sql);
 
         foreach ($linkToArray as $key => $value) {
@@ -73,5 +81,57 @@ class GetModel
         $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    //##########################################################//
+    //#####  Obtener datos con tablas relacionadas ############//
+    //#########################################################//
+
+    static public function getRelationData($rel, $type, $select, $orderBy, $orderInfo, $limit_ini, $limit_end)
+    {
+        $relArray = explode(',', $rel);
+        $typeArray = explode(',', $type);
+        $newLink = "";
+        $sql = "";
+        if (count($relArray) > 1) {
+
+            foreach ($relArray as $key => $value) {
+                if ($key > 0) {
+                    $newLink .= " INNER JOIN " . $value . " ON " .$relArray[0].".id_".$typeArray[$key]."_".$typeArray[0]." = ".$value.".id_".$typeArray[$key]." ";
+                }
+            }
+
+
+
+            // Obtener datos ordenados y limitados
+
+            if ($orderBy != null && $orderInfo != null && $limit_ini != null && $limit_end != null) {
+                $sql = "SELECT $select FROM $relArray[0] $newLink  ORDER BY $orderBy $orderInfo LIMIT $limit_ini,$limit_end";
+            }
+
+            // Obtener datos ordenados sin limit
+
+            if ($orderBy != null && $orderInfo != null && $limit_ini == null && $limit_end == null) {
+                $sql = "SELECT $select FROM $relArray[0] $newLink ORDER BY $orderBy $orderInfo";
+            }
+            // Obtener no ordenados con limit
+
+            if ($orderBy == null && $orderInfo == null && $limit_ini != null && $limit_end != null) {
+                $sql = "SELECT $select FROM $relArray[0] $newLink LIMIT $limit_ini,$limit_end";
+            }
+
+            // Obtener datos sin orden y sin limit
+
+            if ($orderBy == null && $orderInfo == null && $limit_ini == null && $limit_end == null) {
+                $sql = "SELECT $select FROM $relArray[0] $newLink";
+            }
+
+            $stmt = Connection::Connect()->prepare($sql);
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            return null;
+        }
     }
 }

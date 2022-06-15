@@ -24,17 +24,25 @@ class GetController
         }
     }
 
-    static function getData($tabla,$select, $orderBy, $orderInfo,$limit_ini,$limit_end)
+    static function getData($tabla, $select, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
-        $response = GetModel::getData($tabla,$select, $orderBy, $orderInfo,$limit_ini,$limit_end);
+        $response = GetModel::getData($tabla, $select, $orderBy, $orderInfo, $limit_ini, $limit_end);
 
         $getController = new GetController();
         $getController->respuestaJson($response);
     }
 
-    static function getDataFilter($tabla,$select,$linkTo,$equalTo, $orderBy, $orderInfo,$limit_ini,$limit_end)
+    static function getDataFilter($tabla, $select, $linkTo, $equalTo, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
-        $response = GetModel::getDataFilter($tabla,$select,$linkTo,$equalTo, $orderBy, $orderInfo,$limit_ini,$limit_end);
+        $response = GetModel::getDataFilter($tabla, $select, $linkTo, $equalTo, $orderBy, $orderInfo, $limit_ini, $limit_end);
+
+        $getController = new GetController();
+        $getController->respuestaJson($response);
+    }
+
+    static function getRelationData($rel, $type, $select, $orderBy, $orderInfo, $limit_ini, $limit_end)
+    {
+        $response = GetModel::getRelationData($rel, $type, $select, $orderBy, $orderInfo, $limit_ini, $limit_end);
 
         $getController = new GetController();
         $getController->respuestaJson($response);

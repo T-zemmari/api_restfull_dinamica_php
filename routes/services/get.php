@@ -3,36 +3,34 @@
 require_once './controllers/get-controller.php';
 $tabla = explode('?', $array_routes[1])[0];
 $select = $_GET['select'] ?? "*";
+$linkTo = $_GET['linkTo'] ?? null;
+$equalTo = $_GET['equalTo'] ?? null;
+$orderBy = $_GET['orderBy'] ?? null;
+$orderInfo = $_GET['orderInfo'] ?? null;
+$limit_ini = $_GET['limit_ini'] ?? null;
+$limit_end = $_GET['limit_end'] ?? null;
 
 $response =  new GetController();
 
 if (isset($_GET['linkTo']) && isset($_GET['equalTo'])) {
-    if (isset($_GET['orderBy']) && isset($_GET['orderInfo'])) {
-        if (isset($_GET['limit_ini']) && isset($_GET['limit_end'])) {
-            $response->getDataFilter($tabla, $select, $_GET['linkTo'], $_GET['equalTo'], $_GET['orderBy'], $_GET['orderInfo'], $_GET['limit_ini'], $_GET['limit_end']);
-        } else {
-            $response->getDataFilter($tabla, $select, $_GET['linkTo'], $_GET['equalTo'], $_GET['orderBy'], $_GET['orderInfo'], null, null);
-        }
-    } else {
-        if (isset($_GET['limit_ini']) && isset($_GET['limit_end'])) {
-            $response->getDataFilter($tabla, $select, $_GET['linkTo'], $_GET['equalTo'], null, null,$_GET['limit_ini'], $_GET['limit_end']);
-        } else {
-            $response->getDataFilter($tabla, $select, $_GET['linkTo'], $_GET['equalTo'], null, null,null,null);
-        }
-    }
+
+    //#####################################################################//
+    //#### Peticiones con filtros orenados o no Limitados o no ############//
+    //#####################################################################//
+
+    $response->getDataFilter($tabla, $select, $linkTo, $equalTo, $orderBy, $orderInfo, $limit_ini, $limit_end);
+
+} else if (isset($_GET['rel']) && isset($_GET['type']) &&  !isset($_GET['linkTo']) && !isset($_GET['equalTo'])) {
+
+    //#####################################################################//
+    //####                 Peticiones con relaciones           ############//
+    //#####################################################################//
+
+    $response->getRelationData($_GET['rel'], $_GET['type'], $select, $orderBy, $orderInfo, $limit_ini, $limit_end);
 } else {
-    if (isset($_GET['orderBy']) && isset($_GET['orderInfo'])) {
-        if (isset($_GET['limit_ini']) && isset($_GET['limit_end'])) {
-            $response->getData($tabla, $select, $_GET['orderBy'], $_GET['orderInfo'], $_GET['limit_ini'], $_GET['limit_end']);
-        } else {
-            $response->getData($tabla, $select, $_GET['orderBy'], $_GET['orderInfo'], null, null);
-        }
-    } else {
-        if (isset($_GET['limit_ini']) && isset($_GET['limit_end'])) {
-            $response->getData($tabla, $select, null, null, $_GET['limit_ini'], $_GET['limit_end']); 
-        }else{
-            $response->getData($tabla, $select, null, null,null,null);  
-        }
-      
-    }
+
+    //#####################################################################//
+    //#### Peticiones sin filtros orenados o no Limitados o no ############//
+    //#####################################################################//
+    $response->getData($tabla, $select, $orderBy, $orderInfo, $limit_ini, $limit_end);
 }
