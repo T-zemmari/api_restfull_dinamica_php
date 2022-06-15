@@ -43,4 +43,3 @@ if (count($array_routes) == 1 && isset($_SERVER['REQUEST_METHOD'])) {
 }
 
 
-return;
