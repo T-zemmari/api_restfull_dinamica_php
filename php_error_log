@@ -247,3 +247,39 @@ Stack trace:
 #5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(22): RoutersController->index()
 #6 {main}
   thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 43
+[15-Jun-2022 12:56:18 Europe/Berlin] PHP Warning:  Undefined variable $orderBy in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php on line 17
+[15-Jun-2022 12:56:18 Europe/Berlin] PHP Warning:  Undefined variable $orderInfo in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php on line 17
+[15-Jun-2022 12:56:18 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:21
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(21): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(29): GetModel::getData('users', '*', NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(17): GetController::getData('users', '*', NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(22): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 21
+[15-Jun-2022 12:56:41 Europe/Berlin] PHP Warning:  Undefined variable $orderBy in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php on line 17
+[15-Jun-2022 12:56:41 Europe/Berlin] PHP Warning:  Undefined variable $orderInfo in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php on line 17
+[15-Jun-2022 12:56:41 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:21
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(21): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(29): GetModel::getData('users', '*', NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(17): GetController::getData('users', '*', NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(22): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 21
+[15-Jun-2022 12:58:52 Europe/Berlin] PHP Warning:  Undefined variable $orderBy in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php on line 17
+[15-Jun-2022 12:58:52 Europe/Berlin] PHP Warning:  Undefined variable $orderInfo in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php on line 17
+[15-Jun-2022 12:58:52 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:21
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(21): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(29): GetModel::getData('users', '*', NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(17): GetController::getData('users', '*', NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(22): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 21

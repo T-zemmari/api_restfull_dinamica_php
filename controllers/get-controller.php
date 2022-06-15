@@ -24,17 +24,17 @@ class GetController
         }
     }
 
-    static function getData($tabla,$select)
+    static function getData($tabla,$select, $orderBy, $orderInfo)
     {
-        $response = GetModel::getData($tabla,$select);
+        $response = GetModel::getData($tabla,$select, $orderBy, $orderInfo);
 
         $getController = new GetController();
         $getController->respuestaJson($response);
     }
 
-    static function getDataFilter($tabla,$select,$linkTo,$equalTo)
+    static function getDataFilter($tabla,$select,$linkTo,$equalTo, $orderBy, $orderInfo)
     {
-        $response = GetModel::getDataFilter($tabla,$select,$linkTo,$equalTo);
+        $response = GetModel::getDataFilter($tabla,$select,$linkTo,$equalTo, $orderBy, $orderInfo);
 
         $getController = new GetController();
         $getController->respuestaJson($response);

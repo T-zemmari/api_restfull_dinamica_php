@@ -9,10 +9,14 @@ class GetModel
     //##########################################################//
     //####         Obtener datos sin mas filtros    ############//
     //#########################################################//
-    static public function getData($tabla, $select)
+    static public function getData($tabla, $select, $orderBy, $orderInfo)
     {
-
-        $sql = "SELECT * FROM $tabla";
+        $sql = "";
+        if ($orderBy != "00" && $orderInfo != "00") {
+            $sql = "SELECT $select  FROM $tabla ORDER BY $orderBy $orderInfo";
+        } else {
+            $sql = "SELECT $select FROM $tabla";
+        }
         $stmt = Connection::Connect()->prepare($sql);
         $stmt->execute();
 
@@ -23,7 +27,7 @@ class GetModel
     //####         Obtener datos con el id      ############//
     //#########################################################//
 
-    static public function getDataFilter($tabla, $select, $linkTo, $equalTo)
+    static public function getDataFilter($tabla, $select, $linkTo, $equalTo, $orderBy, $orderInfo)
     {
 
         $linkToArray = explode(',', $linkTo);
@@ -37,7 +41,14 @@ class GetModel
                 }
             }
         }
-        $sql = "SELECT $select FROM $tabla WHERE $linkToArray[0]= :$linkToArray[0] $newLink";
+        $sql = "";
+
+        if ($orderBy != "00" && $orderInfo != "00") {
+            $sql = "SELECT $select FROM $tabla WHERE $linkToArray[0]= :$linkToArray[0] $newLink ORDER BY $orderBy $orderInfo";
+        } else {
+            $sql = "SELECT $select FROM $tabla WHERE $linkToArray[0]= :$linkToArray[0] $newLink ";
+        }
+
         $stmt = Connection::Connect()->prepare($sql);
 
         foreach ($linkToArray as $key => $value) {
