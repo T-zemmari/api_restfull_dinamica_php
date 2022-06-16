@@ -4,6 +4,9 @@ require_once './models/get-model.php';
 class GetController
 {
 
+    //#####################################################################//
+    //###################   Funcion respueta en json    ###################//
+    //#####################################################################//
 
     public function respuestaJson($response)
     {
@@ -24,6 +27,10 @@ class GetController
         }
     }
 
+    //#####################################################################//
+    //################ Funcion obtener datos sin filtros  #################//
+    //#####################################################################//
+
     static function getData($tabla, $select, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
         $response = GetModel::getData($tabla, $select, $orderBy, $orderInfo, $limit_ini, $limit_end);
@@ -31,6 +38,10 @@ class GetController
         $getController = new GetController();
         $getController->respuestaJson($response);
     }
+
+    //#####################################################################//
+    //################ Funcion obtener datos con filtros  #################//
+    //#####################################################################//
 
     static function getDataFilter($tabla, $select, $linkTo, $equalTo, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
@@ -40,6 +51,10 @@ class GetController
         $getController->respuestaJson($response);
     }
 
+    //#####################################################################//
+    //########## Funcion obtener datos con relaciones sin filtros##########//
+    //#####################################################################//
+
     static function getRelationData($rel, $type, $select, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
         $response = GetModel::getRelationData($rel, $type, $select, $orderBy, $orderInfo, $limit_ini, $limit_end);
@@ -47,6 +62,11 @@ class GetController
         $getController = new GetController();
         $getController->respuestaJson($response);
     }
+
+    //#####################################################################//
+    //########## Funcion obtener datos con relaciones con filtros##########//
+    //#####################################################################//
+
     static function  getRelationDataWithFilter($rel, $type, $select, $linkTo, $equalTo, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
         $response = GetModel::getRelationData($rel, $type, $select, $orderBy, $orderInfo, $limit_ini, $limit_end);
@@ -54,4 +74,22 @@ class GetController
         $getController = new GetController();
         $getController->respuestaJson($response);
     }
+
+    //#####################################################################//
+    //##########  Funcion obtener datos con search sin filtros  ###########//
+    //#####################################################################//
+
+    static function  getdataWithSearch($table, $select, $linkTo, $search, $orderBy, $orderInfo, $limit_ini, $limit_end)
+    {
+        $response = GetModel::getdataWithSearch($table, $select, $linkTo, $search, $orderBy, $orderInfo, $limit_ini, $limit_end);
+
+        $getController = new GetController();
+        $getController->respuestaJson($response);
+    }
+
+
+
+    //#####################################################################//
+    //##########  Funcion obtener datos con search con filtros  ###########//
+    //#####################################################################//
 }

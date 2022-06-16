@@ -12,19 +12,23 @@ class GetModel
     static public function getData($tabla, $select, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
         $sql = "";
-        if ($orderBy != null && $orderInfo != null) {
-            if ($limit_ini != null && $limit_end != null) {
-                $sql = "SELECT $select  FROM $tabla ORDER BY $orderBy $orderInfo LIMIT $limit_ini,$limit_end";
-            } else {
-                $sql = "SELECT $select  FROM $tabla ORDER BY $orderBy $orderInfo";
-            }
-        } else {
-            if ($limit_ini != null && $limit_end != null) {
-                $sql = "SELECT $select FROM $tabla LIMIT $limit_ini,$limit_end";
-            } else {
-                $sql = "SELECT $select FROM $tabla";
-            }
+
+        if ($orderBy != null && $orderInfo != null && $limit_ini != null && $limit_end != null) {
+            $sql = "SELECT $select  FROM $tabla ORDER BY $orderBy $orderInfo LIMIT $limit_ini,$limit_end";
         }
+        if ($orderBy != null && $orderInfo != null && $limit_ini == null && $limit_end == null) {
+            $sql = "SELECT $select  FROM $tabla ORDER BY $orderBy $orderInfo";
+        }
+        if ($orderBy == null && $orderInfo == null && $limit_ini != null && $limit_end != null) {
+            $sql = "SELECT $select FROM $tabla LIMIT $limit_ini,$limit_end";
+        }
+
+        if ($orderBy == null && $orderInfo == null && $limit_ini == null && $limit_end == null) {
+            $sql = "SELECT $select FROM $tabla";
+        }
+
+
+
         $stmt = Connection::Connect()->prepare($sql);
         $stmt->execute();
 
@@ -199,5 +203,37 @@ class GetModel
         } else {
             return null;
         }
+    }
+
+    //#####################################################################//
+    //##########      Obtener datos con search sin filtros      ###########//
+    //#####################################################################//
+
+    static public function getdataWithSearch($tabla, $select, $linkTo, $search, $orderBy, $orderInfo, $limit_ini, $limit_end)
+    {
+        $sql = "";
+
+        if ($orderBy != null && $orderInfo != null && $limit_ini != null && $limit_end != null) {
+            $sql = "SELECT $select  FROM $tabla ORDER BY $orderBy $orderInfo LIMIT $limit_ini,$limit_end";
+        }
+        if ($orderBy != null && $orderInfo != null && $limit_ini == null && $limit_end == null) {
+            $sql = "SELECT $select  FROM $tabla ORDER BY $orderBy $orderInfo";
+        }
+        if ($orderBy == null && $orderInfo == null && $limit_ini != null && $limit_end != null) {
+            $sql = "SELECT $select FROM $tabla LIMIT $limit_ini,$limit_end";
+        }
+
+        if ($orderBy == null && $orderInfo == null && $limit_ini == null && $limit_end == null) {
+            $sql = "SELECT $select FROM $tabla";
+        }
+
+        $stmt = Connection::Connect()->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt = Connection::Connect()->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

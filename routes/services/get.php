@@ -34,7 +34,7 @@ else if (isset($_GET['rel']) && isset($_GET['type']) &&  isset($_GET['linkTo']) 
 //#####################################################################//
 
 else if (isset($_GET['linkTo']) && isset($_GET['search'])) {
-    $response->getdataWithSearch($_GET['linkTo'], $_GET['search'], $select, $orderBy, $orderInfo, $limit_ini, $limit_end);
+    $response->getdataWithSearch($tabla,$_GET['linkTo'], $_GET['search'], $select, $orderBy, $orderInfo, $limit_ini, $limit_end);
 }
 //#####################################################################//
 //#### Peticiones sin filtros orenados o no Limitados o no ############//
