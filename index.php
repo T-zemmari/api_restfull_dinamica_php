@@ -15,7 +15,6 @@ ini_set('error_log',"C:/xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php/p
 //#########################################################//
 
 require_once "models/connection.php";
-
 require_once "controllers/routes-controller.php";
 
 $index = new RoutersController();

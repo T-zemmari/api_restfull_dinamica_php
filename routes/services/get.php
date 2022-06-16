@@ -13,30 +13,33 @@ $limit_end = $_GET['limit_end'] ?? null;
 $response =  new GetController();
 
 if (isset($_GET['linkTo']) && isset($_GET['equalTo'])) {
-
-    //#####################################################################//
-    //#### Peticiones con filtros orenados o no Limitados o no ############//
-    //#####################################################################//
-
     $response->getDataFilter($tabla, $select, $linkTo, $equalTo, $orderBy, $orderInfo, $limit_ini, $limit_end);
-} else if (isset($_GET['rel']) && isset($_GET['type']) &&  !isset($_GET['linkTo']) && !isset($_GET['equalTo'])) {
+}
+//#####################################################################//
+//########       Peticiones con relaciones Sin Filtros     ############//
+//#####################################################################//
 
-    //#####################################################################//
-    //########       Peticiones con relaciones Sin Filtros     ############//
-    //#####################################################################//
-
+else if (isset($_GET['rel']) && isset($_GET['type']) &&  !isset($_GET['linkTo']) && !isset($_GET['equalTo'])) {
     $response->getRelationData($_GET['rel'], $_GET['type'], $select, $orderBy, $orderInfo, $limit_ini, $limit_end);
-} else if (isset($_GET['rel']) && isset($_GET['type']) &&  isset($_GET['linkTo']) && isset($_GET['equalTo'])) {
+}
+//#####################################################################//
+//#######        Peticiones con relaciones Con Filtros     ############//
+//#####################################################################//
 
-    //#####################################################################//
-    //#######        Peticiones con relaciones Con Filtros     ############//
-    //#####################################################################//
-
+else if (isset($_GET['rel']) && isset($_GET['type']) &&  isset($_GET['linkTo']) && isset($_GET['equalTo'])) {
     $response->getRelationDataWithFilter($_GET['rel'], $_GET['type'], $select, $linkTo, $equalTo,  $orderBy, $orderInfo, $limit_ini, $limit_end);
-} else {
+}
+//#####################################################################//
+//#######     Peticiones datos con palabras sin filtro     ############//
+//#####################################################################//
 
-    //#####################################################################//
-    //#### Peticiones sin filtros orenados o no Limitados o no ############//
-    //#####################################################################//
+else if (isset($_GET['linkTo']) && isset($_GET['search'])) {
+    $response->getdataWithSearch($_GET['linkTo'], $_GET['search'], $select, $orderBy, $orderInfo, $limit_ini, $limit_end);
+}
+//#####################################################################//
+//#### Peticiones sin filtros orenados o no Limitados o no ############//
+//#####################################################################//
+
+else {
     $response->getData($tabla, $select, $orderBy, $orderInfo, $limit_ini, $limit_end);
 }
