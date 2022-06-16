@@ -92,4 +92,12 @@ class GetController
     //#####################################################################//
     //##########  Funcion obtener datos con search con filtros  ###########//
     //#####################################################################//
+
+    static function  getdataWithSearchAndFilters($table, $select, $linkTo, $search, $orderBy, $orderInfo, $limit_ini, $limit_end)
+    {
+        $response = GetModel::getdataWithSearchAndFilters($table, $select, $linkTo, $search,$orderBy, $orderInfo, $limit_ini, $limit_end);
+
+        $getController = new GetController();
+        $getController->respuestaJson($response);
+    }
 }

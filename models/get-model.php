@@ -193,12 +193,12 @@ class GetModel
             }
 
             $stmt = Connection::Connect()->prepare($sql);
-            $stmt->execute();
+
 
             foreach ($linkToArray as $key => $value) {
                 $stmt->bindParam(":" . $value, $equalToArray[$key], PDO::PARAM_STR);
             }
-
+            $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } else {
             return null;
@@ -212,8 +212,6 @@ class GetModel
     static public function getdataWithSearch($tabla, $select, $linkTo, $search, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
         $sql = "";
-
-
 
         if ($orderBy != null && $orderInfo != null && $limit_ini != null && $limit_end != null) {
             $sql = "SELECT $select  FROM $tabla WHERE $linkTo LIKE '%$search%' ORDER BY $orderBy $orderInfo LIMIT $limit_ini,$limit_end";
@@ -229,13 +227,60 @@ class GetModel
             $sql = "SELECT $select FROM $tabla WHERE $linkTo LIKE '%$search%' ";
         }
 
+
         $stmt = Connection::Connect()->prepare($sql);
         $stmt->execute();
+        // $stmt->bindParam(":".$linkTo,$search,PDO::PARAM_STR);
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    //#####################################################################//
+    //##########      Obtener datos con search con filtros      ###########//
+    //#####################################################################//
+
+    static public function getdataWithSearchAndFilters($tabla, $select, $linkTo, $search,  $orderBy, $orderInfo, $limit_ini, $limit_end)
+    {
+        $sql = "";
+
+        $arrayLinksTo = explode(',', $linkTo);
+        $arraySearch = explode('_', $search);
+        $newLink = "";
+
+        if (count($arrayLinksTo) > 1) {
+            foreach ($arrayLinksTo as $key => $value) {
+                if ($key > 0) {
+                    $newLink .= "AND " . $value . " = :" . $value . " ";
+                }
+            }
+        }
+
+        if ($orderBy != null && $orderInfo != null && $limit_ini != null && $limit_end != null) {
+            $sql = "SELECT $select  FROM $tabla WHERE $arrayLinksTo[0] LIKE '%$arraySearch[0]%' ORDER BY $orderBy $orderInfo LIMIT $limit_ini,$limit_end";
+        }
+        if ($orderBy != null && $orderInfo != null && $limit_ini == null && $limit_end == null) {
+            $sql = "SELECT $select  FROM $tabla WHERE $arrayLinksTo[0] LIKE '%$arraySearch[0]%' ORDER BY $orderBy $orderInfo";
+        }
+        if ($orderBy == null && $orderInfo == null && $limit_ini != null && $limit_end != null) {
+            $sql = "SELECT $select FROM $tabla WHERE $arrayLinksTo[0] LIKE '%$arraySearch[0]%' LIMIT $limit_ini,$limit_end";
+        }
+
+        if ($orderBy == null && $orderInfo == null && $limit_ini == null && $limit_end == null) {
+            $sql = "SELECT $select FROM $tabla WHERE $arrayLinksTo[0] LIKE '%$arraySearch[0]%' $newLink ";
+        }
+
+        // echo '<pre>'; print_r($sql); echo '</pre>';
+        // return;
+
         $stmt = Connection::Connect()->prepare($sql);
+        foreach ($arrayLinksTo as $key => $value) {
+            if ($key > 0) {
+                $stmt->bindParam(":" . $value, $arraySearch[$key], PDO::PARAM_STR);
+            }
+        }
         $stmt->execute();
-       // $stmt->bindParam(":".$linkTo,$search,PDO::PARAM_STR);
+
+
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }

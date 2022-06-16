@@ -403,3 +403,183 @@ Stack trace:
 #5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
 #6 {main}
   thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 233
+[16-Jun-2022 09:20:22 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'favicon.ico' doesn't exist in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:33
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(33): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(36): GetModel::getData('favicon.ico', '*', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(49): GetController::getData('favicon.ico', '*', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 33
+[16-Jun-2022 09:22:09 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'phone_user LIKE '%Tarik,666666666%'' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:233
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(233): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(84): GetModel::getdataWithSearch('users', '*', 'name_user,phone...', 'Tarik,666666666', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(38): GetController::getdataWithSearch('users', '*', 'name_user,phone...', 'Tarik,666666666', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 233
+[16-Jun-2022 09:22:27 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'phone_user LIKE '%Tarik_666666666%'' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:233
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(233): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(84): GetModel::getdataWithSearch('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(38): GetController::getdataWithSearch('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 233
+[16-Jun-2022 09:24:09 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'phone_user LIKE '%Tarik_666666666%'' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:233
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(233): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(84): GetModel::getdataWithSearch('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(38): GetController::getdataWithSearch('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 233
+[16-Jun-2022 09:25:14 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'phone_user LIKE '%Tarik_666666666%'' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:233
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(233): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(84): GetModel::getdataWithSearch('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(38): GetController::getdataWithSearch('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 233
+[16-Jun-2022 09:28:49 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':phone_user' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:279
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(279): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(98): GetModel::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(43): GetController::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 279
+[16-Jun-2022 09:30:44 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':phone_user' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:279
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(279): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(98): GetModel::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(43): GetController::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 279
+[16-Jun-2022 09:31:32 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':phone_user' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:279
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(279): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(98): GetModel::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(43): GetController::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 279
+[16-Jun-2022 09:32:34 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':phone_user' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:279
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(279): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(98): GetModel::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(43): GetController::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 279
+[16-Jun-2022 09:33:14 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':phone_user' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:279
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(279): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(98): GetModel::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(43): GetController::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 279
+[16-Jun-2022 09:35:40 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':phone_user' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:279
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(279): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(98): GetModel::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(43): GetController::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 279
+[16-Jun-2022 09:38:52 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':phone_user' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:276
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(276): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(98): GetModel::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(43): GetController::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 276
+[16-Jun-2022 09:43:22 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':phone_user' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:279
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(279): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(98): GetModel::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(43): GetController::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 279
+[16-Jun-2022 09:44:44 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':phone_user' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:278
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(278): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(98): GetModel::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(43): GetController::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 278
+[16-Jun-2022 09:46:25 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':phone_user' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:278
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(278): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(98): GetModel::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(43): GetController::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 278
+[16-Jun-2022 09:47:20 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':phone_user' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:278
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(278): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(98): GetModel::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(43): GetController::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 278
+[16-Jun-2022 09:47:38 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':phone_user' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:278
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(278): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(98): GetModel::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(43): GetController::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 278
+[16-Jun-2022 09:49:30 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':phone_user' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:278
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(278): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(98): GetModel::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(43): GetController::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'Tarik_666666666', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 278

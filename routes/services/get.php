@@ -9,6 +9,7 @@ $orderBy = $_GET['orderBy'] ?? null;
 $orderInfo = $_GET['orderInfo'] ?? null;
 $limit_ini = $_GET['limit_ini'] ?? null;
 $limit_end = $_GET['limit_end'] ?? null;
+$search = $_GET['search'] ?? null;
 
 $response =  new GetController();
 
@@ -34,12 +35,20 @@ else if (isset($_GET['rel']) && isset($_GET['type']) &&  isset($_GET['linkTo']) 
 //#####################################################################//
 
 else if (isset($_GET['linkTo']) && isset($_GET['search'])) {
-    $response->getdataWithSearch($tabla,$select,$_GET['linkTo'], $_GET['search'], $orderBy, $orderInfo, $limit_ini, $limit_end);
+    $arraySearch = explode('_', $_GET['search']);
+    if (count($arraySearch) == 1) {
+        $response->getdataWithSearch($tabla, $select, $_GET['linkTo'], $_GET['search'], $orderBy, $orderInfo, $limit_ini, $limit_end);
+    }
+    if (count($arraySearch) > 1) {
+        $response->getdataWithSearchAndFilters($tabla, $select, $_GET['linkTo'], $_GET['search'], $orderBy, $orderInfo, $limit_ini, $limit_end);
+    }
 }
 //#####################################################################//
-//#### Peticiones sin filtros orenados o no Limitados o no ############//
+//########     Peticiones datos con palabras sin filtro    ############//
 //#####################################################################//
 
-else {
+else if (isset($_GET['linkTo']) && isset($_GET['search'])) {
+    $response->getdataWithSearchAndFilters($tabla, $select, $_GET['linkTo'], $_GET['search'], $orderBy, $orderInfo, $limit_ini, $limit_end);
+} else {
     $response->getData($tabla, $select, $orderBy, $orderInfo, $limit_ini, $limit_end);
 }
