@@ -213,18 +213,20 @@ class GetModel
     {
         $sql = "";
 
+
+
         if ($orderBy != null && $orderInfo != null && $limit_ini != null && $limit_end != null) {
-            $sql = "SELECT $select  FROM $tabla ORDER BY $orderBy $orderInfo LIMIT $limit_ini,$limit_end";
+            $sql = "SELECT $select  FROM $tabla WHERE $linkTo LIKE '%$search%' ORDER BY $orderBy $orderInfo LIMIT $limit_ini,$limit_end";
         }
         if ($orderBy != null && $orderInfo != null && $limit_ini == null && $limit_end == null) {
-            $sql = "SELECT $select  FROM $tabla ORDER BY $orderBy $orderInfo";
+            $sql = "SELECT $select  FROM $tabla WHERE $linkTo LIKE '%$search%' ORDER BY $orderBy $orderInfo";
         }
         if ($orderBy == null && $orderInfo == null && $limit_ini != null && $limit_end != null) {
-            $sql = "SELECT $select FROM $tabla LIMIT $limit_ini,$limit_end";
+            $sql = "SELECT $select FROM $tabla WHERE $linkTo LIKE '%$search%' LIMIT $limit_ini,$limit_end";
         }
 
         if ($orderBy == null && $orderInfo == null && $limit_ini == null && $limit_end == null) {
-            $sql = "SELECT $select FROM $tabla";
+            $sql = "SELECT $select FROM $tabla WHERE $linkTo LIKE '%$search%' ";
         }
 
         $stmt = Connection::Connect()->prepare($sql);
@@ -233,6 +235,7 @@ class GetModel
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
         $stmt = Connection::Connect()->prepare($sql);
         $stmt->execute();
+       // $stmt->bindParam(":".$linkTo,$search,PDO::PARAM_STR);
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }

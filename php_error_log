@@ -363,3 +363,43 @@ Stack trace:
 #6 {main}
   thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 29
 [16-Jun-2022 08:10:07 Europe/Berlin] PHP Warning:  Undefined variable $a in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php on line 37
+[16-Jun-2022 08:31:26 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIKE %:Tarik%' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:233
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(233): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(84): GetModel::getdataWithSearch('users', 'name_user', 'Tarik', '*', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(37): GetController::getdataWithSearch('users', 'name_user', 'Tarik', '*', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 233
+[16-Jun-2022 08:34:35 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIKE '%:Tarik%'' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:233
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(233): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(84): GetModel::getdataWithSearch('users', 'name_user', 'Tarik', '*', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(37): GetController::getdataWithSearch('users', 'name_user', 'Tarik', '*', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 233
+[16-Jun-2022 08:36:12 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIKE '%*%'' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:233
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(233): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(84): GetModel::getdataWithSearch('users', 'name_user', 'Tarik', '*', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(37): GetController::getdataWithSearch('users', 'name_user', 'Tarik', '*', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 233
+[16-Jun-2022 08:37:05 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Tarik' in 'where clause' in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:233
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(233): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(84): GetModel::getdataWithSearch('users', 'name_user', 'Tarik', '*', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(37): GetController::getdataWithSearch('users', 'name_user', 'Tarik', '*', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 233
