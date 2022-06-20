@@ -69,8 +69,8 @@ class GetController
 
     static function  getRelationDataWithFilter($rel, $type, $select, $linkTo, $equalTo, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
-        $response = GetModel::getRelationData($rel, $type, $select, $orderBy, $orderInfo, $limit_ini, $limit_end);
-
+        $response = GetModel::getRelationDataWithFilter($rel, $type, $select, $linkTo, $equalTo, $orderBy, $orderInfo, $limit_ini, $limit_end);
+      
         $getController = new GetController();
         $getController->respuestaJson($response);
     }

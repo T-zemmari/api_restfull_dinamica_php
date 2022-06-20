@@ -36,4 +36,18 @@ class Connection
 
         return $link;
     }
+
+
+    // Informcacion de la base de datos y validar exitencia de una columna en la base de datos;
+
+    static public function getColumnsData($table)
+    {
+
+        $database = Connection::infoDatabase()['database'];
+
+
+        return Connection::Connect()
+            ->query("SELECT column_name, data_type FROM INFORMATION_SCHEMA.COLUMNS where table_name = '$table'and table_schema = '$database'")
+            ->fetchAll(PDO::FETCH_OBJ);
+    }
 }

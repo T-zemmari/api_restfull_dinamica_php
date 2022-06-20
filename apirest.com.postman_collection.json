@@ -255,6 +255,128 @@
 				"header": []
 			},
 			"response": []
+		},
+		{
+			"name": "Get data from table with search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "apirest.com/users?select=*&linkTo=name_user&search=Ta",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "*"
+						},
+						{
+							"key": "limit_ini",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit_end",
+							"value": "5",
+							"disabled": true
+						},
+						{
+							"key": "rel",
+							"value": "users,experiences",
+							"disabled": true
+						},
+						{
+							"key": "type",
+							"value": "user,experience",
+							"disabled": true
+						},
+						{
+							"key": "linkTo",
+							"value": "name_user"
+						},
+						{
+							"key": "equalTo",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "search",
+							"value": "Ta"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get data from table with search and filters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "apirest.com/users?select=*&linkTo=name_user&search=Ta",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "*"
+						},
+						{
+							"key": "limit_ini",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit_end",
+							"value": "5",
+							"disabled": true
+						},
+						{
+							"key": "rel",
+							"value": "users,experiences",
+							"disabled": true
+						},
+						{
+							"key": "type",
+							"value": "user,experience",
+							"disabled": true
+						},
+						{
+							"key": "linkTo",
+							"value": "name_user"
+						},
+						{
+							"key": "equalTo",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "search",
+							"value": "Ta"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get data from table with relation and serach and filters",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
 		}
 	]
 }

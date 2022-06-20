@@ -11,6 +11,11 @@ class GetModel
     //#########################################################//
     static public function getData($tabla, $select, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
+        if (empty(Connection::getColumnsData($tabla))) {
+
+            return null;
+        }
+
         $sql = "";
 
         if ($orderBy != null && $orderInfo != null && $limit_ini != null && $limit_end != null) {
@@ -41,6 +46,10 @@ class GetModel
 
     static public function getDataFilter($tabla, $select, $linkTo, $equalTo, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
+        if (empty(Connection::getColumnsData($tabla))) {
+
+            return null;
+        }
 
         $linkToArray = explode(',', $linkTo);
         $equalToArray = explode('_', $equalTo);
@@ -93,6 +102,7 @@ class GetModel
 
     static public function getRelationData($rel, $type, $select, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
+
         $relArray = explode(',', $rel);
         $typeArray = explode(',', $type);
         $newLink = "";
@@ -100,6 +110,10 @@ class GetModel
         if (count($relArray) > 1) {
 
             foreach ($relArray as $key => $value) {
+                if (empty(Connection::getColumnsData($value))) {
+
+                    return null;
+                }
                 if ($key > 0) {
                     $newLink .= " INNER JOIN " . $value . " ON " . $relArray[0] . ".id_" . $typeArray[$key] . "_" . $typeArray[0] . " = " . $value . ".id_" . $typeArray[$key] . " ";
                 }
@@ -138,11 +152,12 @@ class GetModel
     }
 
     //#####################################################################//
-    //#####  Obtener datos con tablas relacionadas sin filtros ############//
+    //#####  Obtener datos con tablas relacionadas con filtros ############//
     //#####################################################################//
 
     static public function getRelationDataWithFilter($rel, $type, $select, $linkTo, $equalTo, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
+
         $relArray = explode(',', $rel);
         $typeArray = explode(',', $type);
         $linkToArray = explode(',', $linkTo);
@@ -151,45 +166,52 @@ class GetModel
         $newLinkInnerJoin = "";
         $sql = "";
 
-        if (count($linkToArray) > 1) {
+        if (count($relArray) > 1) {
+            // echo '<pre>'; print_r($relArray); echo '</pre>';
+            // return;
 
+
+            foreach ($relArray as $key => $value) {
+
+                if ($key > 0) {
+                    $newLinkInnerJoin .= " INNER JOIN " . $value . " ON " . $relArray[0] . ".id_" . $typeArray[$key] . "_" . $typeArray[0] . " = " . $value . ".id_" . $typeArray[$key] . " ";
+                }
+            }
             foreach ($linkToArray as $key => $value) {
                 if ($key > 0) {
                     $newLink .= "AND " . $value . "= :" . $value . " ";
-                }
-            }
-        }
-
-
-        if (count($relArray) > 1) {
-
-            foreach ($relArray as $key => $value) {
-                if ($key > 0) {
-                    $newLinkInnerJoin .= " INNER JOIN " . $value . " ON " . $relArray[0] . ".id_" . $typeArray[$key] . "_" . $typeArray[0] . " = " . $value . ".id_" . $typeArray[$key] . " ";
                 }
             }
 
             // Obtener datos ordenados y limitados
 
             if ($orderBy != null && $orderInfo != null && $limit_ini != null && $limit_end != null) {
-                $sql = "SELECT $select FROM $relArray[0] $newLinkInnerJoin  WHERE $newLink ORDER BY $orderBy $orderInfo LIMIT $limit_ini,$limit_end";
+                $sql = "SELECT $select FROM $relArray[0] $newLinkInnerJoin  WHERE $linkToArray[0] = $equalToArray[0] $newLink ORDER BY $orderBy $orderInfo LIMIT $limit_ini,$limit_end";
+                // echo '<pre>'; print_r("SELECT $select FROM $relArray[0] $newLinkInnerJoin  WHERE $linkToArray[0] = $equalToArray[0] $newLink ORDER BY $orderBy $orderInfo LIMIT $limit_ini,$limit_end"); echo '</pre>';
+                // return;
+
             }
 
             // Obtener datos ordenados sin limit
 
             if ($orderBy != null && $orderInfo != null && $limit_ini == null && $limit_end == null) {
-                $sql = "SELECT $select FROM $relArray[0] $newLinkInnerJoin WHERE $newLink ORDER BY $orderBy $orderInfo";
+                $sql = "SELECT $select FROM $relArray[0] $newLinkInnerJoin WHERE $linkToArray[0] = $equalToArray[0] $newLink ORDER BY $orderBy $orderInfo";
+                //echo '<pre>'; print_r("SELECT $select FROM $relArray[0] $newLinkInnerJoin  WHERE $linkToArray[0] = $equalToArray[0] $newLink ORDER BY $orderBy $orderInfo LIMIT $limit_ini,$limit_end"); echo '</pre>';
+                // return;
             }
             // Obtener no ordenados con limit
 
             if ($orderBy == null && $orderInfo == null && $limit_ini != null && $limit_end != null) {
-                $sql = "SELECT $select FROM $relArray[0] $newLinkInnerJoin WHERE $newLink LIMIT $limit_ini,$limit_end";
+                $sql = "SELECT $select FROM $relArray[0] $newLinkInnerJoin WHERE $linkToArray[0] = $equalToArray[0] $newLink LIMIT $limit_ini,$limit_end";
+                //echo '<pre>'; print_r("SELECT $select FROM $relArray[0] $newLinkInnerJoin  WHERE $linkToArray[0] = $equalToArray[0] $newLink ORDER BY $orderBy $orderInfo LIMIT $limit_ini,$limit_end"); echo '</pre>';
+                // return;
             }
 
             // Obtener datos sin orden y sin limit
 
             if ($orderBy == null && $orderInfo == null && $limit_ini == null && $limit_end == null) {
-                $sql = "SELECT $select FROM $relArray[0] $newLinkInnerJoin WHERE $newLink ";
+
+                $sql = "SELECT $select FROM $relArray[0] $newLinkInnerJoin WHERE $linkToArray[0] = :$linkToArray[0] $newLink ";
             }
 
             $stmt = Connection::Connect()->prepare($sql);
@@ -211,6 +233,10 @@ class GetModel
 
     static public function getdataWithSearch($tabla, $select, $linkTo, $search, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
+        if (empty(Connection::getColumnsData($tabla))) {
+
+            return null;
+        }
         $sql = "";
 
         if ($orderBy != null && $orderInfo != null && $limit_ini != null && $limit_end != null) {
@@ -241,6 +267,10 @@ class GetModel
 
     static public function getdataWithSearchAndFilters($tabla, $select, $linkTo, $search,  $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
+        if (empty(Connection::getColumnsData($tabla))) {
+
+            return null;
+        }
         $sql = "";
 
         $arrayLinksTo = explode(',', $linkTo);
@@ -267,6 +297,74 @@ class GetModel
 
         if ($orderBy == null && $orderInfo == null && $limit_ini == null && $limit_end == null) {
             $sql = "SELECT $select FROM $tabla WHERE $arrayLinksTo[0] LIKE '%$arraySearch[0]%' $newLink ";
+        }
+
+        // echo '<pre>'; print_r($sql); echo '</pre>';
+        // return;
+
+        $stmt = Connection::Connect()->prepare($sql);
+        foreach ($arrayLinksTo as $key => $value) {
+            if ($key > 0) {
+                $stmt->bindParam(":" . $value, $arraySearch[$key], PDO::PARAM_STR);
+            }
+        }
+        $stmt->execute();
+
+
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    //#####################################################################//
+    //### Obtener datos de tablas relacionadas con search con filtros #####//
+    //#####################################################################//
+
+    static public function getReldataWithSearchAndFilters($rel, $type, $select, $linkTo, $search,  $orderBy, $orderInfo, $limit_ini, $limit_end)
+    {
+
+        $sql = "";
+
+        $relArray = explode(',', $rel);
+        $typeArray = explode(',', $type);
+        $arrayLinksTo = explode(',', $linkTo);
+        $arraySearch = explode('_', $search);
+        $newLink = "";
+        $newRelLink = "";
+
+
+        if ($relArray > 1) {
+
+            foreach ($relArray as $key => $value) {
+                if (empty(Connection::getColumnsData($value))) {
+
+                    return null;
+                }
+                if ($key > 0) {
+                    $newRelLink .= "INNER JOIN" . $value . "";
+                }
+            }
+        }
+
+        if (count($arrayLinksTo) > 1) {
+            foreach ($arrayLinksTo as $key => $value) {
+                if ($key > 0) {
+                    $newLink .= "AND " . $value . " = :" . $value . " ";
+                }
+            }
+        }
+
+        if ($orderBy != null && $orderInfo != null && $limit_ini != null && $limit_end != null) {
+            $sql = "SELECT $select FROM $relArray[0] ON $relArray[0].$typeArray[0] $newRelLink WHERE $arrayLinksTo[0] LIKE '%$arraySearch[0]%' ORDER BY $orderBy $orderInfo LIMIT $limit_ini,$limit_end";
+        }
+        if ($orderBy != null && $orderInfo != null && $limit_ini == null && $limit_end == null) {
+            $sql = "SELECT $select FROM $relArray[0] $newRelLink  WHERE $arrayLinksTo[0] LIKE '%$arraySearch[0]%' ORDER BY $orderBy $orderInfo";
+        }
+        if ($orderBy == null && $orderInfo == null && $limit_ini != null && $limit_end != null) {
+            $sql = "SELECT $select FROM $relArray[0] $newRelLink  WHERE $arrayLinksTo[0] LIKE '%$arraySearch[0]%' LIMIT $limit_ini,$limit_end";
+        }
+
+        if ($orderBy == null && $orderInfo == null && $limit_ini == null && $limit_end == null) {
+            $sql = "SELECT $select FROM $relArray[0] $newRelLink  WHERE $arrayLinksTo[0] LIKE '%$arraySearch[0]%' $newLink ";
         }
 
         // echo '<pre>'; print_r($sql); echo '</pre>';

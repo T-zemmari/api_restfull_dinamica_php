@@ -583,3 +583,170 @@ Stack trace:
 #5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
 #6 {main}
   thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 278
+[16-Jun-2022 10:19:56 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'id_experience_user LIKE '%tarik,2%'' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:232
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(232): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(84): GetModel::getdataWithSearch('users', '*', 'user_name,id_ex...', 'tarik,2', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(40): GetController::getdataWithSearch('users', '*', 'user_name,id_ex...', 'tarik,2', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 232
+[20-Jun-2022 09:47:56 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'favicon.ico' doesn't exist in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:33
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(33): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(36): GetModel::getData('favicon.ico', '*', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(53): GetController::getData('favicon.ico', '*', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 33
+[20-Jun-2022 09:48:31 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'id_experience_user LIKE '%tarik,2%'' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:232
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(232): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(84): GetModel::getdataWithSearch('users', '*', 'user_name,id_ex...', 'tarik,2', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(40): GetController::getdataWithSearch('users', '*', 'user_name,id_ex...', 'tarik,2', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 232
+[20-Jun-2022 09:50:18 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user_name' in 'where clause' in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:281
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(281): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(98): GetModel::getdataWithSearchAndFilters('users', '*', 'user_name,id_ex...', 'tarik_2', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(43): GetController::getdataWithSearchAndFilters('users', '*', 'user_name,id_ex...', 'tarik_2', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 281
+[20-Jun-2022 09:53:55 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id_user_experience' in 'where clause' in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:281
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(281): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(98): GetModel::getdataWithSearchAndFilters('users', '*', 'name_user,id_us...', 'tarik_2', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(43): GetController::getdataWithSearchAndFilters('users', '*', 'name_user,id_us...', 'tarik_2', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 281
+[20-Jun-2022 09:55:51 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:281
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(281): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(98): GetModel::getdataWithSearchAndFilters('users', '*', 'name_user,id_us...', 'tarik_2', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(43): GetController::getdataWithSearchAndFilters('users', '*', 'name_user,id_us...', 'tarik_2', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 281
+[20-Jun-2022 09:55:54 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id_user_experience' in 'where clause' in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:281
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(281): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(98): GetModel::getdataWithSearchAndFilters('users', '*', 'name_user,id_us...', 'tarik_2', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(43): GetController::getdataWithSearchAndFilters('users', '*', 'name_user,id_us...', 'tarik_2', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 281
+[20-Jun-2022 10:29:43 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'api_restful.user' doesn't exist in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:38
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(38): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(36): GetModel::getData('user', '*', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(53): GetController::getData('user', '*', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 38
+[20-Jun-2022 11:26:52 Europe/Berlin] PHP Warning:  Undefined variable $table in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php on line 23
+[20-Jun-2022 11:26:52 Europe/Berlin] PHP Warning:  Undefined variable $table in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php on line 30
+[20-Jun-2022 11:29:39 Europe/Berlin] PHP Warning:  Undefined variable $table in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php on line 23
+[20-Jun-2022 11:29:39 Europe/Berlin] PHP Warning:  Undefined variable $table in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php on line 30
+[20-Jun-2022 11:41:07 Europe/Berlin] PHP Warning:  Undefined variable $linkTo in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php on line 17
+[20-Jun-2022 11:41:07 Europe/Berlin] PHP Warning:  Undefined variable $equalTo in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php on line 17
+[20-Jun-2022 11:59:24 Europe/Berlin] PHP Parse error:  syntax error, unexpected token "}", expecting ";" in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 215
+[20-Jun-2022 12:20:38 Europe/Berlin] PHP Fatal error:  Uncaught ValueError: PDO::prepare(): Argument #1 ($query) cannot be empty in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:220
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(220): PDO->prepare('')
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(72): GetModel::getRelationDataWithFilter('users,experienc...', 'user,experience', '*', 'nif_user', '23940555J', NULL, NULL, '0', NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(43): GetController::getRelationDataWithFilter('users,experienc...', 'user,experience', '*', 'nif_user', '23940555J', NULL, NULL, '0', NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 220
+[20-Jun-2022 12:21:12 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:226
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(226): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(72): GetModel::getRelationDataWithFilter('users,experienc...', 'user,experience', '*', 'nif_user', '23940555J', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(43): GetController::getRelationDataWithFilter('users,experienc...', 'user,experience', '*', 'nif_user', '23940555J', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 226
+[20-Jun-2022 12:21:24 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:226
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(226): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(72): GetModel::getRelationDataWithFilter('users,experienc...', 'user,experience', '*', 'nif_user', ''23940555J'', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(43): GetController::getRelationDataWithFilter('users,experienc...', 'user,experience', '*', 'nif_user', ''23940555J'', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 226
+[20-Jun-2022 12:21:35 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:226
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(226): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(72): GetModel::getRelationDataWithFilter('users,experienc...', 'user,experience', '*', 'nif_user', '23940555J', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(43): GetController::getRelationDataWithFilter('users,experienc...', 'user,experience', '*', 'nif_user', '23940555J', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 226
+[20-Jun-2022 12:23:08 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:226
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(226): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(72): GetModel::getRelationDataWithFilter('users,experienc...', 'user,experience', '*', 'id_experience', '2', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(43): GetController::getRelationDataWithFilter('users,experienc...', 'user,experience', '*', 'id_experience', '2', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 226
+[20-Jun-2022 12:23:13 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:226
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(226): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(72): GetModel::getRelationDataWithFilter('users,experienc...', 'user,experience', '*', 'id_experience', '2', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(43): GetController::getRelationDataWithFilter('users,experienc...', 'user,experience', '*', 'id_experience', '2', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 226
+[20-Jun-2022 12:35:55 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'name_user LIKE '%666666666.lo%'' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:258
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(258): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(84): GetModel::getdataWithSearch('users', '*', 'phone_user,name...', '666666666.lo', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(60): GetController::getdataWithSearch('users', '*', 'phone_user,name...', '666666666.lo', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 258
+[20-Jun-2022 12:37:24 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id_user_experience' in 'where clause' in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:311
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(311): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(98): GetModel::getdataWithSearchAndFilters('users', '*', 'name_user,id_us...', 'tarik_2', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(67): GetController::getdataWithSearchAndFilters('users', '*', 'name_user,id_us...', 'tarik_2', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 311
