@@ -70,20 +70,20 @@ class GetController
     static function  getDataWithRelationAndFilter($rel, $type, $select, $linkTo, $equalTo, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
         $response = GetModel::getDataWithRelationAndFilter($rel, $type, $select, $linkTo, $equalTo, $orderBy, $orderInfo, $limit_ini, $limit_end);
-      
+
         $getController = new GetController();
         $getController->respuestaJson($response);
     }
 
 
-      //#####################################################################//
+    //#####################################################################//
     //########## Funcion obtener datos con relaciones con filtros##########//
     //#####################################################################//
 
     static function  getDataWithRelationOneSearchAndMAnyFilters($rel, $type, $select, $linkTo, $search, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
         $response = GetModel::getDataWithRelationOneSearchAndMAnyFilters($rel, $type, $select, $linkTo, $search, $orderBy, $orderInfo, $limit_ini, $limit_end);
-      
+
         $getController = new GetController();
         $getController->respuestaJson($response);
     }
@@ -108,7 +108,20 @@ class GetController
 
     static function  getdataWithSearchAndFilters($table, $select, $linkTo, $search, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
-        $response = GetModel::getdataWithSearchAndFilters($table, $select, $linkTo, $search,$orderBy, $orderInfo, $limit_ini, $limit_end);
+        $response = GetModel::getdataWithSearchAndFilters($table, $select, $linkTo, $search, $orderBy, $orderInfo, $limit_ini, $limit_end);
+
+        $getController = new GetController();
+        $getController->respuestaJson($response);
+    }
+
+
+    //#####################################################################//
+    //##########  Funcion obtener datos con rango de fechas     ###########//
+    //#####################################################################//
+
+    static function getDataWithRange($tabla,$select, $linkTo, $range_1, $range_2, $orderBy, $orderInfo, $limit_ini, $limit_end)
+    {
+        $response = GetModel::getDataWithRange($tabla,$select, $linkTo, $range_1, $range_2, $orderBy, $orderInfo, $limit_ini, $limit_end);
 
         $getController = new GetController();
         $getController->respuestaJson($response);

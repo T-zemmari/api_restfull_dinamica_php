@@ -288,9 +288,9 @@ class GetModel
 
             if ($orderBy == null && $orderInfo == null && $limit_ini == null && $limit_end == null) {
                 $sql = "SELECT $select FROM $relArray[0] $newLink WHERE $linkToArray[0] LIKE '%$searchOrFiltersArray[0]%' $linkSearchAndFilters";
-                echo '<pre>';
-                print_r($sql);
-                echo '</pre>';
+                // echo '<pre>';
+                // print_r($sql);
+                // echo '</pre>';
                 //return;
             }
 
@@ -466,6 +466,42 @@ class GetModel
         $stmt->execute();
 
 
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    //#####################################################################//
+    //##########  Funcion obtener datos con rango de fechas     ###########//
+    //#####################################################################//
+
+
+    static function getDataWithRange($tabla,$select, $linkTo, $range_1, $range_2, $orderBy, $orderInfo, $limit_ini, $limit_end)
+    {
+        if (empty(Connection::getColumnsData($tabla))) {
+
+            return null;
+        }
+
+        $sql = "";
+
+        if ($orderBy != null && $orderInfo != null && $limit_ini != null && $limit_end != null) {
+            $sql = "SELECT $select  FROM $tabla  $linkTo $range_1 AND $range_2 ORDER BY $orderBy $orderInfo LIMIT $limit_ini,$limit_end";
+        }
+        if ($orderBy != null && $orderInfo != null && $limit_ini == null && $limit_end == null) {
+            $sql = "SELECT $select  FROM $tabla $linkTo $range_1 AND $range_2 ORDER BY $orderBy $orderInfo";
+        }
+        if ($orderBy == null && $orderInfo == null && $limit_ini != null && $limit_end != null) {
+            $sql = "SELECT $select FROM $tabla $linkTo $range_1 AND $range_2 LIMIT $limit_ini,$limit_end";
+        }
+
+        if ($orderBy == null && $orderInfo == null && $limit_ini == null && $limit_end == null) {
+            $sql = "SELECT $select FROM $tabla";
+        }
+
+
+
+        $stmt = Connection::Connect()->prepare($sql);
+        $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }

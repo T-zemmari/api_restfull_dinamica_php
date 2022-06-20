@@ -71,7 +71,13 @@ else if (isset($_GET['linkTo']) && isset($_GET['search']) && !isset($_GET['rel']
     // echo '</pre>';
     // return;
     $response->getDataWithRelationOneSearchAndMAnyFilters($_GET['rel'], $_GET['type'], $select, $linkTo, $_GET['search'], $orderBy, $orderInfo, $limit_ini, $limit_end);
+} else if (isset($_GET['linkTo']) && isset($_GET['range_1']) && isset($_GET['range_2'])) {
 
+    // echo '<pre>';
+    // print_r("estoy en getdataWithSearch");
+    // echo '</pre>';
+    // return;
+    $response->getDataWithRange($tabla,$select, $linkTo, $_GET['range_1'], $_GET['range_2'], $orderBy, $orderInfo, $limit_ini, $limit_end);
 } else {
     // echo '<pre>';
     // print_r("estoy en getData");
