@@ -10,10 +10,15 @@ $orderInfo = $_GET['orderInfo'] ?? null;
 $limit_ini = $_GET['limit_ini'] ?? null;
 $limit_end = $_GET['limit_end'] ?? null;
 $search = $_GET['search'] ?? null;
-
+$filter_to = $_GET['filter_to'] ?? null;
+$in_to = $_GET['in_to'] ?? null;
+// echo '<pre>';
+// print_r($filter_to);
+// echo '</pre>';
+// return;
 $response =  new GetController();
 
-if (isset($_GET['linkTo']) && isset($_GET['equalTo']) && !isset($_GET['rel']) && !isset($_GET['type'])) {
+if (isset($_GET['linkTo']) && isset($_GET['equalTo']) && !isset($_GET['rel']) && !isset($_GET['type']) && !isset($_GET['range_1']) && !isset($_GET['range_2'])) {
     // echo '<pre>';
     // print_r("estoy getDataFilter ");
     // echo '</pre>';
@@ -71,14 +76,16 @@ else if (isset($_GET['linkTo']) && isset($_GET['search']) && !isset($_GET['rel']
     // echo '</pre>';
     // return;
     $response->getDataWithRelationOneSearchAndMAnyFilters($_GET['rel'], $_GET['type'], $select, $linkTo, $_GET['search'], $orderBy, $orderInfo, $limit_ini, $limit_end);
+
 } else if (isset($_GET['linkTo']) && isset($_GET['range_1']) && isset($_GET['range_2'])) {
 
     // echo '<pre>';
-    // print_r("estoy en getdataWithSearch");
+    // print_r("estoy en getdataWithRange");
     // echo '</pre>';
     // return;
-    $response->getDataWithRange($tabla,$select, $linkTo, $_GET['range_1'], $_GET['range_2'], $orderBy, $orderInfo, $limit_ini, $limit_end);
-} else {
+    $response->getDataWithRange($tabla, $select, $filter_to, $in_to, $linkTo, $_GET['range_1'], $_GET['range_2'], $orderBy, $orderInfo, $limit_ini, $limit_end);
+
+} else  {
     // echo '<pre>';
     // print_r("estoy en getData");
     // echo '</pre>';

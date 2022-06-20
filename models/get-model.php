@@ -475,27 +475,38 @@ class GetModel
     //#####################################################################//
 
 
-    static function getDataWithRange($tabla,$select, $linkTo, $range_1, $range_2, $orderBy, $orderInfo, $limit_ini, $limit_end)
+    static function getDataWithRange($tabla, $select, $filter_to, $in_to, $linkTo, $range_1, $range_2, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
+
+        $sql = "";
+        $filter = "";
         if (empty(Connection::getColumnsData($tabla))) {
 
             return null;
         }
 
-        $sql = "";
+        if($filter_to != null && $in_to != null){
 
+            $filter = "AND ".$filter_to." IN ('$in_to') ";
+
+        }
+
+       
         if ($orderBy != null && $orderInfo != null && $limit_ini != null && $limit_end != null) {
-            $sql = "SELECT $select  FROM $tabla  $linkTo $range_1 AND $range_2 ORDER BY $orderBy $orderInfo LIMIT $limit_ini,$limit_end";
+            $sql = "SELECT $select  FROM $tabla WHERE $linkTo BETWEEN $range_1 AND $range_2 $filter ORDER BY $orderBy $orderInfo LIMIT $limit_ini,$limit_end";
         }
         if ($orderBy != null && $orderInfo != null && $limit_ini == null && $limit_end == null) {
-            $sql = "SELECT $select  FROM $tabla $linkTo $range_1 AND $range_2 ORDER BY $orderBy $orderInfo";
+            $sql = "SELECT $select  FROM $tabla WHERE  $linkTo BETWEEN $range_1 AND $range_2 $filter ORDER BY $orderBy $orderInfo";
         }
         if ($orderBy == null && $orderInfo == null && $limit_ini != null && $limit_end != null) {
-            $sql = "SELECT $select FROM $tabla $linkTo $range_1 AND $range_2 LIMIT $limit_ini,$limit_end";
+            $sql = "SELECT $select FROM  $tabla WHERE$linkTo BETWEEN $range_1 AND $range_2 $filter LIMIT $limit_ini,$limit_end";
         }
 
         if ($orderBy == null && $orderInfo == null && $limit_ini == null && $limit_end == null) {
-            $sql = "SELECT $select FROM $tabla";
+            $sql = "SELECT $select FROM $tabla WHERE $linkTo BETWEEN $range_1 AND $range_2 $filter";
+            echo '<pre>'; print_r($sql); echo '</pre>';
+            //return;
+
         }
 
 
@@ -505,4 +516,5 @@ class GetModel
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
 }
