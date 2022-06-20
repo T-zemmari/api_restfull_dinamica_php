@@ -100,7 +100,7 @@ class GetModel
     //#####  Obtener datos con tablas relacionadas sin filtros ############//
     //#####################################################################//
 
-    static public function getRelationData($rel, $type, $select, $orderBy, $orderInfo, $limit_ini, $limit_end)
+    static public function getDataWithRelation($rel, $type, $select, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
 
         $relArray = explode(',', $rel);
@@ -155,7 +155,7 @@ class GetModel
     //#####  Obtener datos con tablas relacionadas con filtros ############//
     //#####################################################################//
 
-    static public function getRelationDataWithFilter($rel, $type, $select, $linkTo, $equalTo, $orderBy, $orderInfo, $limit_ini, $limit_end)
+    static public function getDataWithRelationAndFilter($rel, $type, $select, $linkTo, $equalTo, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
 
         $relArray = explode(',', $rel);
@@ -221,6 +221,93 @@ class GetModel
                 $stmt->bindParam(":" . $value, $equalToArray[$key], PDO::PARAM_STR);
             }
             $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            return null;
+        }
+    }
+
+
+    //#####################################################################//
+    //#####  Obtener datos con tablas relacionadas y busqueda  ############//
+    //#####################################################################//
+
+    static public function getDataWithRelationOneSearchAndMAnyFilters($rel, $type, $select, $linkTo, $search, $orderBy, $orderInfo, $limit_ini, $limit_end)
+    {
+
+
+        $relArray = explode(',', $rel);
+        $typeArray = explode(',', $type);
+        $newLink = "";
+        $linkSearchAndFilters = "";
+
+        $linkToArray = explode(',', $linkTo);
+        $searchOrFiltersArray = explode('_', $search);
+
+
+        $sql = "";
+
+        if (count($relArray) > 1) {
+
+            foreach ($relArray as $key => $value) {
+                if (empty(Connection::getColumnsData($value))) {
+
+                    return null;
+                }
+                if ($key > 0) {
+                    $newLink .= "INNER JOIN " . $value . " ON " . $relArray[0] . ".id_" . $typeArray[$key] . "_" . $typeArray[0] . " = " . $value . ".id_" . $typeArray[$key] . " ";
+                }
+            }
+
+            foreach ($linkToArray as $key => $value) {
+                if ($key > 0) {
+                    $linkSearchAndFilters .= "AND " . $value . " = :" . $value . " ";
+                }
+            }
+
+
+
+            // Obtener datos ordenados y limitados
+
+            if ($orderBy != null && $orderInfo != null && $limit_ini != null && $limit_end != null) {
+                $sql = "SELECT $select FROM $relArray[0] $newLink  WHERE $linkToArray[0] LIKE '%$searchOrFiltersArray[0]%' $linkSearchAndFilters ORDER BY $orderBy $orderInfo LIMIT $limit_ini,$limit_end";
+            }
+
+            // Obtener datos ordenados sin limit
+
+            if ($orderBy != null && $orderInfo != null && $limit_ini == null && $limit_end == null) {
+                $sql = "SELECT $select FROM $relArray[0] $newLink WHERE $linkToArray[0] LIKE '%$searchOrFiltersArray[0]%' $linkSearchAndFilters ORDER BY $orderBy $orderInfo";
+            }
+            // Obtener no ordenados con limit
+
+            if ($orderBy == null && $orderInfo == null && $limit_ini != null && $limit_end != null) {
+                $sql = "SELECT $select FROM $relArray[0] $newLink WHERE $linkToArray[0] LIKE '%$searchOrFiltersArray[0]%' $linkSearchAndFilters LIMIT $limit_ini,$limit_end";
+            }
+
+            // Obtener datos sin orden y sin limit
+
+            if ($orderBy == null && $orderInfo == null && $limit_ini == null && $limit_end == null) {
+                $sql = "SELECT $select FROM $relArray[0] $newLink WHERE $linkToArray[0] LIKE '%$searchOrFiltersArray[0]%' $linkSearchAndFilters";
+                echo '<pre>';
+                print_r($sql);
+                echo '</pre>';
+                //return;
+            }
+
+            $stmt = Connection::Connect()->prepare($sql);
+
+            foreach ($linkToArray as $key => $value) {
+
+                if ($key > 0) {
+                    // echo '<pre>';
+                    // print_r($value);
+                    // echo '</pre>';
+                    // return;
+                    $stmt->bindParam(":" . $value, $searchOrFiltersArray[$key], PDO::PARAM_STR);
+                }
+            }
+            $stmt->execute();
+
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } else {
             return null;

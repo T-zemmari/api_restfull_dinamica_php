@@ -55,9 +55,9 @@ class GetController
     //########## Funcion obtener datos con relaciones sin filtros##########//
     //#####################################################################//
 
-    static function getRelationData($rel, $type, $select, $orderBy, $orderInfo, $limit_ini, $limit_end)
+    static function getDataWithRelation($rel, $type, $select, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
-        $response = GetModel::getRelationData($rel, $type, $select, $orderBy, $orderInfo, $limit_ini, $limit_end);
+        $response = GetModel::getDataWithRelation($rel, $type, $select, $orderBy, $orderInfo, $limit_ini, $limit_end);
 
         $getController = new GetController();
         $getController->respuestaJson($response);
@@ -67,9 +67,22 @@ class GetController
     //########## Funcion obtener datos con relaciones con filtros##########//
     //#####################################################################//
 
-    static function  getRelationDataWithFilter($rel, $type, $select, $linkTo, $equalTo, $orderBy, $orderInfo, $limit_ini, $limit_end)
+    static function  getDataWithRelationAndFilter($rel, $type, $select, $linkTo, $equalTo, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
-        $response = GetModel::getRelationDataWithFilter($rel, $type, $select, $linkTo, $equalTo, $orderBy, $orderInfo, $limit_ini, $limit_end);
+        $response = GetModel::getDataWithRelationAndFilter($rel, $type, $select, $linkTo, $equalTo, $orderBy, $orderInfo, $limit_ini, $limit_end);
+      
+        $getController = new GetController();
+        $getController->respuestaJson($response);
+    }
+
+
+      //#####################################################################//
+    //########## Funcion obtener datos con relaciones con filtros##########//
+    //#####################################################################//
+
+    static function  getDataWithRelationOneSearchAndMAnyFilters($rel, $type, $select, $linkTo, $search, $orderBy, $orderInfo, $limit_ini, $limit_end)
+    {
+        $response = GetModel::getDataWithRelationOneSearchAndMAnyFilters($rel, $type, $select, $linkTo, $search, $orderBy, $orderInfo, $limit_ini, $limit_end);
       
         $getController = new GetController();
         $getController->respuestaJson($response);
