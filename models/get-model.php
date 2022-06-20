@@ -11,6 +11,12 @@ class GetModel
     //#########################################################//
     static public function getData($tabla, $select, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
+
+        //==============================================//
+        //============= Validar columnas   s
+        //==============================================//
+
+        $selectArray = explode(',', $select);
         if (empty(Connection::getColumnsData($tabla))) {
 
             return null;
