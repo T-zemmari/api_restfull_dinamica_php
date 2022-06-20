@@ -908,3 +908,75 @@ Stack trace:
 #5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
 #6 {main}
   thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 302
+[20-Jun-2022 16:06:00 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INNER JOIN experiences ON users.id_experience_user = experiences.id_experience' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:575
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(575): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(136): GetModel::getDataWithRangeAndRel('users,experienc...', 'user,experience', '*', 'id_user', '1', 'date_create_use...', '2022-06-01', '2022-06-20', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(92): GetController::getDataWithRangeAndRel('users,experienc...', 'user,experience', '*', 'id_user', '1', 'date_create_use...', '2022-06-01', '2022-06-20', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 575
+[20-Jun-2022 16:06:58 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INNER JOIN experiences ON users.id_experience_user = experiences.id_experience' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:575
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(575): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(136): GetModel::getDataWithRangeAndRel('users,experienc...', 'user,experience', '*', 'id_user', '1', 'date_create_use...', '2022-06-01', '2022-06-20', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(92): GetController::getDataWithRangeAndRel('users,experienc...', 'user,experience', '*', 'id_user', '1', 'date_create_use...', '2022-06-01', '2022-06-20', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 575
+[20-Jun-2022 16:07:17 Europe/Berlin] PHP Warning:  Undefined array key 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 547
+[20-Jun-2022 16:07:17 Europe/Berlin] PHP Warning:  Undefined array key 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 547
+[20-Jun-2022 16:07:17 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INNER JOIN experiences ON users.id__user_experience = experiences.id_' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:575
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(575): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(136): GetModel::getDataWithRangeAndRel('users,experienc...', 'user_experience', '*', 'id_user', '1', 'date_create_use...', '2022-06-01', '2022-06-20', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(92): GetController::getDataWithRangeAndRel('users,experienc...', 'user_experience', '*', 'id_user', '1', 'date_create_use...', '2022-06-01', '2022-06-20', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 575
+[20-Jun-2022 16:07:28 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INNER JOIN experiences ON users.id_experience_user = experiences.id_experience' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:575
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(575): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(136): GetModel::getDataWithRangeAndRel('users,experienc...', 'user,experience', '*', 'id_user', '1', 'date_create_use...', '2022-06-01', '2022-06-20', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(92): GetController::getDataWithRangeAndRel('users,experienc...', 'user,experience', '*', 'id_user', '1', 'date_create_use...', '2022-06-01', '2022-06-20', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 575
+[20-Jun-2022 16:07:56 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INNER JOIN experiences ON users.id_experience_user = experiences.id_experience' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:575
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(575): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(136): GetModel::getDataWithRangeAndRel('users,experienc...', 'user,experience', '*', 'id_user', '1', 'date_create_use...', '2022-06-01', '2022-06-20', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(92): GetController::getDataWithRangeAndRel('users,experienc...', 'user,experience', '*', 'id_user', '1', 'date_create_use...', '2022-06-01', '2022-06-20', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 575
+[20-Jun-2022 16:08:42 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INNER JOIN experiences ON users.id_experience_user = experiences.id_experience' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:574
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(574): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(136): GetModel::getDataWithRangeAndRel('users,experienc...', 'user,experience', '*', NULL, NULL, 'date_create_use...', '2022-06-01', '2022-06-20', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(92): GetController::getDataWithRangeAndRel('users,experienc...', 'user,experience', '*', NULL, NULL, 'date_create_use...', '2022-06-01', '2022-06-20', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 574
+[20-Jun-2022 16:09:05 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INNER JOIN experiences ON users.id_experience_user = experiences.id_experience' at line 1 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:574
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(574): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(136): GetModel::getDataWithRangeAndRel('users,experienc...', 'user,experience', '*', NULL, NULL, 'date_create_use...', '2022-06-01', '2022-06-20', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(92): GetController::getDataWithRangeAndRel('users,experienc...', 'user,experience', '*', NULL, NULL, 'date_create_use...', '2022-06-01', '2022-06-20', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 574

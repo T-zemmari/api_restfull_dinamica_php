@@ -119,13 +119,23 @@ class GetController
     //##########  Funcion obtener datos con rango de fechas     ###########//
     //#####################################################################//
 
-    static function getDataWithRange($tabla, $select, $filter_to,$in_to,$linkTo, $range_1, $range_2, $orderBy, $orderInfo, $limit_ini, $limit_end)
+    static function getDataWithRange($tabla, $select, $filter_to, $in_to, $linkTo, $range_1, $range_2, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
-        $response = GetModel::getDataWithRange($tabla, $select, $filter_to,$in_to,$linkTo, $range_1, $range_2, $orderBy, $orderInfo, $limit_ini, $limit_end);
+        $response = GetModel::getDataWithRange($tabla, $select, $filter_to, $in_to, $linkTo, $range_1, $range_2, $orderBy, $orderInfo, $limit_ini, $limit_end);
 
         $getController = new GetController();
         $getController->respuestaJson($response);
     }
 
- 
+    //###############################################################################################//
+    //##########  Funcion obtener datos con rango de fechas y relaciones entre tablas     ###########//
+    //###############################################################################################//
+
+    static function getDataWithRangeAndRel($rel, $type, $select, $filter_to, $in_to, $linkTo, $range_1, $range_2, $orderBy, $orderInfo, $limit_ini, $limit_end)
+    {
+        $response = GetModel::getDataWithRangeAndRel($rel, $type, $select, $filter_to, $in_to, $linkTo, $range_1, $range_2, $orderBy, $orderInfo, $limit_ini, $limit_end);
+
+        $getController = new GetController();
+        $getController->respuestaJson($response);
+    }
 }

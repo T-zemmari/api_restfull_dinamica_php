@@ -76,16 +76,21 @@ else if (isset($_GET['linkTo']) && isset($_GET['search']) && !isset($_GET['rel']
     // echo '</pre>';
     // return;
     $response->getDataWithRelationOneSearchAndMAnyFilters($_GET['rel'], $_GET['type'], $select, $linkTo, $_GET['search'], $orderBy, $orderInfo, $limit_ini, $limit_end);
-
-} else if (isset($_GET['linkTo']) && isset($_GET['range_1']) && isset($_GET['range_2'])) {
+} else if (isset($_GET['linkTo']) && isset($_GET['range_1']) && isset($_GET['range_2']) && !isset($_GET['rel']) && !isset($_GET['type'])) {
 
     // echo '<pre>';
     // print_r("estoy en getdataWithRange");
     // echo '</pre>';
     // return;
     $response->getDataWithRange($tabla, $select, $filter_to, $in_to, $linkTo, $_GET['range_1'], $_GET['range_2'], $orderBy, $orderInfo, $limit_ini, $limit_end);
+} else if (isset($_GET['linkTo']) && isset($_GET['range_1']) && isset($_GET['range_2']) && $tabla == "relaciones" && isset($_GET['rel']) && isset($_GET['type'])) {
 
-} else  {
+    // echo '<pre>';
+    // print_r("estoy en getdataWithRangeRel");
+    // echo '</pre>';
+    // return;
+    $response->getDataWithRangeAndRel($_GET['rel'], $_GET['type'], $select, $filter_to, $in_to, $linkTo, $_GET['range_1'], $_GET['range_2'], $orderBy, $orderInfo, $limit_ini, $limit_end);
+} else {
     // echo '<pre>';
     // print_r("estoy en getData");
     // echo '</pre>';

@@ -485,13 +485,12 @@ class GetModel
             return null;
         }
 
-        if($filter_to != null && $in_to != null){
+        if ($filter_to != null && $in_to != null) {
 
-            $filter = "AND ".$filter_to." IN ('$in_to') ";
-
+            $filter = "AND " . $filter_to . " IN ('$in_to') ";
         }
 
-       
+
         if ($orderBy != null && $orderInfo != null && $limit_ini != null && $limit_end != null) {
             $sql = "SELECT $select  FROM $tabla WHERE $linkTo BETWEEN $range_1 AND $range_2 $filter ORDER BY $orderBy $orderInfo LIMIT $limit_ini,$limit_end";
         }
@@ -504,7 +503,7 @@ class GetModel
 
         if ($orderBy == null && $orderInfo == null && $limit_ini == null && $limit_end == null) {
             $sql = "SELECT $select FROM $tabla WHERE $linkTo BETWEEN $range_1 AND $range_2 $filter";
-            echo '<pre>'; print_r($sql); echo '</pre>';
+
             //return;
 
         }
@@ -517,4 +516,67 @@ class GetModel
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    //###############################################################################################//
+    //##########  Funcion obtener datos con rango de fechas y relaciones entre tablas     ###########//
+    //###############################################################################################//
+
+
+    static function getDataWithRangeAndRel($rel, $type, $select, $filter_to, $in_to, $linkTo, $range_1, $range_2, $orderBy, $orderInfo, $limit_ini, $limit_end)
+    {
+
+        $filter = "";
+        if ($filter_to != null && $in_to != null) {
+            $filter = "AND " . $filter_to . " IN ('$in_to') ";
+        }
+
+        $relArray = explode(',', $rel);
+        $typeArray = explode(',', $type);
+        $newLink = "";
+        $sql = "";
+        if (count($relArray) > 1) {
+
+            foreach ($relArray as $key => $value) {
+                if (empty(Connection::getColumnsData($value))) {
+
+                    return null;
+                }
+                if ($key > 0) {
+                    $newLink .= " INNER JOIN " . $value . " ON " . $relArray[0] . ".id_" . $typeArray[$key] . "_" . $typeArray[0] . " = " . $value . ".id_" . $typeArray[$key] . " ";
+                }
+            }
+
+            // Obtener datos ordenados y limitados
+
+            if ($orderBy != null && $orderInfo != null && $limit_ini != null && $limit_end != null) {
+                $sql = "SELECT $select FROM $relArray[0] $newLink  WHERE $linkTo BETWEEN $range_1 AND $range_2 $filter ORDER BY $orderBy $orderInfo LIMIT $limit_ini,$limit_end";
+            }
+
+            // Obtener datos ordenados sin limit
+
+            if ($orderBy != null && $orderInfo != null && $limit_ini == null && $limit_end == null) {
+                $sql = "SELECT $select FROM $relArray[0] $newLink WHERE $linkTo BETWEEN $range_1 AND $range_2 $filter ORDER BY $orderBy $orderInfo";
+            }
+            // Obtener no ordenados con limit
+
+            if ($orderBy == null && $orderInfo == null && $limit_ini != null && $limit_end != null) {
+                $sql = "SELECT $select FROM $relArray[0] $newLink WHERE $linkTo BETWEEN $range_1 AND $range_2 $filter LIMIT $limit_ini,$limit_end";
+            }
+
+            // Obtener datos sin orden y sin limit
+
+            if ($orderBy == null && $orderInfo == null && $limit_ini == null && $limit_end == null) {
+                $sql = "SELECT $select FROM $relArray[0] $newLink WHERE $linkTo BETWEEN $range_1 AND $range_2 $filter ";
+                // echo '<pre>';
+                // print_r($sql);
+                // echo '</pre>';
+            }
+
+            $stmt = Connection::Connect()->prepare($sql);
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            return null;
+        }
+    }
 }
