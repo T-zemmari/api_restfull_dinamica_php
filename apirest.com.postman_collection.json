@@ -19,6 +19,13 @@
 					],
 					"path": [
 						"users"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "id_user",
+							"disabled": true
+						}
 					]
 				}
 			},
@@ -30,7 +37,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "apirest.com/users?select=*&linkTo=name_user&equalTo=Tarik",
+					"raw": "apirest.com/users?select=id_user,name_user&linkTo=name_user&equalTo=Tarik",
 					"host": [
 						"apirest",
 						"com"
@@ -41,7 +48,7 @@
 					"query": [
 						{
 							"key": "select",
-							"value": "*"
+							"value": "id_user,name_user"
 						},
 						{
 							"key": "linkTo",
@@ -241,18 +248,52 @@
 			"response": []
 		},
 		{
-			"name": "Get Users InnerJoin Experiences",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
 			"name": "Get data from tables InnerJoins anothe tables with filters",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "apirest.com/relaciones?select=id_user,name_user&rel=users,experiences&type=user,experience&linkTo=id_experience&equalTo=1",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"relaciones"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "id_user,name_user"
+						},
+						{
+							"key": "rel",
+							"value": "users,experiences"
+						},
+						{
+							"key": "type",
+							"value": "user,experience"
+						},
+						{
+							"key": "linkTo",
+							"value": "id_experience"
+						},
+						{
+							"key": "equalTo",
+							"value": "1"
+						},
+						{
+							"key": "limit_ini",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit_end",
+							"value": "5",
+							"disabled": true
+						}
+					]
+				}
 			},
 			"response": []
 		},
@@ -262,7 +303,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "apirest.com/users?select=*&linkTo=name_user&search=Ta",
+					"raw": "apirest.com/users?select=name_user&linkTo=name_user&search=tarik",
 					"host": [
 						"apirest",
 						"com"
@@ -273,7 +314,7 @@
 					"query": [
 						{
 							"key": "select",
-							"value": "*"
+							"value": "name_user"
 						},
 						{
 							"key": "limit_ini",
@@ -300,13 +341,8 @@
 							"value": "name_user"
 						},
 						{
-							"key": "equalTo",
-							"value": "2",
-							"disabled": true
-						},
-						{
 							"key": "search",
-							"value": "Ta"
+							"value": "tarik"
 						}
 					]
 				}
@@ -319,7 +355,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "apirest.com/users?select=*&linkTo=name_user&search=Ta",
+					"raw": "apirest.com/users?select=*&linkTo=name_user,phone_user,id_user&search=ma_666666666_3",
 					"host": [
 						"apirest",
 						"com"
@@ -354,16 +390,11 @@
 						},
 						{
 							"key": "linkTo",
-							"value": "name_user"
-						},
-						{
-							"key": "equalTo",
-							"value": "2",
-							"disabled": true
+							"value": "name_user,phone_user,id_user"
 						},
 						{
 							"key": "search",
-							"value": "Ta"
+							"value": "ma_666666666_3"
 						}
 					]
 				}
@@ -374,7 +405,250 @@
 			"name": "Get data from table with relation and serach and filters",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "apirest.com/relaciones?rel=users,experiences&type=user,experience&linkTo=name_user,id_experience&search=tarik_2",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"relaciones"
+					],
+					"query": [
+						{
+							"key": "limit_ini",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit_end",
+							"value": "5",
+							"disabled": true
+						},
+						{
+							"key": "rel",
+							"value": "users,experiences"
+						},
+						{
+							"key": "type",
+							"value": "user,experience"
+						},
+						{
+							"key": "linkTo",
+							"value": "name_user,id_experience"
+						},
+						{
+							"key": "search",
+							"value": "tarik_2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get data with range",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "apirest.com/users?select=*&linkTo=date_create_user&range_1='2022-06-01'&range_2='2022-06-20'",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "*"
+						},
+						{
+							"key": "linkTo",
+							"value": "date_create_user"
+						},
+						{
+							"key": "range_1",
+							"value": "'2022-06-01'"
+						},
+						{
+							"key": "range_2",
+							"value": "'2022-06-20'"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get data with range and filter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "apirest.com/users?select=id_user,name_user&linkTo=date_create_user&range_1='2022-06-01'&range_2='2022-06-20'&filter_to=id_experience_user&in_to=1,2",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "id_user,name_user"
+						},
+						{
+							"key": "linkTo",
+							"value": "date_create_user"
+						},
+						{
+							"key": "range_1",
+							"value": "'2022-06-01'"
+						},
+						{
+							"key": "range_2",
+							"value": "'2022-06-20'"
+						},
+						{
+							"key": "filter_to",
+							"value": "id_experience_user"
+						},
+						{
+							"key": "in_to",
+							"value": "1,2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get data with range and filter And relation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "apirest.com/relaciones?select=*&linkTo=date_create_user&range_1='2022-06-01'&range_2='2022-06-20'&filter_to=id_user&in_to=1&rel=users,experiences&type=user,experience",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"relaciones"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "*"
+						},
+						{
+							"key": "linkTo",
+							"value": "date_create_user"
+						},
+						{
+							"key": "range_1",
+							"value": "'2022-06-01'"
+						},
+						{
+							"key": "range_2",
+							"value": "'2022-06-20'"
+						},
+						{
+							"key": "filter_to",
+							"value": "id_user"
+						},
+						{
+							"key": "in_to",
+							"value": "1"
+						},
+						{
+							"key": "rel",
+							"value": "users,experiences"
+						},
+						{
+							"key": "type",
+							"value": "user,experience"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post All Users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name_user",
+							"value": "Paco",
+							"type": "text"
+						},
+						{
+							"key": "lastname_user",
+							"value": "Lopez Flores",
+							"type": "text"
+						},
+						{
+							"key": "email_user",
+							"value": "lopez@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password_user",
+							"value": "123456789",
+							"type": "text"
+						},
+						{
+							"key": "phone_user",
+							"value": "666666666",
+							"type": "text"
+						},
+						{
+							"key": "adress_user",
+							"value": "calle la paz mundial 21",
+							"type": "text"
+						},
+						{
+							"key": "cp_user",
+							"value": "46001",
+							"type": "text"
+						},
+						{
+							"key": "city_user",
+							"value": "Valencia",
+							"type": "text"
+						},
+						{
+							"key": "country_user",
+							"value": "España",
+							"type": "text"
+						},
+						{
+							"key": "nif_user",
+							"value": "23669988L",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "apirest.com/users",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
 			},
 			"response": []
 		}

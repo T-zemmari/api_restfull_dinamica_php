@@ -41,7 +41,11 @@ class GetModel
 
 
         $stmt = Connection::Connect()->prepare($sql);
-        $stmt->execute();
+        try {
+            $stmt->execute();
+        } catch (PDOException $e) {
+            return null;
+        }
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -104,7 +108,11 @@ class GetModel
         foreach ($linkToArray as $key => $value) {
             $stmt->bindParam(":" . $value, $equalToArray[$key], PDO::PARAM_STR);
         }
-        $stmt->execute();
+        try {
+            $stmt->execute();
+        } catch (PDOException $e) {
+            return null;
+        }
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -125,7 +133,7 @@ class GetModel
         if (count($relArray) > 1) {
 
             foreach ($relArray as $key => $value) {
-                if (empty(Connection::getColumnsData($value, $arraySelect))) {
+                if (empty(Connection::getColumnsData($value, ['*']))) {
                     return null;
                 }
 
@@ -158,7 +166,11 @@ class GetModel
             }
 
             $stmt = Connection::Connect()->prepare($sql);
-            $stmt->execute();
+            try {
+                $stmt->execute();
+            } catch (PDOException $e) {
+                return null;
+            }
 
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } else {
@@ -193,6 +205,9 @@ class GetModel
             // echo '<pre>'; print_r($relArray); echo '</pre>';
             // return;
             foreach ($relArray as $key => $value) {
+                if (empty(Connection::getColumnsData($value, ['*']))) {
+                    return null;
+                }
 
                 if ($key > 0) {
                     $newLinkInnerJoin .= " INNER JOIN " . $value . " ON " . $relArray[0] . ".id_" . $typeArray[$key] . "_" . $typeArray[0] . " = " . $value . ".id_" . $typeArray[$key] . " ";
@@ -245,7 +260,13 @@ class GetModel
             foreach ($linkToArray as $key => $value) {
                 $stmt->bindParam(":" . $value, $equalToArray[$key], PDO::PARAM_STR);
             }
-            $stmt->execute();
+
+            try {
+                $stmt->execute();
+            } catch (PDOException $e) {
+                return null;
+            }
+
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } else {
             return null;
@@ -274,7 +295,10 @@ class GetModel
 
         if (count($relArray) > 1) {
 
-            foreach ($relArray as $key => $value) {              
+            foreach ($relArray as $key => $value) {
+                if (empty(Connection::getColumnsData($value, ['*']))) {
+                    return null;
+                }
                 if ($key > 0) {
                     $newLink .= "INNER JOIN " . $value . " ON " . $relArray[0] . ".id_" . $typeArray[$key] . "_" . $typeArray[0] . " = " . $value . ".id_" . $typeArray[$key] . " ";
                 }
@@ -327,7 +351,11 @@ class GetModel
                     $stmt->bindParam(":" . $value, $searchOrFiltersArray[$key], PDO::PARAM_STR);
                 }
             }
-            $stmt->execute();
+            try {
+                $stmt->execute();
+            } catch (PDOException $e) {
+                return null;
+            }
 
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } else {
@@ -341,7 +369,7 @@ class GetModel
 
     static public function getdataWithSearch($tabla, $select, $linkTo, $search, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
-          
+
         $sql = "";
 
         if ($orderBy != null && $orderInfo != null && $limit_ini != null && $limit_end != null) {
@@ -360,7 +388,11 @@ class GetModel
 
 
         $stmt = Connection::Connect()->prepare($sql);
-        $stmt->execute();
+        try {
+            $stmt->execute();
+        } catch (PDOException $e) {
+            return null;
+        }
         // $stmt->bindParam(":".$linkTo,$search,PDO::PARAM_STR);
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -372,7 +404,7 @@ class GetModel
 
     static public function getdataWithSearchAndFilters($tabla, $select, $linkTo, $search,  $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
-        
+
         $sql = "";
 
         $arrayLinksTo = explode(',', $linkTo);
@@ -381,6 +413,7 @@ class GetModel
 
         if (count($arrayLinksTo) > 1) {
             foreach ($arrayLinksTo as $key => $value) {
+
                 if ($key > 0) {
                     $newLink .= "AND " . $value . " = :" . $value . " ";
                 }
@@ -410,7 +443,11 @@ class GetModel
                 $stmt->bindParam(":" . $value, $arraySearch[$key], PDO::PARAM_STR);
             }
         }
-        $stmt->execute();
+        try {
+            $stmt->execute();
+        } catch (PDOException $e) {
+            return null;
+        }
 
 
 
@@ -437,7 +474,7 @@ class GetModel
         if ($relArray > 1) {
 
             foreach ($relArray as $key => $value) {
-              
+
                 if ($key > 0) {
                     $newRelLink .= "INNER JOIN" . $value . "";
                 }
@@ -475,7 +512,11 @@ class GetModel
                 $stmt->bindParam(":" . $value, $arraySearch[$key], PDO::PARAM_STR);
             }
         }
-        $stmt->execute();
+        try {
+            $stmt->execute();
+        } catch (PDOException $e) {
+            return null;
+        }
 
 
 
@@ -492,7 +533,7 @@ class GetModel
 
         $sql = "";
         $filter = "";
-    
+
 
         if ($filter_to != null && $in_to != null) {
 
@@ -520,7 +561,11 @@ class GetModel
 
 
         $stmt = Connection::Connect()->prepare($sql);
-        $stmt->execute();
+        try {
+            $stmt->execute();
+        } catch (PDOException $e) {
+            return null;
+        }
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -545,7 +590,11 @@ class GetModel
         if (count($relArray) > 1) {
 
             foreach ($relArray as $key => $value) {
-             
+
+                if (empty(Connection::getColumnsData($value, ['*']))) {
+                    return null;
+                }
+
                 if ($key > 0) {
                     $newLink .= " INNER JOIN " . $value . " ON " . $relArray[0] . ".id_" . $typeArray[$key] . "_" . $typeArray[0] . " = " . $value . ".id_" . $typeArray[$key] . " ";
                 }
@@ -578,7 +627,11 @@ class GetModel
             }
 
             $stmt = Connection::Connect()->prepare($sql);
-            $stmt->execute();
+            try {
+                $stmt->execute();
+            } catch (PDOException $e) {
+                return null;
+            }
 
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } else {
