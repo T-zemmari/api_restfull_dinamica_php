@@ -1134,3 +1134,83 @@ Stack trace:
 #5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
 #6 {main}
   thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php on line 45
+[21-Jun-2022 16:46:54 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Connection::getColumnsData(), 1 passed in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 375 and exactly 2 expected in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php:45
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(375): Connection::getColumnsData('users')
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(111): GetModel::getdataWithSearchAndFilters('users', '*', 'name_user', 'tarik_666666666', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(70): GetController::getdataWithSearchAndFilters('users', '*', 'name_user', 'tarik_666666666', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php on line 45
+[21-Jun-2022 16:47:17 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Connection::getColumnsData(), 1 passed in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 375 and exactly 2 expected in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php:45
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(375): Connection::getColumnsData('users')
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(111): GetModel::getdataWithSearchAndFilters('users', '*', 'name_user_phone...', 'tarik_666666666', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(70): GetController::getdataWithSearchAndFilters('users', '*', 'name_user_phone...', 'tarik_666666666', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php on line 45
+[21-Jun-2022 16:48:49 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Connection::getColumnsData(), 1 passed in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 375 and exactly 2 expected in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php:45
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(375): Connection::getColumnsData('users')
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(111): GetModel::getdataWithSearchAndFilters('users', '*', 'name_user_phone...', 'tarik_666666666', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(70): GetController::getdataWithSearchAndFilters('users', '*', 'name_user_phone...', 'tarik_666666666', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php on line 45
+[21-Jun-2022 16:49:24 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Connection::getColumnsData(), 1 passed in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 375 and exactly 2 expected in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php:45
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(375): Connection::getColumnsData('users')
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(111): GetModel::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'tarik_666666666', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(70): GetController::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'tarik_666666666', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php on line 45
+[21-Jun-2022 16:49:30 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Connection::getColumnsData(), 1 passed in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 375 and exactly 2 expected in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php:45
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(375): Connection::getColumnsData('users')
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(111): GetModel::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'tarik_666666666', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(70): GetController::getdataWithSearchAndFilters('users', '*', 'name_user,phone...', 'tarik_666666666', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php on line 45
+[21-Jun-2022 16:50:48 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Connection::getColumnsData(), 1 passed in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 345 and exactly 2 expected in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php:45
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(345): Connection::getColumnsData('users')
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(97): GetModel::getdataWithSearch('users', '*', 'name_user', 'tarik', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(63): GetController::getdataWithSearch('users', '*', 'name_user', 'tarik', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php on line 45
+[21-Jun-2022 16:51:23 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Connection::getColumnsData(), 1 passed in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 345 and exactly 2 expected in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php:45
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(345): Connection::getColumnsData('users')
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(97): GetModel::getdataWithSearch('users', '*', 'name_user', 'tarik', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(63): GetController::getdataWithSearch('users', '*', 'name_user', 'tarik', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php on line 45
+[21-Jun-2022 16:52:27 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'api_restful.user' doesn't exist in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php:413
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(413): PDOStatement->execute()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(111): GetModel::getdataWithSearchAndFilters('user', '*', 'name_user,phone...', 'ma_666666666_3', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(70): GetController::getdataWithSearchAndFilters('user', '*', 'name_user,phone...', 'ma_666666666_3', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 413

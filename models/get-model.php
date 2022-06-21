@@ -120,13 +120,15 @@ class GetModel
         $typeArray = explode(',', $type);
         $newLink = "";
         $sql = "";
+        $arraySelect = explode(',', $select);
+
         if (count($relArray) > 1) {
 
             foreach ($relArray as $key => $value) {
-                if (empty(Connection::getColumnsData($value))) {
-
+                if (empty(Connection::getColumnsData($value, $arraySelect))) {
                     return null;
                 }
+
                 if ($key > 0) {
                     $newLink .= " INNER JOIN " . $value . " ON " . $relArray[0] . ".id_" . $typeArray[$key] . "_" . $typeArray[0] . " = " . $value . ".id_" . $typeArray[$key] . " ";
                 }
@@ -175,6 +177,14 @@ class GetModel
         $typeArray = explode(',', $type);
         $linkToArray = explode(',', $linkTo);
         $equalToArray = explode('_', $equalTo);
+        $arraySelect = explode(',', $select);
+
+
+        foreach ($linkToArray as $key => $value) {
+            array_push($arraySelect, $value);
+        }
+        $arraySelect = array_unique($arraySelect);
+
         $newLink = "";
         $newLinkInnerJoin = "";
         $sql = "";
@@ -182,8 +192,6 @@ class GetModel
         if (count($relArray) > 1) {
             // echo '<pre>'; print_r($relArray); echo '</pre>';
             // return;
-
-
             foreach ($relArray as $key => $value) {
 
                 if ($key > 0) {
@@ -225,6 +233,10 @@ class GetModel
             if ($orderBy == null && $orderInfo == null && $limit_ini == null && $limit_end == null) {
 
                 $sql = "SELECT $select FROM $relArray[0] $newLinkInnerJoin WHERE $linkToArray[0] = :$linkToArray[0] $newLink ";
+                // echo '<pre>';
+                // print_r("SELECT $select FROM $relArray[0] $newLinkInnerJoin WHERE $linkToArray[0] = :$linkToArray[0] $newLink");
+                // echo '</pre>';
+                // return;
             }
 
             $stmt = Connection::Connect()->prepare($sql);
@@ -262,11 +274,7 @@ class GetModel
 
         if (count($relArray) > 1) {
 
-            foreach ($relArray as $key => $value) {
-                if (empty(Connection::getColumnsData($value))) {
-
-                    return null;
-                }
+            foreach ($relArray as $key => $value) {              
                 if ($key > 0) {
                     $newLink .= "INNER JOIN " . $value . " ON " . $relArray[0] . ".id_" . $typeArray[$key] . "_" . $typeArray[0] . " = " . $value . ".id_" . $typeArray[$key] . " ";
                 }
@@ -333,10 +341,7 @@ class GetModel
 
     static public function getdataWithSearch($tabla, $select, $linkTo, $search, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
-        if (empty(Connection::getColumnsData($tabla))) {
-
-            return null;
-        }
+          
         $sql = "";
 
         if ($orderBy != null && $orderInfo != null && $limit_ini != null && $limit_end != null) {
@@ -367,10 +372,7 @@ class GetModel
 
     static public function getdataWithSearchAndFilters($tabla, $select, $linkTo, $search,  $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
-        if (empty(Connection::getColumnsData($tabla))) {
-
-            return null;
-        }
+        
         $sql = "";
 
         $arrayLinksTo = explode(',', $linkTo);
@@ -435,10 +437,7 @@ class GetModel
         if ($relArray > 1) {
 
             foreach ($relArray as $key => $value) {
-                if (empty(Connection::getColumnsData($value))) {
-
-                    return null;
-                }
+              
                 if ($key > 0) {
                     $newRelLink .= "INNER JOIN" . $value . "";
                 }
@@ -493,10 +492,7 @@ class GetModel
 
         $sql = "";
         $filter = "";
-        if (empty(Connection::getColumnsData($tabla))) {
-
-            return null;
-        }
+    
 
         if ($filter_to != null && $in_to != null) {
 
@@ -549,10 +545,7 @@ class GetModel
         if (count($relArray) > 1) {
 
             foreach ($relArray as $key => $value) {
-                if (empty(Connection::getColumnsData($value))) {
-
-                    return null;
-                }
+             
                 if ($key > 0) {
                     $newLink .= " INNER JOIN " . $value . " ON " . $relArray[0] . ".id_" . $typeArray[$key] . "_" . $typeArray[0] . " = " . $value . ".id_" . $typeArray[$key] . " ";
                 }
