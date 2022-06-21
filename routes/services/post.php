@@ -1,7 +1,9 @@
 <?php
+require_once './controllers/post-controller.php';
 
-$json = [
-    'status' => 200,
-    'result' => "Solicitud POST"
-];
-echo json_encode($json, http_response_code($json['status']));
+$tabla = explode("?", $array_routes[1])[0];
+$body = $_POST['body'] ?? null;
+
+if (isset($body)) {
+    $response->createNew($tabla, $_POST['body']);
+}
