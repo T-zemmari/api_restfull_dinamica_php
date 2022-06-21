@@ -12,13 +12,13 @@ class GetModel
     static public function getData($tabla, $select, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
 
+        $arraySelect = explode(',', $select);
+
         //==============================================//
-        //============= Validar columnas   s
+        //============= Validar columnas 
         //==============================================//
 
-        $selectArray = explode(',', $select);
-        if (empty(Connection::getColumnsData($tabla))) {
-
+        if (empty(Connection::getColumnsData($tabla, $arraySelect))) {
             return null;
         }
 
@@ -52,12 +52,19 @@ class GetModel
 
     static public function getDataFilter($tabla, $select, $linkTo, $equalTo, $orderBy, $orderInfo, $limit_ini, $limit_end)
     {
-        if (empty(Connection::getColumnsData($tabla))) {
+        $linkToArray = explode(',', $linkTo);
+        $arraySelect = explode(',', $select);
 
+        foreach ($linkToArray as $key => $value) {
+            array_push($arraySelect, $value);
+        }
+
+        $arraySelect = array_unique($arraySelect);
+
+        if (empty(Connection::getColumnsData($tabla, $arraySelect))) {
             return null;
         }
 
-        $linkToArray = explode(',', $linkTo);
         $equalToArray = explode('_', $equalTo);
         $newLink = "";
         if (count($linkToArray) > 1) {

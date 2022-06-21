@@ -1124,3 +1124,13 @@ Stack trace:
 [20-Jun-2022 16:37:03 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$item in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php on line 57
 [20-Jun-2022 16:37:03 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$item in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php on line 57
 [20-Jun-2022 16:37:03 Europe/Berlin] PHP Warning:  Undefined property: stdClass::$item in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php on line 57
+[21-Jun-2022 15:57:30 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Connection::getColumnsData(), 1 passed in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php on line 55 and exactly 2 expected in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php:45
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\get-model.php(55): Connection::getColumnsData('users')
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\get-controller.php(48): GetModel::getDataFilter('users', '*', 'name_user', 'Tarik', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\get.php(26): GetController::getDataFilter('users', '*', 'name_user', 'Tarik', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php on line 45
