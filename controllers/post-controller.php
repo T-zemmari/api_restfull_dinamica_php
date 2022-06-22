@@ -30,10 +30,6 @@ class PostController{
     static function postData($tabla, $body)
     {
         $response = PostModel::postData($tabla, $body);
-        echo '<pre>'; print_r($response); echo '</pre>';
-        return;
-
-    
         $postController = new PostController();
         $postController->respuestaJson($response);
     }
