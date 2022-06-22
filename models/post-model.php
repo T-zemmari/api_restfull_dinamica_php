@@ -4,7 +4,7 @@ class PostModel
 {
 
     /*=========================================================
-    
+    Insertar nuevos datos en una tabla 
     ===========================================================*/
     static public function postData($tabla, $body)
 
@@ -16,7 +16,7 @@ class PostModel
         foreach ($body as $key => $value) {
             if ($key > 0) {
                 $column_name .= $key . ",";
-                $column_value .= ":".$key. ",";
+                $column_value .= ":" . $key . ",";
             }
         }
 
@@ -24,7 +24,8 @@ class PostModel
         $column_value = substr($column_value, 0, -1);
         $sql = "INSERT INTO $tabla ($column_name)VALUES($column_value)";
 
-        $stmt = Connection::Connect()->prepare($sql);
+        $link = Connection::Connect();
+        $stmt = $link->prepare($sql);
 
         try {
             foreach ($body as $key => $value) {
@@ -32,11 +33,12 @@ class PostModel
             }
             if ($stmt->execute()) {
                 $response = [
+                    'lastId'=>$link->lastInsertId(),
                     'comment' => "El proceso se realizó con exito",
                 ];
                 return $response;
             } else {
-                return Connection::Connect()->errorInfo();
+                return $link->errorInfo();
             }
         } catch (PDOException $e) {
             return null;

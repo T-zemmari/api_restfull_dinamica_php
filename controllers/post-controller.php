@@ -22,6 +22,7 @@ class PostController{
             $json = [
                 'status' => 404,
                 'result' => "Información no encontrada",
+                'method'=>'post'
             ];
             echo json_encode($json, http_response_code($json['status']));
         }
