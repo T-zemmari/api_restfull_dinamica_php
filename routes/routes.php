@@ -26,6 +26,8 @@ if (count($array_routes) == 1 && isset($_SERVER['REQUEST_METHOD'])) {
     // echo '<pre>';
     // print_r($_SERVER['REQUEST_METHOD']);
     // echo '</pre>';
+    $tabla = explode("?", $array_routes[1])[0];
+
 
     if ($_SERVER['REQUEST_METHOD'] == "GET") {
         include 'routes/services/get.php';
@@ -41,5 +43,3 @@ if (count($array_routes) == 1 && isset($_SERVER['REQUEST_METHOD'])) {
         include 'routes/services/delete.php';
     }
 }
-
-

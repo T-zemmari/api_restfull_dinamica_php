@@ -1,7 +1,6 @@
 <?php
 
 require_once './controllers/get-controller.php';
-$tabla = explode("?", $array_routes[1])[0];
 $select = $_GET['select'] ?? "*";
 $linkTo = $_GET['linkTo'] ?? null;
 $equalTo = $_GET['equalTo'] ?? null;

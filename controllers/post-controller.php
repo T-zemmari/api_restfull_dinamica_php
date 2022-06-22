@@ -4,7 +4,7 @@ require_once './models/post-model.php';
 class PostController{
 
 
-        //#####################################################################//
+    //#####################################################################//
     //###################   Funcion respueta en json    ###################//
     //#####################################################################//
 
@@ -27,9 +27,12 @@ class PostController{
         }
     }
 
-    static function createNew($tabla, $body)
+    static function postData($tabla, $body)
     {
-        $response = PostModel::createNew($tabla, $body);
+        $response = PostModel::postData($tabla, $body);
+        echo '<pre>'; print_r($response); echo '</pre>';
+        return;
+
     
         $postController = new PostController();
         $postController->respuestaJson($response);
