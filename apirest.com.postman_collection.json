@@ -37,7 +37,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "apirest.com/users?select=id_user,name_user&linkTo=name_user&equalTo=Tarik",
+					"raw": "apirest.com/users?linkTo=name_user&equalTo=Tarek 2",
 					"host": [
 						"apirest",
 						"com"
@@ -48,7 +48,8 @@
 					"query": [
 						{
 							"key": "select",
-							"value": "id_user,name_user"
+							"value": "id_user,name_user",
+							"disabled": true
 						},
 						{
 							"key": "linkTo",
@@ -56,7 +57,7 @@
 						},
 						{
 							"key": "equalTo",
-							"value": "Tarik"
+							"value": "Tarek 2"
 						}
 					]
 				}
@@ -636,6 +637,12 @@
 							"key": "nif_user",
 							"value": "23669988L",
 							"type": "text"
+						},
+						{
+							"key": "column\n",
+							"value": "",
+							"type": "text",
+							"disabled": true
 						}
 					]
 				},
@@ -647,6 +654,84 @@
 					],
 					"path": [
 						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put All Users Copy",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name_user",
+							"value": "Tarek 2",
+							"type": "text"
+						},
+						{
+							"key": "lastname_user",
+							"value": "Moreno lopez",
+							"type": "text"
+						},
+						{
+							"key": "email_user",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "phone_user",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "adress_user",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "cp_user",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "city_user",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "country_user",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nif_user",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "apirest.com/users?id=1&column=id_user",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						},
+						{
+							"key": "column",
+							"value": "id_user"
+						}
 					]
 				}
 			},
