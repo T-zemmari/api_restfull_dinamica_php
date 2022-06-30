@@ -1,5 +1,6 @@
 <?php
 require_once "models/connection.php";
+require_once "models/get-model.php";
 class PutModel
 {
 
@@ -10,6 +11,24 @@ class PutModel
 
 
     {
+
+
+        /*=========================================================
+        Validar el id de la tabla 
+    ===========================================================*/
+
+        $response = GetModel::getDataFilter($tabla, $column, $column, $id, null, null, null, null);
+        if (count($response) == 0) {
+
+            $response = [
+                'comment' => "El id no se encuentra registrado en la base de datos",
+            ];
+            return $response;
+        }
+
+
+
+
         $set = "";
         foreach ($data as $key => $value) {
             $set .= $key . " = :" . $key . ",";
@@ -38,7 +57,5 @@ class PutModel
         } catch (PDOException $e) {
             return null;
         }
-
-
     }
 }
