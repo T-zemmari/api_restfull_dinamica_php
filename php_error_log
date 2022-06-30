@@ -1275,3 +1275,4 @@ Stack trace:
 #4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
 #5 {main}
   thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\put-model.php on line 3
+[30-Jun-2022 16:43:22 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php on line 79

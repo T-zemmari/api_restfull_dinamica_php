@@ -23,9 +23,7 @@ if (empty($array_routes)) {
 //#########################################################//
 
 if (count($array_routes) == 1 && isset($_SERVER['REQUEST_METHOD'])) {
-    // echo '<pre>';
-    // print_r($_SERVER['REQUEST_METHOD']);
-    // echo '</pre>';
+   
     $tabla = explode("?", $array_routes[1])[0];
 
 

@@ -1,17 +1,16 @@
 <?php
 require_once "models/connection.php";
 require_once "models/get-model.php";
-class PutModel
+class DeleteModel
 {
 
     /*=========================================================
-        Editar datos en una tabla de forma dinamica
+        Eliminar registro mediante un id 
     ===========================================================*/
-    static public function putData($tabla, $data, $id, $column)
 
-
+    static public function deleteData($tabla, $id, $column)
     {
-
+     
         /*=========================================================
         Validar el id de la tabla 
     ===========================================================*/
@@ -26,32 +25,29 @@ class PutModel
         }
 
 
-        $set = "";
-        foreach ($data as $key => $value) {
-            $set .= $key . " = :" . $key . ",";
-        }
-
-        $set = substr($set, 0, -1);
-        $sql = "UPDATE $tabla SET $set WHERE $column=:$column";
-
+        /*=========================================================
+        Eliminar el registro
+    ===========================================================*/
+        $sql = "DELETE FROM $tabla WHERE $column = :$column ";
+      
         $link = Connection::Connect();
         $stmt = $link->prepare($sql);
 
         try {
-            foreach ($data as $key => $value) {
-                $stmt->bindParam(":" . $key, $data[$key], PDO::PARAM_STR);
-            }
             $stmt->bindParam(":" . $column, $id, PDO::PARAM_STR);
-
+            
             if ($stmt->execute()) {
                 $response = [
                     'comment' => "El proceso se realizó con exito",
                 ];
                 return $response;
             } else {
+
                 return $link->errorInfo();
             }
+            //echo '<pre>'; print_r($link->errorInfo()); echo '</pre>';
         } catch (PDOException $e) {
+            //echo '<pre>'; print_r($e); echo '</pre>';
             return null;
         }
     }
