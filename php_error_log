@@ -1222,3 +1222,46 @@ Stack trace:
 [22-Jun-2022 12:49:53 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\post-model.php on line 27
 [22-Jun-2022 12:51:39 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\post-model.php on line 28
 [22-Jun-2022 12:53:28 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\post-model.php on line 29
+[22-Jun-2022 14:00:53 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PutController" not found in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\put.php:5
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(39): include()
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#3 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\put.php on line 5
+[30-Jun-2022 15:16:01 Europe/Berlin] PHP Warning:  Undefined variable $columns in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\put.php on line 16
+[30-Jun-2022 15:16:01 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php on line 79
+[30-Jun-2022 15:16:01 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php:85
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php(85): in_array('id_user', NULL)
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\put.php(16): Connection::getColumnsData('users', NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(39): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php on line 85
+[30-Jun-2022 15:16:18 Europe/Berlin] PHP Warning:  Undefined variable $columns in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\put.php on line 16
+[30-Jun-2022 15:16:18 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php on line 79
+[30-Jun-2022 15:16:18 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php:85
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php(85): in_array('id_user', NULL)
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\put.php(16): Connection::getColumnsData('users', NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(39): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php on line 85
+[30-Jun-2022 15:17:44 Europe/Berlin] PHP Warning:  Undefined variable $columns in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\put.php on line 16
+[30-Jun-2022 15:17:44 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php on line 79
+[30-Jun-2022 15:17:44 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php:85
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php(85): in_array('id_user', NULL)
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\put.php(16): Connection::getColumnsData('users', NULL)
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(39): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php on line 85
+[30-Jun-2022 15:30:43 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php on line 79
+[30-Jun-2022 15:31:31 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php on line 79
+[30-Jun-2022 15:31:46 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php on line 79
