@@ -18,6 +18,9 @@ if (isset($id) && isset($column)) {
         array_push($columns, $value);
     }
 
+    array_push($columns, $_GET['column']);
+    $columns = array_unique($columns);
+    
     /*=========================================================
         Validar la tabla y los campos de la tabla 
         ===========================================================*/
@@ -32,7 +35,7 @@ if (isset($id) && isset($column)) {
     /*=========================================================
            Obtener los datos del body y pasarlos al controlador
         ===========================================================*/
- 
 
-    $response->putData($tabla, $data,$id,$column);
+
+    $response->putData($tabla, $data, $id, $column);
 }

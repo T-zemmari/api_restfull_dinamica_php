@@ -10,19 +10,12 @@ class PutModel
 
 
     {
-
-
         $set = "";
         foreach ($data as $key => $value) {
             $set .= $key . " = :" . $key . ",";
         }
 
         $set = substr($set, 0, -1);
-
-        // echo '<pre>';
-        // print_r($set);
-        // echo '</pre>';
-
         $sql = "UPDATE $tabla SET $set WHERE $column=:$column";
 
         $link = Connection::Connect();
