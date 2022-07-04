@@ -1,5 +1,6 @@
 <?php
 
+require_once 'models/connection.php';
 
 $array_routes = explode('/', $_SERVER['REQUEST_URI']);
 $array_routes = array_filter($array_routes);
@@ -23,21 +24,32 @@ if (empty($array_routes)) {
 //#########################################################//
 
 if (count($array_routes) == 1 && isset($_SERVER['REQUEST_METHOD'])) {
-   
+
+
+
     $tabla = explode("?", $array_routes[1])[0];
 
+    if (!isset(getallheaders()['Authorization']) || getallheaders()['Authorization'] != Connection::apiKey()) {
+        $json = [
+            'status' => 404,
+            'result' => "ApiKey requerida, no estas autorizado"
+        ];
+        echo json_encode($json, http_response_code($json['status']));
+        return;
+    } else {
 
-    if ($_SERVER['REQUEST_METHOD'] == "GET") {
-        include 'routes/services/get.php';
-    }
-    if ($_SERVER['REQUEST_METHOD'] == "POST") {
-        include 'routes/services/post.php';
-    }
-    if ($_SERVER['REQUEST_METHOD'] == "PUT") {
-        include 'routes/services/put.php';
-    }
+        if ($_SERVER['REQUEST_METHOD'] == "GET") {
+            include 'routes/services/get.php';
+        }
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            include 'routes/services/post.php';
+        }
+        if ($_SERVER['REQUEST_METHOD'] == "PUT") {
+            include 'routes/services/put.php';
+        }
 
-    if ($_SERVER['REQUEST_METHOD'] == "DELETE") {
-        include 'routes/services/delete.php';
+        if ($_SERVER['REQUEST_METHOD'] == "DELETE") {
+            include 'routes/services/delete.php';
+        }
     }
 }

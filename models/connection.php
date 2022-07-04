@@ -144,4 +144,17 @@ class Connection
             return "No-autorizado";
         }
     }
+
+
+    /*=================================================*/
+    /*Api key */
+    /*=================================================*/
+
+    static public function apiKey()
+    {
+
+        $apiKey = "nnpTFTjQi5wdVvz6HqP4VcQUXhedaL";
+
+        return  $apiKey;
+    }
 }

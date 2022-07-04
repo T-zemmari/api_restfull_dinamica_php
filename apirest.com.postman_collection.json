@@ -10,7 +10,13 @@
 			"name": "Get All users",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nnpTFTjQi5wdVvz6HqP4VcQUXhedaL",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "apirest.com/users",
 					"host": [
@@ -35,7 +41,13 @@
 			"name": "Get Users By One Column",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nnpTFTjQi5wdVvz6HqP4VcQUXhedaL",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "apirest.com/users?linkTo=id_user&equalTo=2",
 					"host": [
@@ -68,7 +80,13 @@
 			"name": "Get Users By Many Columns",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nnpTFTjQi5wdVvz6HqP4VcQUXhedaL",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "apirest.com/users?select=*&linkTo=name_user,phone_user&equalTo=Paco|666666666",
 					"host": [
@@ -100,7 +118,13 @@
 			"name": "Get Users Ordered",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nnpTFTjQi5wdVvz6HqP4VcQUXhedaL",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "apirest.com/users?select=*&orderBy=id_user&orderInfo=DESC",
 					"host": [
@@ -132,7 +156,13 @@
 			"name": "Get Users Limited",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nnpTFTjQi5wdVvz6HqP4VcQUXhedaL",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "apirest.com/users?select=*&limit_ini=0&limit_end=2",
 					"host": [
@@ -164,7 +194,13 @@
 			"name": "Get Users Ordered And Limited",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nnpTFTjQi5wdVvz6HqP4VcQUXhedaL",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "apirest.com/users?select=*&orderBy=id_user&orderInfo=DESC&limit_ini=0&limit_end=5",
 					"host": [
@@ -204,7 +240,13 @@
 			"name": "Get Users By Many Columns Ordered And Limited",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nnpTFTjQi5wdVvz6HqP4VcQUXhedaL",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "apirest.com/users?select=*&linkTo=name_user,phone_user&equalTo=Paco|666666666&orderBy=id_user&orderInfo=DESC&limit_ini=0&limit_end=5",
 					"host": [
@@ -252,7 +294,13 @@
 			"name": "Get data from tables InnerJoins anothe tables with filters",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nnpTFTjQi5wdVvz6HqP4VcQUXhedaL",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "apirest.com/relaciones?select=id_user,name_user&rel=users,experiences&type=user,experience&linkTo=id_experience&equalTo=1",
 					"host": [
@@ -302,7 +350,13 @@
 			"name": "Get data from table with search",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nnpTFTjQi5wdVvz6HqP4VcQUXhedaL",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "apirest.com/users?select=name_user&linkTo=name_user&search=Tarek",
 					"host": [
@@ -354,7 +408,13 @@
 			"name": "Get data from table with search and filters",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nnpTFTjQi5wdVvz6HqP4VcQUXhedaL",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "apirest.com/users?select=*&linkTo=name_user,phone_user,id_user&search=ma|666666666|3",
 					"host": [
@@ -406,7 +466,13 @@
 			"name": "Get data from table with relation and serach and filters",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nnpTFTjQi5wdVvz6HqP4VcQUXhedaL",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "apirest.com/relaciones?rel=users,experiences&type=user,experience&linkTo=name_user,id_experience&search=tarek|1",
 					"host": [
@@ -452,7 +518,13 @@
 			"name": "Get data with range",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nnpTFTjQi5wdVvz6HqP4VcQUXhedaL",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "apirest.com/users?select=*&linkTo=date_create_user&range_1='2022-06-01'&range_2='2022-06-20'",
 					"host": [
@@ -488,7 +560,13 @@
 			"name": "Get data with range and filter",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nnpTFTjQi5wdVvz6HqP4VcQUXhedaL",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "apirest.com/users?select=id_user,name_user&linkTo=date_create_user&range_1='2022-06-01'&range_2='2022-06-20'&filter_to=id_experience_user&in_to=1,2",
 					"host": [
@@ -532,7 +610,13 @@
 			"name": "Get data with range and filter And relation",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nnpTFTjQi5wdVvz6HqP4VcQUXhedaL",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "apirest.com/relaciones?select=*&linkTo=date_create_user&range_1='2022-06-01'&range_2='2022-06-20'&filter_to=id_user&in_to=2&rel=users,experiences&type=user,experience",
 					"host": [
@@ -584,7 +668,13 @@
 			"name": "Post new data experience",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nnpTFTjQi5wdVvz6HqP4VcQUXhedaL",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "urlencoded",
 					"urlencoded": [
@@ -654,10 +744,101 @@
 			"response": []
 		},
 		{
+			"name": "Post new data experience sin token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nnpTFTjQi5wdVvz6HqP4VcQUXhedaL",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "company_experience",
+							"value": "Tedy business",
+							"type": "text"
+						},
+						{
+							"key": "date_start_experience",
+							"value": "2022-01-01",
+							"type": "text"
+						},
+						{
+							"key": "date_end_experience",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "position_company_experience",
+							"value": "Front-end developper",
+							"type": "text"
+						},
+						{
+							"key": "date_create_experience",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "date_update_experience",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "column\n",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "apirest.com/experiences?token=no&except=id_experience",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"experiences"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "no"
+						},
+						{
+							"key": "sufijo_tabla",
+							"value": "user",
+							"disabled": true
+						},
+						{
+							"key": "tabla_token",
+							"value": "users",
+							"disabled": true
+						},
+						{
+							"key": "except",
+							"value": "id_experience"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Post new data product",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nnpTFTjQi5wdVvz6HqP4VcQUXhedaL",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "urlencoded",
 					"urlencoded": [
@@ -733,7 +914,13 @@
 			"name": "Register email password",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nnpTFTjQi5wdVvz6HqP4VcQUXhedaL",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "urlencoded",
 					"urlencoded": [
@@ -830,7 +1017,13 @@
 			"name": "Registro desde una app externa(facebook,gmail..etc)",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nnpTFTjQi5wdVvz6HqP4VcQUXhedaL",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "urlencoded",
 					"urlencoded": [
@@ -928,7 +1121,13 @@
 			"name": "Post Login",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nnpTFTjQi5wdVvz6HqP4VcQUXhedaL",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "urlencoded",
 					"urlencoded": [
@@ -1025,7 +1224,13 @@
 			"name": "Post login gmail facbook etc(Sin contraseña)",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nnpTFTjQi5wdVvz6HqP4VcQUXhedaL",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "urlencoded",
 					"urlencoded": [
@@ -1123,13 +1328,19 @@
 			"name": "Put (update a user)",
 			"request": {
 				"method": "PUT",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nnpTFTjQi5wdVvz6HqP4VcQUXhedaL",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
 							"key": "name_user",
-							"value": "Tarek 2",
+							"value": "Tarek 5",
 							"type": "text"
 						},
 						{
@@ -1175,7 +1386,7 @@
 					]
 				},
 				"url": {
-					"raw": "apirest.com/users?id=2&column=id_user",
+					"raw": "apirest.com/users?id=2&column=id_user&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTY5MzEyNTksImV4cCI6MTY1NzAxNzY1OSwiZGF0YSI6eyJpZCI6IjIzIiwiZW1haWwiOiJjb3JyZW8zQHVzZXJzLmNvbSJ9fQ.T51ysbL_K21b8szoDHboNd4JPWWfbOcaYulzHSAPwVE&sufijo_tabla=user&tabla_token=users",
 					"host": [
 						"apirest",
 						"com"
@@ -1191,6 +1402,18 @@
 						{
 							"key": "column",
 							"value": "id_user"
+						},
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTY5MzEyNTksImV4cCI6MTY1NzAxNzY1OSwiZGF0YSI6eyJpZCI6IjIzIiwiZW1haWwiOiJjb3JyZW8zQHVzZXJzLmNvbSJ9fQ.T51ysbL_K21b8szoDHboNd4JPWWfbOcaYulzHSAPwVE"
+						},
+						{
+							"key": "sufijo_tabla",
+							"value": "user"
+						},
+						{
+							"key": "tabla_token",
+							"value": "users"
 						}
 					]
 				}
@@ -1201,9 +1424,15 @@
 			"name": "Delete user",
 			"request": {
 				"method": "DELETE",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nnpTFTjQi5wdVvz6HqP4VcQUXhedaL",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": "apirest.com/users?id=1&column=id_user",
+					"raw": "apirest.com/users?id=2&column=id_user&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTY5MzEyNTksImV4cCI6MTY1NzAxNzY1OSwiZGF0YSI6eyJpZCI6IjIzIiwiZW1haWwiOiJjb3JyZW8zQHVzZXJzLmNvbSJ9fQ.T51ysbL_K21b8szoDHboNd4JPWWfbOcaYulzHSAPwVE&tabla_token=users&sufijo_tabla=user",
 					"host": [
 						"apirest",
 						"com"
@@ -1214,11 +1443,23 @@
 					"query": [
 						{
 							"key": "id",
-							"value": "1"
+							"value": "2"
 						},
 						{
 							"key": "column",
 							"value": "id_user"
+						},
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTY5MzEyNTksImV4cCI6MTY1NzAxNzY1OSwiZGF0YSI6eyJpZCI6IjIzIiwiZW1haWwiOiJjb3JyZW8zQHVzZXJzLmNvbSJ9fQ.T51ysbL_K21b8szoDHboNd4JPWWfbOcaYulzHSAPwVE"
+						},
+						{
+							"key": "tabla_token",
+							"value": "users"
+						},
+						{
+							"key": "sufijo_tabla",
+							"value": "user"
 						}
 					]
 				}
