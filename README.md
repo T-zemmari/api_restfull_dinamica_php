@@ -1,9 +1,9 @@
 # DOCUMENTACION APIRESTFULL 100% PHP
 
-<h2>Configurar base de datos</h2>
+<h2>Configurar la base de datos</h2>
 
 <p> En la ruta models/connection.php se encuentra el metodo infoDatabase();
-donde se puede configurar la base de datos , añadiendo el nombre m el usuario y la contraseña.</p>
+donde se puede configurar la base de datos , añadiendo el nombre , el usuario y la contraseña.</p>
 
 
 <h2>Configurar la apiKey</h2>
@@ -12,7 +12,7 @@ donde se puede configurar la base de datos , añadiendo el nombre m el usuario y
 
 
 
-<h2>Configurar base de datos</h2>
+<h2>Configurar acceso publico</h2>
 
 <p>En la ruta models/connection.php , se encuentra el metodo publicAccess, donde se pueden agregar las tablas que no necesiten acceso mediante una apiKey;</p>
 
