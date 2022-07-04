@@ -672,6 +672,153 @@
 			"response": []
 		},
 		{
+			"name": "Post new data experience",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "company_experience",
+							"value": "Paco",
+							"type": "text"
+						},
+						{
+							"key": "date_start_experience",
+							"value": "Lopez Flores",
+							"type": "text"
+						},
+						{
+							"key": "date_end_experience",
+							"value": "correo2@users.com",
+							"type": "text"
+						},
+						{
+							"key": "position_company_experience",
+							"value": "123456789",
+							"type": "text"
+						},
+						{
+							"key": "date_create_experience",
+							"value": "666666666",
+							"type": "text"
+						},
+						{
+							"key": "date_update_experience",
+							"value": "calle la paz mundial 21",
+							"type": "text"
+						},
+						{
+							"key": "column\n",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "apirest.com/experiences",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"experiences"
+					],
+					"query": [
+						{
+							"key": "register",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "sufijo_tabla",
+							"value": "user",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post new data product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "model_product",
+							"value": "Paco raban",
+							"type": "text"
+						},
+						{
+							"key": "quantity_product",
+							"value": "110",
+							"type": "text"
+						},
+						{
+							"key": "marca_product",
+							"value": "Paco raban marca",
+							"type": "text"
+						},
+						{
+							"key": "image_one_product",
+							"value": "/asdasdasdasdasda",
+							"type": "text"
+						},
+						{
+							"key": "price_product",
+							"value": "15.99",
+							"type": "text"
+						},
+						{
+							"key": "add_date_product",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "modified_date_product",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "column\n",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "apirest.com/products",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "register",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "sufijo_tabla",
+							"value": "user",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Register email password",
 			"request": {
 				"method": "POST",
@@ -790,7 +937,7 @@
 						},
 						{
 							"key": "email_user",
-							"value": "correo3@users.com",
+							"value": "correo1@gmail.com",
 							"type": "text"
 						},
 						{
@@ -895,6 +1042,104 @@
 							"key": "password_user",
 							"value": "123456789",
 							"type": "text"
+						},
+						{
+							"key": "phone_user",
+							"value": "666666666",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "adress_user",
+							"value": "calle la paz mundial 21",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "cp_user",
+							"value": "46001",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "city_user",
+							"value": "Valencia",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "country_user",
+							"value": "España",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "nif_user",
+							"value": "23669988L",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "column\n",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "apirest.com/users?login=true&sufijo_tabla=user",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "login",
+							"value": "true"
+						},
+						{
+							"key": "sufijo_tabla",
+							"value": "user"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post login gmail facbook etc(Sin contraseña)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name_user",
+							"value": "Paco",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "lastname_user",
+							"value": "Lopez Flores",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "email_user",
+							"value": "correo1@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password_user",
+							"value": "123456789",
+							"type": "text",
+							"disabled": true
 						},
 						{
 							"key": "phone_user",
