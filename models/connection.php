@@ -157,4 +157,16 @@ class Connection
 
         return  $apiKey;
     }
+
+    /*=================================================*/
+    /*Accesso publico */
+    /*=================================================*/
+
+    static public function publicAcess()
+    {
+
+        $tablas = ['experiences'];
+
+        return  $tablas;
+    }
 }

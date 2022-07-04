@@ -1354,3 +1354,8 @@ Stack trace:
 #1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
 #2 {main}
   thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php on line 3
+[04-Jul-2022 15:57:52 Europe/Berlin] PHP Warning:  Undefined variable $select in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php on line 47
+[04-Jul-2022 15:57:52 Europe/Berlin] PHP Warning:  Undefined variable $orderBy in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php on line 47
+[04-Jul-2022 15:57:52 Europe/Berlin] PHP Warning:  Undefined variable $orderInfo in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php on line 47
+[04-Jul-2022 15:57:52 Europe/Berlin] PHP Warning:  Undefined variable $limit_ini in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php on line 47
+[04-Jul-2022 15:57:52 Europe/Berlin] PHP Warning:  Undefined variable $limit_end in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php on line 47
