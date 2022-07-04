@@ -1286,3 +1286,23 @@ Stack trace:
 [04-Jul-2022 09:51:26 Europe/Berlin] PHP Warning:  Attempt to read property "password_user" on array in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\post-controller.php on line 57
 [04-Jul-2022 09:54:33 Europe/Berlin] PHP Warning:  Undefined array key "passworduser" in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\post-controller.php on line 58
 [04-Jul-2022 10:15:43 Europe/Berlin] PHP Warning:  Undefined array key "emailuser" in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\post-controller.php on line 59
+[04-Jul-2022 10:25:03 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Firebase\JWT\JWT::encode(), 2 passed in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php on line 114 and at least 3 expected in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\vendor\firebase\php-jwt\src\JWT.php:183
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php(114): Firebase\JWT\JWT::encode(Array, 'Hola_Soy_laKey_...')
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\post-controller.php(59): Connection::jwt('23', 'correo3@users.c...')
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\post.php(53): PostController::postDataLogin('users', Array, 'user')
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(34): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\vendor\firebase\php-jwt\src\JWT.php on line 183
+[04-Jul-2022 10:25:33 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Firebase\JWT\JWT::encode(), 2 passed in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php on line 114 and at least 3 expected in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\vendor\firebase\php-jwt\src\JWT.php:183
+Stack trace:
+#0 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php(114): Firebase\JWT\JWT::encode(Array, 'Hola_Soy_laKey_...')
+#1 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\post-controller.php(59): Connection::jwt('23', 'correo3@users.c...')
+#2 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\services\post.php(53): PostController::postDataLogin('users', Array, 'user')
+#3 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\routes\routes.php(34): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\routes-controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\index.php(21): RoutersController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\vendor\firebase\php-jwt\src\JWT.php on line 183

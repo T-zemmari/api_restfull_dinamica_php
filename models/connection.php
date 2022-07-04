@@ -1,5 +1,9 @@
 <?php
 
+require_once "vendor/autoload.php";
+use Firebase\JWT\JWT;
+
+
 class Connection
 {
 
@@ -106,8 +110,12 @@ class Connection
             ]
         ];
 
+        $key ="Hola_Soy_laKey_de_momento_para_pruebas";
+
+        $jwt = JWT::encode($token,$key,'HS256');
+
         echo '<pre>';
-        print_r($token);
+        print_r($jwt);
         echo '</pre>';
     }
 }
