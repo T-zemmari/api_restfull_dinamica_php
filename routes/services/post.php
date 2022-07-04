@@ -31,23 +31,27 @@ if (isset($_POST)) {
     }
 
 
-    /*############################################################*/
-    /*##  Peticion POST para el registro de un nuevo usuario   ## */
-    /*############################################################*/
+
 
     if (isset($_GET['register']) && $_GET['register'] == true) {
+        /*############################################################*/
+        /*##  Peticion POST para el registro de un nuevo usuario   ## */
+        /*############################################################*/
 
         $sufijo_tabla = $_GET['sufijo_tabla'] ?? "user";
         $response->postDataRegister($tabla, $_POST, $sufijo_tabla);
-    }
-    /*############################################################*/
-    /*##   Peticion POST para el login de un nuevo usuario     ## */
-    /*############################################################*/
-
-    if (isset($_GET['login']) && $_GET['login'] == true) {
+    } elseif (isset($_GET['login']) && $_GET['login'] == true) {
+        /*############################################################*/
+        /*##   Peticion POST para el login de un nuevo usuario     ## */
+        /*############################################################*/
 
         $sufijo_tabla = $_GET['sufijo_tabla'] ?? "user";
+        // echo '<pre>'; print_r($tabla); echo '</pre>';
+        // echo '<pre>'; print_r($_POST); echo '</pre>';
+        // echo '<pre>'; print_r($sufijo_tabla); echo '</pre>';
+        // return;
         $response->postDataLogin($tabla, $_POST, $sufijo_tabla);
+   
     } else {
         /*############################################################*/
         /*##   Obtener los datos del body y pasarlos al controlador## */

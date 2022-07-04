@@ -1276,3 +1276,12 @@ Stack trace:
 #5 {main}
   thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\put-model.php on line 3
 [30-Jun-2022 16:43:22 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\models\connection.php on line 79
+[04-Jul-2022 09:42:37 Europe/Berlin] PHP Warning:  Attempt to read property "password_user" on array in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\post-controller.php on line 52
+[04-Jul-2022 09:43:22 Europe/Berlin] PHP Warning:  Attempt to read property "password_user" on array in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\post-controller.php on line 52
+[04-Jul-2022 09:45:08 Europe/Berlin] PHP Warning:  Attempt to read property "password_user" on array in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\post-controller.php on line 52
+[04-Jul-2022 09:46:23 Europe/Berlin] PHP Warning:  Attempt to read property "password_user" on array in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\post-controller.php on line 52
+[04-Jul-2022 09:47:34 Europe/Berlin] PHP Warning:  Attempt to read property "password_user" on array in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\post-controller.php on line 52
+[04-Jul-2022 09:47:50 Europe/Berlin] PHP Warning:  Attempt to read property "password_user" on array in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\post-controller.php on line 52
+[04-Jul-2022 09:50:33 Europe/Berlin] PHP Warning:  Attempt to read property "password_user" on array in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\post-controller.php on line 57
+[04-Jul-2022 09:51:26 Europe/Berlin] PHP Warning:  Attempt to read property "password_user" on array in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\post-controller.php on line 57
+[04-Jul-2022 09:54:33 Europe/Berlin] PHP Warning:  Undefined array key "passworduser" in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\post-controller.php on line 58
