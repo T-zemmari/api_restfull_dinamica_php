@@ -80,7 +80,7 @@ class PostController
                     ];
 
                     /*###############################################################*/
-                    /*##   Guarda el token en la tabla y registro correspondiente ## */
+                    /*##  Guardar el token en la tabla y registro correspondiente ## */
                     /*###############################################################*/
 
                     $update = PutModel::putData($tabla, $data, $response[0]["id_" . $sufijo_tabla], "id_" . $sufijo_tabla);
