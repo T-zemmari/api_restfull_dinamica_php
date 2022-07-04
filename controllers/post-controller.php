@@ -65,11 +65,51 @@ class PostController
         $response = GetModel::getDataFilter($tabla, "*", "email_" . $sufijo_tabla, $body["email_" . $sufijo_tabla], null, null, null, null);
 
         if (!empty($response)) {
-            $crypt = crypt($body["password_" . $sufijo_tabla], '$2a$07$aHasheaHachea052022$$');
-            if ($response[0]["password_" . $sufijo_tabla] == $crypt) {
+
+            if ($response[0]["password_" . $sufijo_tabla] != null) {
+                $crypt = crypt($body["password_" . $sufijo_tabla], '$2a$07$aHasheaHachea052022$$');
+                if ($response[0]["password_" . $sufijo_tabla] == $crypt) {
+
+                    $token = Connection::jwt($response[0]["id_" . $sufijo_tabla], $response[0]["email_" . $sufijo_tabla]);
+                    $key = "Hola_Soy_laKey_de_momento_para_pruebas";
+                    $jwt = JWT::encode($token, $key, 'HS256');
+
+                    $data = [
+                        "token_" . $sufijo_tabla => $jwt,
+                        "token_exp_" . $sufijo_tabla => $token['exp']
+                    ];
+
+                    /*###############################################################*/
+                    /*##   Guarda el token en la tabla y registro correspondiente ## */
+                    /*###############################################################*/
+
+                    $update = PutModel::putData($tabla, $data, $response[0]["id_" . $sufijo_tabla], "id_" . $sufijo_tabla);
+
+
+                    if (isset($update) && $update["comment"] == "El proceso se realizó con exito") {
+
+                        $response[0]["token_" . $sufijo_tabla] = $jwt;
+                        $response[0]["token_exp_" . $sufijo_tabla] = $token['exp'];
+                        $postController = new PostController();
+                        $postController->respuestaJson($response, null, $sufijo_tabla);
+                    } else {
+                        $response = null;
+                        $postController = new PostController();
+                        $postController->respuestaJson($response, "No se han podido actualizar los datos ", $sufijo_tabla);
+                    }
+                } else {
+                    $response = null;
+                    $postController = new PostController();
+                    $postController->respuestaJson($response, "Contraseña incorrecta", $sufijo_tabla);
+                }
+            } else {
+
+
+                /*##########################################################################################################*/
+                /*##   Guarda el token en el caso de que los datos vengan de facebook gmail ..etc o sea (Sin contraseña )## */
+                /*##########################################################################################################s*/
 
                 $token = Connection::jwt($response[0]["id_" . $sufijo_tabla], $response[0]["email_" . $sufijo_tabla]);
-
                 $key = "Hola_Soy_laKey_de_momento_para_pruebas";
                 $jwt = JWT::encode($token, $key, 'HS256');
 
@@ -78,9 +118,6 @@ class PostController
                     "token_exp_" . $sufijo_tabla => $token['exp']
                 ];
 
-                /*###############################################################*/
-                /*##   Guarda el token en la tabla y registro correspondiente ## */
-                /*###############################################################*/
 
                 $update = PutModel::putData($tabla, $data, $response[0]["id_" . $sufijo_tabla], "id_" . $sufijo_tabla);
 
@@ -96,10 +133,6 @@ class PostController
                     $postController = new PostController();
                     $postController->respuestaJson($response, "No se han podido actualizar los datos ", $sufijo_tabla);
                 }
-            } else {
-                $response = null;
-                $postController = new PostController();
-                $postController->respuestaJson($response, "Contraseña incorrecta", $sufijo_tabla);
             }
         } else {
             $response = null;
@@ -130,7 +163,7 @@ class PostController
 
             $response = PostModel::postData($tabla, $body);
             if (isset($response) && $response["comment"] == "El proceso se realizó con exito") {
-                
+
                 $response = GetModel::getDataFilter($tabla, "*", "email_" . $sufijo_tabla, $body["email_" . $sufijo_tabla], null, null, null, null);
 
                 if (!empty($response)) {

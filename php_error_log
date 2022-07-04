@@ -1308,3 +1308,5 @@ Stack trace:
   thrown in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\vendor\firebase\php-jwt\src\JWT.php on line 183
 [04-Jul-2022 11:44:31 Europe/Berlin] PHP Warning:  Undefined array key "password_user" in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\post-controller.php on line 68
 [04-Jul-2022 11:46:25 Europe/Berlin] PHP Warning:  Undefined array key "password_user" in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\post-controller.php on line 68
+[04-Jul-2022 12:02:05 Europe/Berlin] PHP Warning:  Undefined array key "passworduser" in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\post-controller.php on line 69
+[04-Jul-2022 12:02:21 Europe/Berlin] PHP Warning:  Undefined array key "password_user" in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\post-controller.php on line 70
