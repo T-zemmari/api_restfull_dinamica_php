@@ -123,6 +123,41 @@ class PostController
             $response = PostModel::postData($tabla, $body);
             $postController = new PostController();
             $postController->respuestaJson($response, null, null);
+        } else {
+            /*#################################################*/
+            /*##  Peticion POST registro desde app externas ## */
+            /*#################################################*/
+
+            $response = PostModel::postData($tabla, $body);
+            if (isset($response) && $response["comment"] == "El proceso se realizó con exito") {
+                
+                $response = GetModel::getDataFilter($tabla, "*", "email_" . $sufijo_tabla, $body["email_" . $sufijo_tabla], null, null, null, null);
+
+                if (!empty($response)) {
+                    $token = Connection::jwt($response[0]["id_" . $sufijo_tabla], $response[0]["email_" . $sufijo_tabla]);
+
+                    $key = "Hola_Soy_laKey_de_momento_para_pruebas";
+                    $jwt = JWT::encode($token, $key, 'HS256');
+
+                    $data = [
+                        "token_" . $sufijo_tabla => $jwt,
+                        "token_exp_" . $sufijo_tabla => $token['exp']
+                    ];
+
+                    $update = PutModel::putData($tabla, $data, $response[0]["id_" . $sufijo_tabla], "id_" . $sufijo_tabla);
+                    if (isset($update) && $update["comment"] == "El proceso se realizó con exito") {
+
+                        $response[0]["token_" . $sufijo_tabla] = $jwt;
+                        $response[0]["token_exp_" . $sufijo_tabla] = $token['exp'];
+                        $postController = new PostController();
+                        $postController->respuestaJson($response, null, $sufijo_tabla);
+                    }
+                }
+            } else {
+                $response = null;
+                $postController = new PostController();
+                $postController->respuestaJson($response, "Error en el login", $sufijo_tabla);
+            }
         }
     }
     /*############################################################*/
