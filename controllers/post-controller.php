@@ -15,10 +15,20 @@ class PostController
     //###################   Funcion respueta en json    ###################//
     //#####################################################################//
 
-    public function respuestaJson($response, $error)
+    public function respuestaJson($response, $error, $sufijo_tabla)
     {
 
         if (!empty($response)) {
+
+            /*###########################################*/
+            /*##    Eliminar la contraseña del json   ## */
+            /*###########################################*/
+
+            if (isset($response[0]["password_" . $sufijo_tabla])) {
+
+                unset($response[0]["password_" . $sufijo_tabla]);
+            }
+
             $json = [
                 'status' => 200,
                 'total' => count($response),
@@ -72,20 +82,29 @@ class PostController
                 /*##   Guarda el token en la tabla y registro correspondiente ## */
                 /*###############################################################*/
 
-                $update = PutModel::putData($tabla, $body, $response[0]["id_" . $sufijo_tabla], "id_" . $sufijo_tabla);
+                $update = PutModel::putData($tabla, $data, $response[0]["id_" . $sufijo_tabla], "id_" . $sufijo_tabla);
 
-                if ($update['comment'] == "El proceso se realizó con exito") {
+
+                if (isset($update) && $update["comment"] == "El proceso se realizó con exito") {
+
+                    $response[0]["token_" . $sufijo_tabla] = $jwt;
+                    $response[0]["token_exp_" . $sufijo_tabla] = $token['exp'];
+                    $postController = new PostController();
+                    $postController->respuestaJson($response, null, $sufijo_tabla);
                 } else {
+                    $response = null;
+                    $postController = new PostController();
+                    $postController->respuestaJson($response, "No se han podido actualizar los datos ", $sufijo_tabla);
                 }
             } else {
                 $response = null;
                 $postController = new PostController();
-                $postController->respuestaJson($response, "Contraseña incorrecta");
+                $postController->respuestaJson($response, "Contraseña incorrecta", $sufijo_tabla);
             }
         } else {
             $response = null;
             $postController = new PostController();
-            $postController->respuestaJson($response, "No se ha encontrado el email  ");
+            $postController->respuestaJson($response, "No se ha encontrado el email", $sufijo_tabla);
         }
     }
 
@@ -103,7 +122,7 @@ class PostController
             $body["password_" . $sufijo_tabla] = $crypt;
             $response = PostModel::postData($tabla, $body);
             $postController = new PostController();
-            $postController->respuestaJson($response, null);
+            $postController->respuestaJson($response, null, null);
         }
     }
     /*############################################################*/
@@ -113,6 +132,6 @@ class PostController
     {
         $response = PostModel::postData($tabla, $body);
         $postController = new PostController();
-        $postController->respuestaJson($response, null);
+        $postController->respuestaJson($response, null, null);
     }
 }
