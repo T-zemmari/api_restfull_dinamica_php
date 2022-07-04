@@ -1,5 +1,7 @@
 <?php
 require_once "models/connection.php";
+
+
 class PostModel
 {
 
@@ -33,7 +35,7 @@ class PostModel
             }
             if ($stmt->execute()) {
                 $response = [
-                    'lastId'=>$link->lastInsertId(),
+                    'lastId' => $link->lastInsertId(),
                     'comment' => "El proceso se realizó con exito",
                 ];
                 return $response;
@@ -44,4 +46,6 @@ class PostModel
             return null;
         }
     }
+
+
 }
