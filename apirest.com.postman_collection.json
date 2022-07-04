@@ -37,7 +37,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "apirest.com/users?linkTo=id_user&equalTo=1",
+					"raw": "apirest.com/users?linkTo=id_user&equalTo=2",
 					"host": [
 						"apirest",
 						"com"
@@ -57,7 +57,7 @@
 						},
 						{
 							"key": "equalTo",
-							"value": "1"
+							"value": "2"
 						}
 					]
 				}
@@ -70,7 +70,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "apirest.com/users?select=*&linkTo=name_user,phone_user&equalTo=Lorena_669121212",
+					"raw": "apirest.com/users?select=*&linkTo=name_user,phone_user&equalTo=Paco|666666666",
 					"host": [
 						"apirest",
 						"com"
@@ -89,7 +89,7 @@
 						},
 						{
 							"key": "equalTo",
-							"value": "Lorena_669121212"
+							"value": "Paco|666666666"
 						}
 					]
 				}
@@ -206,7 +206,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "apirest.com/users?select=*&linkTo=name_user,phone_user&equalTo=Lorena_669121212&orderBy=id_user&orderInfo=DESC&limit_ini=0&limit_end=5",
+					"raw": "apirest.com/users?select=*&linkTo=name_user,phone_user&equalTo=Paco|666666666&orderBy=id_user&orderInfo=DESC&limit_ini=0&limit_end=5",
 					"host": [
 						"apirest",
 						"com"
@@ -225,7 +225,7 @@
 						},
 						{
 							"key": "equalTo",
-							"value": "Lorena_669121212"
+							"value": "Paco|666666666"
 						},
 						{
 							"key": "orderBy",
@@ -304,7 +304,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "apirest.com/users?select=name_user&linkTo=name_user&search=tarik",
+					"raw": "apirest.com/users?select=name_user&linkTo=name_user&search=Tarek",
 					"host": [
 						"apirest",
 						"com"
@@ -343,7 +343,7 @@
 						},
 						{
 							"key": "search",
-							"value": "tarik"
+							"value": "Tarek"
 						}
 					]
 				}
@@ -356,7 +356,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "apirest.com/users?select=*&linkTo=name_user,phone_user,id_user&search=ma_666666666_3",
+					"raw": "apirest.com/users?select=*&linkTo=name_user,phone_user,id_user&search=ma|666666666|3",
 					"host": [
 						"apirest",
 						"com"
@@ -395,7 +395,7 @@
 						},
 						{
 							"key": "search",
-							"value": "ma_666666666_3"
+							"value": "ma|666666666|3"
 						}
 					]
 				}
@@ -408,7 +408,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "apirest.com/relaciones?rel=users,experiences&type=user,experience&linkTo=name_user,id_experience&search=tarik_2",
+					"raw": "apirest.com/relaciones?rel=users,experiences&type=user,experience&linkTo=name_user,id_experience&search=tarek|1",
 					"host": [
 						"apirest",
 						"com"
@@ -441,7 +441,7 @@
 						},
 						{
 							"key": "search",
-							"value": "tarik_2"
+							"value": "tarek|1"
 						}
 					]
 				}
@@ -534,7 +534,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "apirest.com/relaciones?select=*&linkTo=date_create_user&range_1='2022-06-01'&range_2='2022-06-20'&filter_to=id_user&in_to=1&rel=users,experiences&type=user,experience",
+					"raw": "apirest.com/relaciones?select=*&linkTo=date_create_user&range_1='2022-06-01'&range_2='2022-06-20'&filter_to=id_user&in_to=2&rel=users,experiences&type=user,experience",
 					"host": [
 						"apirest",
 						"com"
@@ -565,7 +565,7 @@
 						},
 						{
 							"key": "in_to",
-							"value": "1"
+							"value": "2"
 						},
 						{
 							"key": "rel",
@@ -574,97 +574,6 @@
 						{
 							"key": "type",
 							"value": "user,experience"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Post new data",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "name_user",
-							"value": "Paco",
-							"type": "text"
-						},
-						{
-							"key": "lastname_user",
-							"value": "Lopez Flores",
-							"type": "text"
-						},
-						{
-							"key": "email_user",
-							"value": "correo2@users.com",
-							"type": "text"
-						},
-						{
-							"key": "password_user",
-							"value": "123456789",
-							"type": "text"
-						},
-						{
-							"key": "phone_user",
-							"value": "666666666",
-							"type": "text"
-						},
-						{
-							"key": "adress_user",
-							"value": "calle la paz mundial 21",
-							"type": "text"
-						},
-						{
-							"key": "cp_user",
-							"value": "46001",
-							"type": "text"
-						},
-						{
-							"key": "city_user",
-							"value": "Valencia",
-							"type": "text"
-						},
-						{
-							"key": "country_user",
-							"value": "España",
-							"type": "text"
-						},
-						{
-							"key": "nif_user",
-							"value": "23669988L",
-							"type": "text"
-						},
-						{
-							"key": "column\n",
-							"value": "",
-							"type": "text",
-							"disabled": true
-						}
-					]
-				},
-				"url": {
-					"raw": "apirest.com/users",
-					"host": [
-						"apirest",
-						"com"
-					],
-					"path": [
-						"users"
-					],
-					"query": [
-						{
-							"key": "register",
-							"value": "true",
-							"disabled": true
-						},
-						{
-							"key": "sufijo_tabla",
-							"value": "user",
-							"disabled": true
 						}
 					]
 				}
@@ -681,32 +590,32 @@
 					"urlencoded": [
 						{
 							"key": "company_experience",
-							"value": "Paco",
+							"value": "Tedy business",
 							"type": "text"
 						},
 						{
 							"key": "date_start_experience",
-							"value": "Lopez Flores",
+							"value": "2022-01-01",
 							"type": "text"
 						},
 						{
 							"key": "date_end_experience",
-							"value": "correo2@users.com",
+							"value": "",
 							"type": "text"
 						},
 						{
 							"key": "position_company_experience",
-							"value": "123456789",
+							"value": "Front-end developper",
 							"type": "text"
 						},
 						{
 							"key": "date_create_experience",
-							"value": "666666666",
+							"value": "",
 							"type": "text"
 						},
 						{
 							"key": "date_update_experience",
-							"value": "calle la paz mundial 21",
+							"value": "",
 							"type": "text"
 						},
 						{
@@ -718,7 +627,7 @@
 					]
 				},
 				"url": {
-					"raw": "apirest.com/experiences",
+					"raw": "apirest.com/experiences?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTY5MzEyNTksImV4cCI6MTY1NzAxNzY1OSwiZGF0YSI6eyJpZCI6IjIzIiwiZW1haWwiOiJjb3JyZW8zQHVzZXJzLmNvbSJ9fQ.T51ysbL_K21b8szoDHboNd4JPWWfbOcaYulzHSAPwVE&sufijo_tabla=user&tabla_token=users",
 					"host": [
 						"apirest",
 						"com"
@@ -728,14 +637,16 @@
 					],
 					"query": [
 						{
-							"key": "register",
-							"value": "true",
-							"disabled": true
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTY5MzEyNTksImV4cCI6MTY1NzAxNzY1OSwiZGF0YSI6eyJpZCI6IjIzIiwiZW1haWwiOiJjb3JyZW8zQHVzZXJzLmNvbSJ9fQ.T51ysbL_K21b8szoDHboNd4JPWWfbOcaYulzHSAPwVE"
 						},
 						{
 							"key": "sufijo_tabla",
-							"value": "user",
-							"disabled": true
+							"value": "user"
+						},
+						{
+							"key": "tabla_token",
+							"value": "users"
 						}
 					]
 				}

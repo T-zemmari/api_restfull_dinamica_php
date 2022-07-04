@@ -1,6 +1,7 @@
 <?php
-
+require_once "models/get-model.php";
 require_once "vendor/autoload.php";
+
 use Firebase\JWT\JWT;
 
 
@@ -110,11 +111,37 @@ class Connection
             ]
         ];
 
-        
+
         return $token;
 
         // echo '<pre>';
         // print_r($jwt);
         // echo '</pre>';
+    }
+
+    /*=================================================*/
+    /*Validar el token recibido despues del login */
+    /*=================================================*/
+
+    static public function validateToken($token, $tabla, $sufijo_tabla)
+    {
+
+        $user = GetModel::getDataFilter($tabla, "token_exp_" . $sufijo_tabla, "token_" . $sufijo_tabla, $token, null, null, null, null);
+
+        if (!empty($user)) {
+
+            /*=================================================*/
+            /*Validacion del tiempo expiracion  del token*/
+            /*=================================================*/
+
+            $time = time();
+            if ($time < $user[0]["token_exp_" . $sufijo_tabla]) {
+                return "Ok";
+            } else {
+                return "Expirado";
+            }
+        } else {
+            return "No-autorizado";
+        }
     }
 }

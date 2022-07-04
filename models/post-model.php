@@ -26,6 +26,7 @@ class PostModel
         $column_value = substr($column_value, 0, -1);
         $sql = "INSERT INTO $tabla ($column_name)VALUES($column_value)";
 
+
         $link = Connection::Connect();
         $stmt = $link->prepare($sql);
 
@@ -38,14 +39,18 @@ class PostModel
                     'lastId' => $link->lastInsertId(),
                     'comment' => "El proceso se realizó con exito",
                 ];
+             
                 return $response;
             } else {
+              
+
                 return $link->errorInfo();
             }
         } catch (PDOException $e) {
+            echo '<pre>';
+            print_r($e);
+            echo '</pre>';
             return null;
         }
     }
-
-
 }

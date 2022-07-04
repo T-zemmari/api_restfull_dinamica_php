@@ -69,7 +69,7 @@ class GetModel
             return null;
         }
 
-        $equalToArray = explode('_', $equalTo);
+        $equalToArray = explode('|', $equalTo);
         $newLink = "";
         if (count($linkToArray) > 1) {
 
@@ -188,7 +188,7 @@ class GetModel
         $relArray = explode(',', $rel);
         $typeArray = explode(',', $type);
         $linkToArray = explode(',', $linkTo);
-        $equalToArray = explode('_', $equalTo);
+        $equalToArray = explode('|', $equalTo);
         $arraySelect = explode(',', $select);
 
 
@@ -288,7 +288,8 @@ class GetModel
         $linkSearchAndFilters = "";
 
         $linkToArray = explode(',', $linkTo);
-        $searchOrFiltersArray = explode('_', $search);
+        $searchOrFiltersArray = explode('|', $search);
+
 
 
         $sql = "";
@@ -385,7 +386,8 @@ class GetModel
         if ($orderBy == null && $orderInfo == null && $limit_ini == null && $limit_end == null) {
             $sql = "SELECT $select FROM $tabla WHERE $linkTo LIKE '%$search%' ";
         }
-
+        // echo '<pre>'; print_r($sql); echo '</pre>';
+        // return;
 
         $stmt = Connection::Connect()->prepare($sql);
         try {
@@ -408,7 +410,7 @@ class GetModel
         $sql = "";
 
         $arrayLinksTo = explode(',', $linkTo);
-        $arraySearch = explode('_', $search);
+        $arraySearch = explode('|', $search);
         $newLink = "";
 
         if (count($arrayLinksTo) > 1) {
@@ -466,7 +468,7 @@ class GetModel
         $relArray = explode(',', $rel);
         $typeArray = explode(',', $type);
         $arrayLinksTo = explode(',', $linkTo);
-        $arraySearch = explode('_', $search);
+        $arraySearch = explode('|', $search);
         $newLink = "";
         $newRelLink = "";
 

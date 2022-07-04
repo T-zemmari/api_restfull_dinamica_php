@@ -198,6 +198,9 @@ class PostController
     /*############################################################*/
     static function postData($tabla, $body)
     {
+        // echo '<pre>'; print_r($tabla); echo '</pre>';
+        // echo '<pre>'; print_r($body); echo '</pre>';
+        // return;
         $response = PostModel::postData($tabla, $body);
         $postController = new PostController();
         $postController->respuestaJson($response, null, null);

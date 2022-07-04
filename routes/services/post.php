@@ -51,12 +51,64 @@ if (isset($_POST)) {
         // echo '<pre>'; print_r($sufijo_tabla); echo '</pre>';
         // return;
         $response->postDataLogin($tabla, $_POST, $sufijo_tabla);
-   
     } else {
         /*############################################################*/
         /*##   Obtener los datos del body y pasarlos al controlador## */
         /*############################################################*/
 
-        $response->postData($tabla, $_POST);
+        // Obtener el token desde la url y pasarla al metodo validateToken
+
+        if (isset($_GET['token']) && $_GET['token'] != "") {
+            $tabla_token = $_GET['tabla_token'] ?? "users";
+            $sufijo_tabla = $_GET['sufijo_tabla'] ?? "user";
+
+            $validate = Connection::validateToken($_GET['token'], $tabla_token, $sufijo_tabla);
+
+
+
+            if ($validate == "Ok") {
+                
+                /*=========================================================*/
+                /*Token valido*/
+                /*=========================================================*/
+
+                $response->postData($tabla, $_POST);
+                
+            }
+            if ($validate == "Expirado") {
+             
+                /*=========================================================*/
+                /*Token expirado */
+                /*=========================================================*/
+                $json = [
+                    'status' => 303,
+                    'results' => "Error, el token ha exiprado"
+                ];
+                echo json_encode($json, http_response_code($json['status']));
+                return;
+            }
+            if ($validate == "No-autorizado") {
+                /*=========================================================*/
+                /*Token no valido valido*/
+                /*=========================================================*/
+                $json = [
+                    'status' => 300,
+                    'results' => "El usuario no esta autorizado"
+                ];
+                echo json_encode($json, http_response_code($json['status']));
+                return;
+            }
+        } else {
+
+            /*=========================================================*/
+            /*No se ha recibido ningun token */
+            /*=========================================================*/
+            $json = [
+                'status' => 404,
+                'results' => "La autentificacion es requerida"
+            ];
+            echo json_encode($json, http_response_code($json['status']));
+            return;
+        }
     }
 }
