@@ -95,7 +95,19 @@ class Connection
 
     static public function jwt($id, $email)
     {
+        $time = time();
 
-        return $id;
+        $token = [
+            'iat' => $time,  // El tiempo en el que inicia el token.
+            'exp' => $time + (60 * 60 * 24), // El tiempo de expiracíon del token (1 dia).
+            'data' => [
+                'id' => $id,
+                'email' => $email
+            ]
+        ];
+
+        echo '<pre>';
+        print_r($token);
+        echo '</pre>';
     }
 }
