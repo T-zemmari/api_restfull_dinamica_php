@@ -1,6 +1,7 @@
 <?php
 require_once './models/post-model.php';
 require_once './models/get-model.php';
+require_once "models/connection.php";
 class PostController
 {
 
@@ -54,6 +55,11 @@ class PostController
                 /*#######################*/
                 /*##    Crear token   ## */
                 /*#######################*/
+
+                $jwt = Connection::jwt($response[0]["id_" . $sufijo_tabla], $response[0]["email_" . $sufijo_tabla]);
+                echo '<pre>';
+                print_r($jwt);
+                echo '</pre>';
             } else {
                 $response = null;
                 $postController = new PostController();

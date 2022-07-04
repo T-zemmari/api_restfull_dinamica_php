@@ -1285,3 +1285,4 @@ Stack trace:
 [04-Jul-2022 09:50:33 Europe/Berlin] PHP Warning:  Attempt to read property "password_user" on array in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\post-controller.php on line 57
 [04-Jul-2022 09:51:26 Europe/Berlin] PHP Warning:  Attempt to read property "password_user" on array in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\post-controller.php on line 57
 [04-Jul-2022 09:54:33 Europe/Berlin] PHP Warning:  Undefined array key "passworduser" in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\post-controller.php on line 58
+[04-Jul-2022 10:15:43 Europe/Berlin] PHP Warning:  Undefined array key "emailuser" in C:\xampp\htdocs\Proyectos\React\Api-restfull-dinamica-php\controllers\post-controller.php on line 59
