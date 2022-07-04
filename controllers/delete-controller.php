@@ -31,8 +31,8 @@ class DeleteController{
     static function deleteData($tabla,$id,$column)
     {
         $response = DeleteModel::deleteData($tabla,$id,$column);
-        echo '<pre>'; print_r($response); echo '</pre>';
-        return;
+        // echo '<pre>'; print_r($response); echo '</pre>';
+        // return;
 
         $deleteController = new DeleteController();
         $deleteController->respuestaJson($response);

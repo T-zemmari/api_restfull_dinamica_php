@@ -38,6 +38,38 @@
 			"response": []
 		},
 		{
+			"name": "Get All experiences sin autorizacion",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nnpTFTjQi5wdVvz6HqP4VcQUXhedaL",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "apirest.com/experiences",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"experiences"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "id_user",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get Users By One Column",
 			"request": {
 				"method": "GET",
