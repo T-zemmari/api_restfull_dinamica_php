@@ -110,12 +110,11 @@ class Connection
             ]
         ];
 
-        $key ="Hola_Soy_laKey_de_momento_para_pruebas";
+        
+        return $token;
 
-        $jwt = JWT::encode($token,$key,'HS256');
-
-        echo '<pre>';
-        print_r($jwt);
-        echo '</pre>';
+        // echo '<pre>';
+        // print_r($jwt);
+        // echo '</pre>';
     }
 }

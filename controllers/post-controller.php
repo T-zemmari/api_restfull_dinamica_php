@@ -1,7 +1,12 @@
 <?php
 require_once './models/post-model.php';
 require_once './models/get-model.php';
+require_once './models/put-model.php';
 require_once "models/connection.php";
+require_once "vendor/autoload.php";
+
+use Firebase\JWT\JWT;
+
 class PostController
 {
 
@@ -52,14 +57,26 @@ class PostController
         if (!empty($response)) {
             $crypt = crypt($body["password_" . $sufijo_tabla], '$2a$07$aHasheaHachea052022$$');
             if ($response[0]["password_" . $sufijo_tabla] == $crypt) {
-                /*#######################*/
-                /*##    Crear token   ## */
-                /*#######################*/
 
-                $jwt = Connection::jwt($response[0]["id_" . $sufijo_tabla], $response[0]["email_" . $sufijo_tabla]);
-                echo '<pre>';
-                print_r($jwt);
-                echo '</pre>';
+                $token = Connection::jwt($response[0]["id_" . $sufijo_tabla], $response[0]["email_" . $sufijo_tabla]);
+
+                $key = "Hola_Soy_laKey_de_momento_para_pruebas";
+                $jwt = JWT::encode($token, $key, 'HS256');
+
+                $data = [
+                    "token_" . $sufijo_tabla => $jwt,
+                    "token_exp_" . $sufijo_tabla => $token['exp']
+                ];
+
+                /*###############################################################*/
+                /*##   Guarda el token en la tabla y registro correspondiente ## */
+                /*###############################################################*/
+
+                $update = PutModel::putData($tabla, $body, $response[0]["id_" . $sufijo_tabla], "id_" . $sufijo_tabla);
+
+                if ($update['comment'] == "El proceso se realizó con exito") {
+                } else {
+                }
             } else {
                 $response = null;
                 $postController = new PostController();
