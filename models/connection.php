@@ -71,12 +71,7 @@ class Connection
             return null;
         } else {
 
-            /*=================================================*/
-            /*Validar la existencia de las columnas*/
-            /*=================================================*/
-
-
-
+        
             /*=================================================*/
             /*Ajuste de seleccion de columnas globales*/
             /*=================================================*/
@@ -95,7 +90,7 @@ class Connection
 
 
     /*=================================================*/
-    /*Genereacion del token de authenticacion*/
+    /*Generacion del token de authenticacion*/
     /*=================================================*/
 
     static public function jwt($id, $email)
