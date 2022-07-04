@@ -18,10 +18,9 @@
 					}
 				],
 				"url": {
-					"raw": "apirest.com/users",
+					"raw": "{{endpoint}}/users",
 					"host": [
-						"apirest",
-						"com"
+						"{{endpoint}}"
 					],
 					"path": [
 						"users"
@@ -50,10 +49,9 @@
 					}
 				],
 				"url": {
-					"raw": "apirest.com/experiences",
+					"raw": "{{endpoint}}/experiences",
 					"host": [
-						"apirest",
-						"com"
+						"{{endpoint}}"
 					],
 					"path": [
 						"experiences"
@@ -81,10 +79,9 @@
 					}
 				],
 				"url": {
-					"raw": "apirest.com/users?linkTo=id_user&equalTo=2",
+					"raw": "{{endpoint}}/users?linkTo=id_user&equalTo=7",
 					"host": [
-						"apirest",
-						"com"
+						"{{endpoint}}"
 					],
 					"path": [
 						"users"
@@ -101,7 +98,7 @@
 						},
 						{
 							"key": "equalTo",
-							"value": "2"
+							"value": "7"
 						}
 					]
 				}
@@ -120,10 +117,9 @@
 					}
 				],
 				"url": {
-					"raw": "apirest.com/users?select=*&linkTo=name_user,phone_user&equalTo=Paco|666666666",
+					"raw": "{{endpoint}}/users?select=*&linkTo=name_user,phone_user&equalTo=Paco|666666666",
 					"host": [
-						"apirest",
-						"com"
+						"{{endpoint}}"
 					],
 					"path": [
 						"users"
@@ -158,10 +154,9 @@
 					}
 				],
 				"url": {
-					"raw": "apirest.com/users?select=*&orderBy=id_user&orderInfo=DESC",
+					"raw": "{{endpoint}}/users?select=*&orderBy=id_user&orderInfo=DESC",
 					"host": [
-						"apirest",
-						"com"
+						"{{endpoint}}"
 					],
 					"path": [
 						"users"
@@ -196,10 +191,9 @@
 					}
 				],
 				"url": {
-					"raw": "apirest.com/users?select=*&limit_ini=0&limit_end=2",
+					"raw": "{{endpoint}}/users?select=*&limit_ini=0&limit_end=2",
 					"host": [
-						"apirest",
-						"com"
+						"{{endpoint}}"
 					],
 					"path": [
 						"users"
@@ -234,10 +228,9 @@
 					}
 				],
 				"url": {
-					"raw": "apirest.com/users?select=*&orderBy=id_user&orderInfo=DESC&limit_ini=0&limit_end=5",
+					"raw": "{{endpoint}}/users?select=*&orderBy=id_user&orderInfo=DESC&limit_ini=0&limit_end=5",
 					"host": [
-						"apirest",
-						"com"
+						"{{endpoint}}"
 					],
 					"path": [
 						"users"
@@ -280,10 +273,9 @@
 					}
 				],
 				"url": {
-					"raw": "apirest.com/users?select=*&linkTo=name_user,phone_user&equalTo=Paco|666666666&orderBy=id_user&orderInfo=DESC&limit_ini=0&limit_end=5",
+					"raw": "{{endpoint}}/users?select=*&linkTo=name_user,phone_user&equalTo=Paco|666666666&orderBy=id_user&orderInfo=DESC&limit_ini=0&limit_end=5",
 					"host": [
-						"apirest",
-						"com"
+						"{{endpoint}}"
 					],
 					"path": [
 						"users"
@@ -334,10 +326,9 @@
 					}
 				],
 				"url": {
-					"raw": "apirest.com/relaciones?select=id_user,name_user&rel=users,experiences&type=user,experience&linkTo=id_experience&equalTo=1",
+					"raw": "{{endpoint}}/relaciones?select=id_user,name_user&rel=users,experiences&type=user,experience&linkTo=id_experience&equalTo=1",
 					"host": [
-						"apirest",
-						"com"
+						"{{endpoint}}"
 					],
 					"path": [
 						"relaciones"
@@ -390,10 +381,9 @@
 					}
 				],
 				"url": {
-					"raw": "apirest.com/users?select=name_user&linkTo=name_user&search=Tarek",
+					"raw": "{{endpoint}}/users?select=name_user&linkTo=name_user&search=Paco",
 					"host": [
-						"apirest",
-						"com"
+						"{{endpoint}}"
 					],
 					"path": [
 						"users"
@@ -429,7 +419,7 @@
 						},
 						{
 							"key": "search",
-							"value": "Tarek"
+							"value": "Paco"
 						}
 					]
 				}
@@ -448,10 +438,9 @@
 					}
 				],
 				"url": {
-					"raw": "apirest.com/users?select=*&linkTo=name_user,phone_user,id_user&search=ma|666666666|3",
+					"raw": "{{endpoint}}/users?select=*&linkTo=name_user,phone_user,id_user&search=Pa|666666666|7",
 					"host": [
-						"apirest",
-						"com"
+						"{{endpoint}}"
 					],
 					"path": [
 						"users"
@@ -487,7 +476,7 @@
 						},
 						{
 							"key": "search",
-							"value": "ma|666666666|3"
+							"value": "Pa|666666666|7"
 						}
 					]
 				}
@@ -506,10 +495,9 @@
 					}
 				],
 				"url": {
-					"raw": "apirest.com/relaciones?rel=users,experiences&type=user,experience&linkTo=name_user,id_experience&search=tarek|1",
+					"raw": "{{endpoint}}/relaciones?rel=users,experiences&type=user,experience&linkTo=name_user,id_experience&search=tarek|1",
 					"host": [
-						"apirest",
-						"com"
+						"{{endpoint}}"
 					],
 					"path": [
 						"relaciones"
@@ -558,10 +546,9 @@
 					}
 				],
 				"url": {
-					"raw": "apirest.com/users?select=*&linkTo=date_create_user&range_1='2022-06-01'&range_2='2022-06-20'",
+					"raw": "{{endpoint}}/users?select=*&linkTo=date_create_user&range_1='2022-06-01'&range_2='2022-06-20'",
 					"host": [
-						"apirest",
-						"com"
+						"{{endpoint}}"
 					],
 					"path": [
 						"users"
@@ -600,10 +587,9 @@
 					}
 				],
 				"url": {
-					"raw": "apirest.com/users?select=id_user,name_user&linkTo=date_create_user&range_1='2022-06-01'&range_2='2022-06-20'&filter_to=id_experience_user&in_to=1,2",
+					"raw": "{{endpoint}}/users?select=id_user,name_user&linkTo=date_create_user&range_1='2022-06-01'&range_2='2022-06-20'&filter_to=id_experience_user&in_to=1,2",
 					"host": [
-						"apirest",
-						"com"
+						"{{endpoint}}"
 					],
 					"path": [
 						"users"
@@ -650,10 +636,9 @@
 					}
 				],
 				"url": {
-					"raw": "apirest.com/relaciones?select=*&linkTo=date_create_user&range_1='2022-06-01'&range_2='2022-06-20'&filter_to=id_user&in_to=2&rel=users,experiences&type=user,experience",
+					"raw": "{{endpoint}}/relaciones?select=*&linkTo=date_create_user&range_1='2022-06-01'&range_2='2022-07-04'&filter_to=id_user&in_to=10&rel=users,experiences&type=user,experience",
 					"host": [
-						"apirest",
-						"com"
+						"{{endpoint}}"
 					],
 					"path": [
 						"relaciones"
@@ -673,7 +658,7 @@
 						},
 						{
 							"key": "range_2",
-							"value": "'2022-06-20'"
+							"value": "'2022-07-04'"
 						},
 						{
 							"key": "filter_to",
@@ -681,7 +666,7 @@
 						},
 						{
 							"key": "in_to",
-							"value": "2"
+							"value": "10"
 						},
 						{
 							"key": "rel",
@@ -749,10 +734,9 @@
 					]
 				},
 				"url": {
-					"raw": "apirest.com/experiences?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTY5MzEyNTksImV4cCI6MTY1NzAxNzY1OSwiZGF0YSI6eyJpZCI6IjIzIiwiZW1haWwiOiJjb3JyZW8zQHVzZXJzLmNvbSJ9fQ.T51ysbL_K21b8szoDHboNd4JPWWfbOcaYulzHSAPwVE&sufijo_tabla=user&tabla_token=users",
+					"raw": "{{endpoint}}/experiences?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTY5MzEyNTksImV4cCI6MTY1NzAxNzY1OSwiZGF0YSI6eyJpZCI6IjIzIiwiZW1haWwiOiJjb3JyZW8zQHVzZXJzLmNvbSJ9fQ.T51ysbL_K21b8szoDHboNd4JPWWfbOcaYulzHSAPwVE&sufijo_tabla=user&tabla_token=users",
 					"host": [
-						"apirest",
-						"com"
+						"{{endpoint}}"
 					],
 					"path": [
 						"experiences"
@@ -828,10 +812,9 @@
 					]
 				},
 				"url": {
-					"raw": "apirest.com/experiences?token=no&except=id_experience",
+					"raw": "{{endpoint}}/experiences?token=no&except=id_experience",
 					"host": [
-						"apirest",
-						"com"
+						"{{endpoint}}"
 					],
 					"path": [
 						"experiences"
@@ -918,10 +901,9 @@
 					]
 				},
 				"url": {
-					"raw": "apirest.com/products",
+					"raw": "{{endpoint}}/products",
 					"host": [
-						"apirest",
-						"com"
+						"{{endpoint}}"
 					],
 					"path": [
 						"products"
@@ -1023,10 +1005,9 @@
 					]
 				},
 				"url": {
-					"raw": "apirest.com/users?register=true&sufijo_tabla=user",
+					"raw": "{{endpoint}}/users?register=true&sufijo_tabla=user",
 					"host": [
-						"apirest",
-						"com"
+						"{{endpoint}}"
 					],
 					"path": [
 						"users"
@@ -1127,10 +1108,9 @@
 					]
 				},
 				"url": {
-					"raw": "apirest.com/users?register=true&sufijo_tabla=user",
+					"raw": "{{endpoint}}/users?register=true&sufijo_tabla=user",
 					"host": [
-						"apirest",
-						"com"
+						"{{endpoint}}"
 					],
 					"path": [
 						"users"
@@ -1230,10 +1210,9 @@
 					]
 				},
 				"url": {
-					"raw": "apirest.com/users?login=true&sufijo_tabla=user",
+					"raw": "{{endpoint}}/users?login=true&sufijo_tabla=user",
 					"host": [
-						"apirest",
-						"com"
+						"{{endpoint}}"
 					],
 					"path": [
 						"users"
@@ -1334,10 +1313,9 @@
 					]
 				},
 				"url": {
-					"raw": "apirest.com/users?login=true&sufijo_tabla=user",
+					"raw": "{{endpoint}}/users?login=true&sufijo_tabla=user",
 					"host": [
-						"apirest",
-						"com"
+						"{{endpoint}}"
 					],
 					"path": [
 						"users"
@@ -1418,10 +1396,9 @@
 					]
 				},
 				"url": {
-					"raw": "apirest.com/users?id=2&column=id_user&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTY5MzEyNTksImV4cCI6MTY1NzAxNzY1OSwiZGF0YSI6eyJpZCI6IjIzIiwiZW1haWwiOiJjb3JyZW8zQHVzZXJzLmNvbSJ9fQ.T51ysbL_K21b8szoDHboNd4JPWWfbOcaYulzHSAPwVE&sufijo_tabla=user&tabla_token=users",
+					"raw": "{{endpoint}}/users?id=2&column=id_user&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTY5MzEyNTksImV4cCI6MTY1NzAxNzY1OSwiZGF0YSI6eyJpZCI6IjIzIiwiZW1haWwiOiJjb3JyZW8zQHVzZXJzLmNvbSJ9fQ.T51ysbL_K21b8szoDHboNd4JPWWfbOcaYulzHSAPwVE&sufijo_tabla=user&tabla_token=users",
 					"host": [
-						"apirest",
-						"com"
+						"{{endpoint}}"
 					],
 					"path": [
 						"users"
@@ -1464,10 +1441,9 @@
 					}
 				],
 				"url": {
-					"raw": "apirest.com/users?id=2&column=id_user&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTY5MzEyNTksImV4cCI6MTY1NzAxNzY1OSwiZGF0YSI6eyJpZCI6IjIzIiwiZW1haWwiOiJjb3JyZW8zQHVzZXJzLmNvbSJ9fQ.T51ysbL_K21b8szoDHboNd4JPWWfbOcaYulzHSAPwVE&tabla_token=users&sufijo_tabla=user",
+					"raw": "{{endpoint}}/users?id=3&column=id_user&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTY5NDM2ODQsImV4cCI6MTY1NzAzMDA4NCwiZGF0YSI6eyJpZCI6IjIzIiwiZW1haWwiOiJjb3JyZW8zQHVzZXJzLmNvbSJ9fQ.zhc2h1mjcPfhwefES45a4l0Z7sf07imgCggMzh4lFZE&tabla_token=users&sufijo_tabla=user",
 					"host": [
-						"apirest",
-						"com"
+						"{{endpoint}}"
 					],
 					"path": [
 						"users"
@@ -1475,7 +1451,7 @@
 					"query": [
 						{
 							"key": "id",
-							"value": "2"
+							"value": "3"
 						},
 						{
 							"key": "column",
@@ -1483,7 +1459,7 @@
 						},
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTY5MzEyNTksImV4cCI6MTY1NzAxNzY1OSwiZGF0YSI6eyJpZCI6IjIzIiwiZW1haWwiOiJjb3JyZW8zQHVzZXJzLmNvbSJ9fQ.T51ysbL_K21b8szoDHboNd4JPWWfbOcaYulzHSAPwVE"
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTY5NDM2ODQsImV4cCI6MTY1NzAzMDA4NCwiZGF0YSI6eyJpZCI6IjIzIiwiZW1haWwiOiJjb3JyZW8zQHVzZXJzLmNvbSJ9fQ.zhc2h1mjcPfhwefES45a4l0Z7sf07imgCggMzh4lFZE"
 						},
 						{
 							"key": "tabla_token",
