@@ -769,6 +769,104 @@
 			"response": []
 		},
 		{
+			"name": "Registro desde una app externa(facebook,gmail..etc)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name_user",
+							"value": "Paco",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "lastname_user",
+							"value": "Lopez Flores",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "email_user",
+							"value": "correo3@users.com",
+							"type": "text"
+						},
+						{
+							"key": "password_user",
+							"value": "123456789",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "phone_user",
+							"value": "666666666",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "adress_user",
+							"value": "calle la paz mundial 21",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "cp_user",
+							"value": "46001",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "city_user",
+							"value": "Valencia",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "country_user",
+							"value": "España",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "nif_user",
+							"value": "23669988L",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "column\n",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "apirest.com/users?register=true&sufijo_tabla=user",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "register",
+							"value": "true"
+						},
+						{
+							"key": "sufijo_tabla",
+							"value": "user"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Post Login",
 			"request": {
 				"method": "POST",
