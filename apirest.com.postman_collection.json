@@ -952,7 +952,7 @@
 						},
 						{
 							"key": "email_user",
-							"value": "correo3@users.com",
+							"value": "correo4@users.com",
 							"type": "text"
 						},
 						{
@@ -1020,6 +1020,105 @@
 						{
 							"key": "sufijo_tabla",
 							"value": "user"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user Data",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nnpTFTjQi5wdVvz6HqP4VcQUXhedaL",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name_user",
+							"value": "Paco",
+							"type": "text"
+						},
+						{
+							"key": "lastname_user",
+							"value": "Lopez Flores",
+							"type": "text"
+						},
+						{
+							"key": "email_user",
+							"value": "correo4@users.com",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password_user",
+							"value": "123456789",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "phone_user",
+							"value": "666666666",
+							"type": "text"
+						},
+						{
+							"key": "adress_user",
+							"value": "calle la paz mundial 21",
+							"type": "text"
+						},
+						{
+							"key": "cp_user",
+							"value": "46001",
+							"type": "text"
+						},
+						{
+							"key": "city_user",
+							"value": "Valencia",
+							"type": "text"
+						},
+						{
+							"key": "country_user",
+							"value": "España",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "nif_user",
+							"value": "23669988L",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{endpoint}}/users?id=50&column=id_user&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTcxNzY3OTEsImV4cCI6MTY1NzI2MzE5MSwiZGF0YSI6eyJpZCI6IjUwIiwiZW1haWwiOiJjb3JyZW80QHVzZXJzLmNvbSJ9fQ.Jr-rVx8gaaWfz3uaVHMgc7ddzcG54o1bBHTn5wAfVvM&tabla_token=users",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "50"
+						},
+						{
+							"key": "column",
+							"value": "id_user"
+						},
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTcxNzY3OTEsImV4cCI6MTY1NzI2MzE5MSwiZGF0YSI6eyJpZCI6IjUwIiwiZW1haWwiOiJjb3JyZW80QHVzZXJzLmNvbSJ9fQ.Jr-rVx8gaaWfz3uaVHMgc7ddzcG54o1bBHTn5wAfVvM"
+						},
+						{
+							"key": "tabla_token",
+							"value": "users"
 						}
 					]
 				}
@@ -1157,7 +1256,7 @@
 						},
 						{
 							"key": "email_user",
-							"value": "correo3@users.com",
+							"value": "correo4@users.com",
 							"type": "text"
 						},
 						{
@@ -1225,6 +1324,11 @@
 						{
 							"key": "sufijo_tabla",
 							"value": "user"
+						},
+						{
+							"key": "sufijo_tabla",
+							"value": null,
+							"disabled": true
 						}
 					]
 				}

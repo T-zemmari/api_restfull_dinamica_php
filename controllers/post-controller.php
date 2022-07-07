@@ -145,12 +145,16 @@ class PostController
 
     {
 
+
+
+
         /*############################################################*/
         /*##  Peticion POST para el registro de un nuevo usuario   ## */
         /*############################################################*/
 
         if (isset($body["password_" . $sufijo_tabla])  && $body["password_" . $sufijo_tabla] != null) {
 
+      
             $crypt = crypt($body["password_" . $sufijo_tabla], '$2a$07$aHasheaHachea052022$$');
             $body["password_" . $sufijo_tabla] = $crypt;
             $response = PostModel::postData($tabla, $body);

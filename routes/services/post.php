@@ -3,7 +3,10 @@ require_once './controllers/post-controller.php';
 require_once './models/connection.php';
 $_POST = $_POST ?? null;
 
-
+// echo '<pre>'; print_r($tabla); echo '</pre>';
+// echo '<pre>'; print_r($_POST); echo '</pre>';
+// echo '<pre>'; print_r($sufijo_tabla); echo '</pre>';
+// return;
 
 $response =  new PostController();
 
