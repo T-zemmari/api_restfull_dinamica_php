@@ -49,10 +49,10 @@ if (isset($_POST)) {
         /*############################################################*/
 
         $sufijo_tabla = $_GET['sufijo_tabla'] ?? "user";
-        // echo '<pre>'; print_r($tabla); echo '</pre>';
-        // echo '<pre>'; print_r($_POST); echo '</pre>';
-        // echo '<pre>'; print_r($sufijo_tabla); echo '</pre>';
-        // return;
+        echo '<pre>'; print_r($tabla); echo '</pre>';
+        echo '<pre>'; print_r($_POST); echo '</pre>';
+        echo '<pre>'; print_r($sufijo_tabla); echo '</pre>';
+        return;
         $response->postDataLogin($tabla, $_POST, $sufijo_tabla);
     } else {
         /*############################################################*/
