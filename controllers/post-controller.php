@@ -145,14 +145,18 @@ class PostController
 
     {
 
-
-
-
+           //echo '<pre>'; print_r($body); echo '</pre>';
+            //return;
         /*############################################################*/
         /*##  Peticion POST para el registro de un nuevo usuario   ## */
         /*############################################################*/
 
         if (isset($body["password_" . $sufijo_tabla])  && $body["password_" . $sufijo_tabla] != null) {
+            
+        //    echo '<pre>'; print_r($body); echo '</pre>';
+        //    //return;
+        //     echo '<pre>'; print_r($body["password_" . $sufijo_tabla]); echo '</pre>';
+        //    // return;
 
       
             $crypt = crypt($body["password_" . $sufijo_tabla], '$2a$07$aHasheaHachea052022$$');

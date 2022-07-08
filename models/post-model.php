@@ -9,8 +9,11 @@ class PostModel
     Insertar nuevos datos en una tabla 
     ===========================================================*/
     static public function postData($tabla, $body)
+ 
 
     {
+        // echo '<pre>'; print_r($body); echo '</pre>';
+        // return;
         $sql = "";
         $column_name = "";
         $column_value = "";

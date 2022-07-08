@@ -3,6 +3,12 @@ require_once './controllers/post-controller.php';
 require_once './models/connection.php';
 $_POST = $_POST ?? null;
 
+
+$json = file_get_contents('php://input');
+$dataObj = json_decode($json, true);
+$_POST=$dataObj;
+
+
 // echo '<pre>'; print_r($tabla); echo '</pre>';
 // echo '<pre>'; print_r($_POST); echo '</pre>';
 // echo '<pre>'; print_r($sufijo_tabla); echo '</pre>';
@@ -41,18 +47,29 @@ if (isset($_POST)) {
         /*##  Peticion POST para el registro de un nuevo usuario   ## */
         /*############################################################*/
 
+
+
         $sufijo_tabla = $_GET['sufijo_tabla'] ?? "user";
+
+        $sufijo_tabla = $_GET['sufijo_tabla'] ?? "user";
+        // echo '<pre>';
+        // print_r($tabla);
+        // echo '</pre>';
+        // echo '<pre>';
+        // print_r($_POST);
+        // echo '</pre>';
+        // echo '<pre>';
+        // print_r($sufijo_tabla);
+        // echo '</pre>';
+        // return;
         $response->postDataRegister($tabla, $_POST, $sufijo_tabla);
+
     } elseif (isset($_GET['login']) && $_GET['login'] == true) {
         /*############################################################*/
         /*##   Peticion POST para el login de un nuevo usuario     ## */
         /*############################################################*/
 
-        $sufijo_tabla = $_GET['sufijo_tabla'] ?? "user";
-        echo '<pre>'; print_r($tabla); echo '</pre>';
-        echo '<pre>'; print_r($_POST); echo '</pre>';
-        echo '<pre>'; print_r($sufijo_tabla); echo '</pre>';
-        return;
+
         $response->postDataLogin($tabla, $_POST, $sufijo_tabla);
     } else {
         /*############################################################*/

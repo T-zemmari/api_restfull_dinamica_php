@@ -160,7 +160,7 @@ class Connection
     static public function publicAcess()
     {
 
-        $tablas = ['experiences'];
+        $tablas = ['experiences','users'];
 
         return  $tablas;
     }
