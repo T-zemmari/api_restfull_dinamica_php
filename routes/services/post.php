@@ -3,10 +3,13 @@ require_once './controllers/post-controller.php';
 require_once './models/connection.php';
 $_POST = $_POST ?? null;
 
+if (empty($_POST)) {
+    $json = file_get_contents('php://input');
+    $dataObj = json_decode($json, true);
+    $_POST = $dataObj;
+}
 
-$json = file_get_contents('php://input');
-$dataObj = json_decode($json, true);
-$_POST=$dataObj;
+
 
 
 // echo '<pre>'; print_r($tabla); echo '</pre>';
@@ -63,7 +66,6 @@ if (isset($_POST)) {
         // echo '</pre>';
         // return;
         $response->postDataRegister($tabla, $_POST, $sufijo_tabla);
-
     } elseif (isset($_GET['login']) && $_GET['login'] == true) {
         /*############################################################*/
         /*##   Peticion POST para el login de un nuevo usuario     ## */
