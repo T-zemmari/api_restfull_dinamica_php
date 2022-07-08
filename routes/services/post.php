@@ -47,21 +47,36 @@ if (isset($_POST)) {
 
 
     if (isset($_GET['register']) && $_GET['register'] == true) {
+
+
+
         /*############################################################*/
         /*##  Peticion POST para el registro de un nuevo usuario   ## */
         /*############################################################*/
 
-        $sufijo_tabla = $_GET['sufijo_tabla'] ?? "user";
-     
-      
+        $sufijo_tabla = $_GET['sufijo_tabla'] ?? "user";      
         $response->postDataRegister($tabla, $_POST, $sufijo_tabla);
+
+
+
+
     } elseif (isset($_GET['login']) && $_GET['login'] == true) {
+
+
+
+
         /*############################################################*/
         /*##   Peticion POST para el login de un nuevo usuario     ## */
         /*############################################################*/
+        $sufijo_tabla = $_GET['sufijo_tabla'] ?? "user";
 
+        // echo '<pre>'; print_r($_POST); echo '</pre>';
+        // return;
 
         $response->postDataLogin($tabla, $_POST, $sufijo_tabla);
+
+
+
     } else {
         /*############################################################*/
         /*##   Obtener los datos del body y pasarlos al controlador## */

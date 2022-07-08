@@ -55,8 +55,13 @@ class PostController
 
 
     static function postDataLogin($tabla, $body, $sufijo_tabla)
+    
 
     {
+
+        // echo '<pre>'; print_r($body); echo '</pre>';
+        // echo '<pre>'; print_r($sufijo_tabla); echo '</pre>';
+        // return;
 
         /*############################################################*/
         /*##    Validar si el usuario existe en la base de datos   ## */
