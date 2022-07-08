@@ -145,59 +145,64 @@ class PostController
 
     {
 
-           //echo '<pre>'; print_r($body); echo '</pre>';
-            //return;
-        /*############################################################*/
-        /*##  Peticion POST para el registro de un nuevo usuario   ## */
-        /*############################################################*/
-
-        if (isset($body["password_" . $sufijo_tabla])  && $body["password_" . $sufijo_tabla] != null) {
-            
-        //    echo '<pre>'; print_r($body); echo '</pre>';
-        //    //return;
-        //     echo '<pre>'; print_r($body["password_" . $sufijo_tabla]); echo '</pre>';
-        //    // return;
-
-      
-            $crypt = crypt($body["password_" . $sufijo_tabla], '$2a$07$aHasheaHachea052022$$');
-            $body["password_" . $sufijo_tabla] = $crypt;
-            $response = PostModel::postData($tabla, $body);
+        $email = $body['email_user'];
+        $isset_user = GetModel::getDataFilter($tabla, 'email_user', 'email_user', $email, null, null, null, null);
+        if (!empty($isset_user) && $isset_user[0]['email_user'] == $email) {
+            $response = [
+                'status' => 'error',
+                'comment' => "Este email se encuentra registrado en la base de datos"
+            ];
             $postController = new PostController();
             $postController->respuestaJson($response, null, null);
         } else {
-            /*#################################################*/
-            /*##  Peticion POST registro desde app externas ## */
-            /*#################################################*/
 
-            $response = PostModel::postData($tabla, $body);
-            if (isset($response) && $response["comment"] == "El proceso se realizó con exito") {
+            /*############################################################*/
+            /*##  Peticion POST para el registro de un nuevo usuario   ## */
+            /*############################################################*/
 
-                $response = GetModel::getDataFilter($tabla, "*", "email_" . $sufijo_tabla, $body["email_" . $sufijo_tabla], null, null, null, null);
+            if (isset($body["password_" . $sufijo_tabla])  && $body["password_" . $sufijo_tabla] != null) {
 
-                if (!empty($response)) {
-                    $token = Connection::jwt($response[0]["id_" . $sufijo_tabla], $response[0]["email_" . $sufijo_tabla]);
 
-                    $key = "Hola_Soy_laKey_de_momento_para_pruebas";
-                    $jwt = JWT::encode($token, $key, 'HS256');
-
-                    $data = [
-                        "token_" . $sufijo_tabla => $jwt,
-                        "token_exp_" . $sufijo_tabla => $token['exp']
-                    ];
-
-                    $update = PutModel::putData($tabla, $data, $response[0]["id_" . $sufijo_tabla], "id_" . $sufijo_tabla);
-                    if (isset($update) && $update["comment"] == "El proceso se realizó con exito") {
-
-                        $response[0]["token_" . $sufijo_tabla] = $jwt;
-                        $response[0]["token_exp_" . $sufijo_tabla] = $token['exp'];
-                        $postController = new PostController();
-                        $postController->respuestaJson($response, null, $sufijo_tabla);
-                    }
-                }
-            } else {
-                $response = null;
+                $crypt = crypt($body["password_" . $sufijo_tabla], '$2a$07$aHasheaHachea052022$$');
+                $body["password_" . $sufijo_tabla] = $crypt;
+                $response = PostModel::postData($tabla, $body);
                 $postController = new PostController();
-                $postController->respuestaJson($response, "Error en el login", $sufijo_tabla);
+                $postController->respuestaJson($response, null, null);
+            } else {
+                /*#################################################*/
+                /*##  Peticion POST registro desde app externas ## */
+                /*#################################################*/
+
+                $response = PostModel::postData($tabla, $body);
+                if (isset($response) && $response["comment"] == "El proceso se realizó con exito") {
+
+                    $response = GetModel::getDataFilter($tabla, "*", "email_" . $sufijo_tabla, $body["email_" . $sufijo_tabla], null, null, null, null);
+
+                    if (!empty($response)) {
+                        $token = Connection::jwt($response[0]["id_" . $sufijo_tabla], $response[0]["email_" . $sufijo_tabla]);
+
+                        $key = "Hola_Soy_laKey_de_momento_para_pruebas";
+                        $jwt = JWT::encode($token, $key, 'HS256');
+
+                        $data = [
+                            "token_" . $sufijo_tabla => $jwt,
+                            "token_exp_" . $sufijo_tabla => $token['exp']
+                        ];
+
+                        $update = PutModel::putData($tabla, $data, $response[0]["id_" . $sufijo_tabla], "id_" . $sufijo_tabla);
+                        if (isset($update) && $update["comment"] == "El proceso se realizó con exito") {
+
+                            $response[0]["token_" . $sufijo_tabla] = $jwt;
+                            $response[0]["token_exp_" . $sufijo_tabla] = $token['exp'];
+                            $postController = new PostController();
+                            $postController->respuestaJson($response, null, $sufijo_tabla);
+                        }
+                    }
+                } else {
+                    $response = null;
+                    $postController = new PostController();
+                    $postController->respuestaJson($response, "Error en el login", $sufijo_tabla);
+                }
             }
         }
     }
@@ -206,9 +211,7 @@ class PostController
     /*############################################################*/
     static function postData($tabla, $body)
     {
-        // echo '<pre>'; print_r($tabla); echo '</pre>';
-        // echo '<pre>'; print_r($body); echo '</pre>';
-        // return;
+
         $response = PostModel::postData($tabla, $body);
         $postController = new PostController();
         $postController->respuestaJson($response, null, null);
